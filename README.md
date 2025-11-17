@@ -40,34 +40,6 @@ Sitio web interactivo para el curso de Inducción a la Administración Pública,
 - **Font Awesome** - Iconos vectoriales
 - **Google Fonts** - Tipografías (Inter y Source Sans Pro)
 
-## Instalación y Uso
-
-### Opción 1: GitHub Pages (Recomendado)
-
-1. **Crear repositorio en GitHub:**
-   - Ve a [github.com](https://github.com)
-   - Crea un nuevo repositorio público
-   - Nombra el repositorio: `inap-induccion-administracion-publica`
-
-2. **Subir archivos:**
-   ```bash
-   # Clonar el repositorio (si no lo has hecho)
-   git clone https://github.com/TU-USUARIO/inap-induccion-administracion-publica.git
-   cd inap-induccion-administracion-publica
-   
-   # Copiar todos los archivos del proyecto
-   # Commit y push
-   git add .
-   git commit -m "Initial commit: Curso INAP"
-   git push origin main
-   ```
-
-3. **Activar GitHub Pages:**
-   - Ve a Settings → Pages
-   - Source: Deploy from a branch
-   - Branch: main
-   - Carpeta: / (root)
-   - Click en Save
 
 4. **Acceder al sitio:**
    - URL: `https://TU-USUARIO.github.io/inap-induccion-administracion-publica/`
@@ -141,7 +113,7 @@ Para modificar el contenido:
 
 - **Facilitador:** Johan Tapia, PhD
 - **Versión:** 2.0
-- **Fecha:** Noviembre 2024
+- **Fecha:** Noviembre 2025
 
 ## Licencia
 

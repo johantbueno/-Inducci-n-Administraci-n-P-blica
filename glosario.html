@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glosario - Inducción a la Administración Pública - INAP</title>
+    <meta name="description" content="Glosario completo de términos y definiciones del curso de Inducción a la Administración Pública">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            --primary-blue: #0f2b5b;
+            --secondary-blue: #1e40af;
+            --light-blue: #dbeafe;
+            --white: #ffffff;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-600: #64748b;
+            --gray-800: #1e293b;
+        }
+        
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background: linear-gradient(135deg, var(--white) 0%, var(--gray-50) 100%);
+            min-height: 100vh;
+        }
+        
+        .font-display {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+        }
+        
+        .glossary-card {
+            background: var(--white);
+            border: 1px solid var(--gray-100);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .glossary-card:hover {
+            border-color: var(--secondary-blue);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--secondary-blue);
+        }
+        
+        .breadcrumb-item {
+            color: var(--gray-600);
+        }
+        
+        .breadcrumb-item.active {
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+        
+        .alphabet-filter {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 24px;
+            justify-content: center;
+        }
+        
+        .alphabet-letter {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .alphabet-letter:hover,
+        .alphabet-letter.active {
+            background: var(--secondary-blue);
+            color: white;
+            border-color: var(--secondary-blue);
+        }
+        
+        .search-box {
+            position: relative;
+            margin-bottom: 24px;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 12px 48px 12px 16px;
+            border: 1px solid var(--gray-200);
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: var(--secondary-blue);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+        
+        .search-icon {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray-400);
+        }
+        
+        .term-letter {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            background: var(--secondary-blue);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+            margin-right: 12px;
+        }
+        
+        .progress-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gray-100);
+            z-index: 1000;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--secondary-blue) 0%, var(--primary-blue) 100%);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        
+        .highlight {
+            background: yellow;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Progress Indicator -->
+    <div class="progress-indicator">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-4">
+                    <div class="flex-shrink-0">
+                        <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-university text-white text-lg"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h1 class="font-display font-bold text-lg text-gray-800">INAP</h1>
+                        <p class="text-xs text-gray-600">Inducción Administración Pública</p>
+                    </div>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Inicio</a>
+                        <a href="unidad1.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Unidad I</a>
+                        <a href="unidad2.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Unidad II</a>
+                        <a href="unidad3.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Unidad III</a>
+                        <a href="ley4108.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Ley 41-08</a>
+                        <a href="casos.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Casos</a>
+                        <a href="glosario.html" class="nav-link text-blue-600 px-3 py-2 text-sm font-medium border-b-2 border-blue-600">Glosario</a>
+                    </div>
+                </div>
+                
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Inicio</a>
+                <a href="unidad1.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Unidad I</a>
+                <a href="unidad2.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Unidad II</a>
+                <a href="unidad3.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Unidad III</a>
+                <a href="ley4108.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Ley 41-08</a>
+                <a href="casos.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Casos</a>
+                <a href="glosario.html" class="block px-3 py-2 text-blue-600 font-medium">Glosario</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="bg-gray-50 py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav class="flex" aria-label="Breadcrumb">
+                <ol class="flex items-center space-x-2">
+                    <li>
+                        <a href="index.html" class="breadcrumb-item hover:text-blue-600">
+                            <i class="fas fa-home"></i>
+                            <span class="sr-only">Inicio</span>
+                        </a>
+                    </li>
+                    <li>
+                        <i class="fas fa-chevron-right breadcrumb-item text-xs"></i>
+                    </li>
+                    <li class="breadcrumb-item active">
+                        Glosario General
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="font-display text-4xl lg:text-5xl font-bold mb-6">
+                    Glosario General
+                </h1>
+                <h2 class="text-2xl lg:text-3xl font-light mb-4">
+                    Términos y Definiciones
+                </h2>
+                <p class="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+                    Diccionario completo de términos técnicos y conceptos fundamentales del manual de inducción a la administración pública dominicana.
+                </p>
+                <div class="mt-8 flex justify-center">
+                    <div class="bg-white bg-opacity-20 backdrop-blur-lg rounded-lg px-6 py-3">
+                        <div class="flex items-center space-x-4 text-sm">
+                            <span><i class="fas fa-book mr-2"></i>100+ términos</span>
+                            <span><i class="fas fa-search mr-2"></i>Buscable</span>
+                            <span><i class="fas fa-sort mr-2"></i>Ordenado A-Z</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Search and Filter -->
+            <div class="mb-8">
+                <div class="search-box">
+                    <input type="text" id="search-input" class="search-input" placeholder="Buscar término...">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+                
+                <div class="alphabet-filter" id="alphabet-filter">
+                    <div class="alphabet-letter active" data-letter="all">Todos</div>
+                    <div class="alphabet-letter" data-letter="A">A</div>
+                    <div class="alphabet-letter" data-letter="B">B</div>
+                    <div class="alphabet-letter" data-letter="C">C</div>
+                    <div class="alphabet-letter" data-letter="D">D</div>
+                    <div class="alphabet-letter" data-letter="E">E</div>
+                    <div class="alphabet-letter" data-letter="F">F</div>
+                    <div class="alphabet-letter" data-letter="G">G</div>
+                    <div class="alphabet-letter" data-letter="I">I</div>
+                    <div class="alphabet-letter" data-letter="J">J</div>
+                    <div class="alphabet-letter" data-letter="L">L</div>
+                    <div class="alphabet-letter" data-letter="M">M</div>
+                    <div class="alphabet-letter" data-letter="N">N</div>
+                    <div class="alphabet-letter" data-letter="O">O</div>
+                    <div class="alphabet-letter" data-letter="P">P</div>
+                    <div class="alphabet-letter" data-letter="R">R</div>
+                    <div class="alphabet-letter" data-letter="S">S</div>
+                    <div class="alphabet-letter" data-letter="T">T</div>
+                    <div class="alphabet-letter" data-letter="V">V</div>
+                </div>
+            </div>
+            
+            <!-- Glossary Terms -->
+            <div id="glossary-container">
+                <!-- A -->
+                <div class="glossary-card" data-letter="A" data-term="Administración Pública Central">
+                    <div class="flex items-start">
+                        <div class="term-letter">A</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Administración Pública Central</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Conjunto de ministerios y direcciones bajo dependencia directa del Presidente de la República.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glossary-card" data-letter="A" data-term="Administración Descentralizada">
+                    <div class="flex items-start">
+                        <div class="term-letter">A</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Administración Descentralizada</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Entidades con autonomía administrativa y financiera (ejemplos: INAPA, IAD, INAIPI).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glossary-card" data-letter="A" data-term="Amonestación">
+                    <div class="flex items-start">
+                        <div class="term-letter">A</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Amonestación</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Sanción disciplinaria leve que consiste en llamado de atención por escrito.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glossary-card" data-letter="A" data-term="Ascenso">
+                    <div class="flex items-start">
+                        <div class="term-letter">A</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Ascenso</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Promoción de un funcionario de carrera a un cargo de mayor nivel y remuneración.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- B -->
+                <div class="glossary-card" data-letter="B" data-term="Bienestar Social">
+                    <div class="flex items-start">
+                        <div class="term-letter">B</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Bienestar Social</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Programas y servicios que garantizan calidad de vida de la población.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glossary-card" data-letter="B" data-term="Buenas Prácticas">
+                    <div class="flex items-start">
+                        <div class="term-letter">B</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Buenas Prácticas</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Procedimientos eficientes y éticos que se replican por su efectividad.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- C -->
+                <div class="glossary-card" data-letter="C" data-term="Carrera Administrativa">
+                    <div class="flex items-start">
+                        <div class="term-letter">C</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Carrera Administrativa</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Sistema de empleo público basado en mérito, con estabilidad y desarrollo profesional.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glossary-card" data-letter="C" data-term="Carta Compromiso">
+                    <div class="flex items-start">
+                        <div class="term-letter">C</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Carta Compromiso</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Documento donde la institución se compromete con estándares de calidad.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glossary-card" data-letter="C" data-term="Código de Ética">
+                    <div class="flex items-start">
+                        <div class="term-letter">C</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Código de Ética</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Conjunto de principios morales que guían la conducta del servidor público (derogado por Ley 41-08 que lo incorporó).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glossary-card" data-letter="C" data-term="Concurso de Oposición">
+                    <div class="flex items-start">
+                        <div class="term-letter">C</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Concurso de Oposición</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Proceso competitivo para seleccionar funcionarios de carrera basado en mérito.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glossary-card" data-letter="C" data-term="Conflicto de Intereses">
+                    <div class="flex items-start">
+                        <div class="term-letter">C</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Conflicto de Intereses</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Situación donde interés personal del servidor puede afectar decisión imparcial.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glossary-card" data-letter="C" data-term="Contraloría">
+                    <div class="flex items-start">
+                        <div class="term-letter">C</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Contraloría</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Órgano de control interno del Poder Ejecutivo.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- D -->
+                <div class="glossary-card" data-letter="D" data-term="Descentralización">
+                    <div class="flex items-start">
+                        <div class="term-letter">D</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Descentralización</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Transferencia de competencias del gobierno central a entidades autónomas o gobiernos locales.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glossary-card" data-letter="D" data-term="Desconcentración">
+                    <div class="flex items-start">
+                        <div class="term-letter">D</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Desconcentración</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Delegación de funciones dentro de una misma institución a oficinas territoriales.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glossary-card" data-letter="D" data-term="Destitución">
+                    <div class="flex items-start">
+                        <div class="term-letter">D</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Destitución</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Separación definitiva del servidor público por comisión de falta grave.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- E -->
+                <div class="glossary-card" data-letter="E" data-term="Eficacia">
+                    <div class="flex items-start">
+                        <div class="term-letter">E</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Eficacia</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Capacidad de lograr objetivos establecidos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glossary-card" data-letter="E" data-term="Eficiencia">
+                    <div class="flex items-start">
+                        <div class="term-letter">E</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Eficiencia</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Lograr objetivos con óptimo uso de recursos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glossary-card" data-letter="E" data-term="Emolumentos">
+                    <div class="flex items-start">
+                        <div class="term-letter">E</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Emolumentos</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Remuneraciones y beneficios económicos del servidor público.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glossary-card" data-letter="E" data-term="Ética Pública">
+                    <div class="flex items-start">
+                        <div class="term-letter">E</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Ética Pública</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Conjunto de valores y principios que deben regir la función pública.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- F -->
+                <div class="glossary-card" data-letter="F" data-term="Función Pública">
+                    <div class="flex items-start">
+                        <div class="term-letter">F</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Función Pública</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Actividad desarrollada por personas al servicio del Estado.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glossary-card" data-letter="F" data-term="Fuero Organizativo">
+                    <div class="flex items-start">
+                        <div class="term-letter">F</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Fuero Organizativo</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Protección especial para dirigentes sindicales que impide destitución arbitraria.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- G -->
+                <div class="glossary-card" data-letter="G" data-term="Gabinete">
+                    <div class="flex items-start">
+                        <div class="term-letter">G</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Gabinete</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Conjunto de ministros que asesoran al Presidente.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glossary-card" data-letter="G" data-term="Gestión Pública">
+                    <div class="flex items-start">
+                        <div class="term-letter">G</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Gestión Pública</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Proceso de administrar recursos estatales para lograr objetivos públicos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glossary-card" data-letter="G" data-term="Gobierno Electrónico">
+                    <div class="flex items-start">
+                        <div class="term-letter">G</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Gobierno Electrónico</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Uso de TIC para mejorar servicios públicos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- I -->
+                <div class="glossary-card" data-letter="I" data-term="INAP">
+                    <div class="flex items-start">
+                        <div class="term-letter">I</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">INAP</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Instituto Nacional de Administración Pública - Responsable de formación de servidores públicos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glossary-card" data-letter="I" data-term="Incompatibilidad">
+                    <div class="flex items-start">
+                        <div class="term-letter">I</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Incompatibilidad</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Prohibición de ejercer simultáneamente ciertas funciones o cargos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glossary-card" data-letter="I" data-term="Indemnización">
+                    <div class="flex items-start">
+                        <div class="term-letter">I</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Indemnización</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Compensación económica por cese injustificado.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glossary-card" data-letter="I" data-term="Inducción">
+                    <div class="flex items-start">
+                        <div class="term-letter">I</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Inducción</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Proceso de orientación inicial al servidor público sobre institución y funciones.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- J -->
+                <div class="glossary-card" data-letter="J" data-term="Jerarquía">
+                    <div class="flex items-start">
+                        <div class="term-letter">J</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Jerarquía</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Organización por niveles de autoridad y responsabilidad.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glossary-card" data-letter="J" data-term="Juridicidad">
+                    <div class="flex items-start">
+                        <div class="term-letter">J</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Juridicidad</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Principio de actuación conforme a todo el ordenamiento jurídico.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- L -->
+                <div class="glossary-card" data-letter="L" data-term="Legalidad">
+                    <div class="flex items-start">
+                        <div class="term-letter">L</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Legalidad</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Actuación administrativa conforme a las leyes (concepto evolucionado a juridicidad).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glossary-card" data-letter="L" data-term="Licencia">
+                    <div class="flex items-start">
+                        <div class="term-letter">L</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Licencia</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Permiso para ausentarse del trabajo por tiempo determinado.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- M -->
+                <div class="glossary-card" data-letter="M" data-term="MAP">
+                    <div class="flex items-start">
+                        <div class="term-letter">M</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">MAP</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Ministerio de Administración Pública - Rector del empleo público.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glossary-card" data-letter="M" data-term="Meritocracia">
+                    <div class="flex items-start">
+                        <div class="term-letter">M</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Meritocracia</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Sistema donde promociones se basan en capacidad y desempeño.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glossary-card" data-letter="M" data-term="Municipio">
+                    <div class="flex items-start">
+                        <div class="term-letter">M</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Municipio</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Unidad territorial básica de organización político-administrativa local.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- N -->
+                <div class="glossary-card" data-letter="N" data-term="Nepotismo">
+                    <div class="flex items-start">
+                        <div class="term-letter">N</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Nepotismo</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Favorecer a familiares en nombramientos o contrataciones.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glossary-card" data-letter="N" data-term="Nombramiento">
+                    <div class="flex items-start">
+                        <div class="term-letter">N</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Nombramiento</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Acto administrativo que designa a persona para ejercer cargo público.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- O -->
+                <div class="glossary-card" data-letter="O" data-term="OAI">
+                    <div class="flex items-start">
+                        <div class="term-letter">O</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">OAI</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Oficina de Acceso a la Información - Responsable de transparencia institucional.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glossary-card" data-letter="O" data-term="Órgano Constitucional">
+                    <div class="flex items-start">
+                        <div class="term-letter">O</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Órgano Constitucional</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Institución creada directamente por la Constitución (ejemplos: JCE, Cámara de Cuentas, Defensor del Pueblo).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glossary-card" data-letter="O" data-term="Órgano Rector">
+                    <div class="flex items-start">
+                        <div class="term-letter">O</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Órgano Rector</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Institución que establece políticas y normas en su área de competencia.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- P -->
+                <div class="glossary-card" data-letter="P" data-term="Período de Prueba">
+                    <div class="flex items-start">
+                        <div class="term-letter">P</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Período de Prueba</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Tiempo de evaluación antes de confirmar permanencia en carrera (hasta 12 meses).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glossary-card" data-letter="P" data-term="Presupuesto Público">
+                    <div class="flex items-start">
+                        <div class="term-letter">P</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Presupuesto Público</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Plan financiero anual del Estado con ingresos y gastos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glossary-card" data-letter="P" data-term="Principios de Actuación">
+                    <div class="flex items-start">
+                        <div class="term-letter">P</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Principios de Actuación</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Reglas fundamentales que guían conducta administrativa (10 principios del Art. 138 Constitución).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glossary-card" data-letter="P" data-term="Probidad">
+                    <div class="flex items-start">
+                        <div class="term-letter">P</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Probidad</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Integridad y honradez en manejo de recursos públicos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- R -->
+                <div class="glossary-card" data-letter="R" data-term="Reasignación">
+                    <div class="flex items-start">
+                        <div class="term-letter">R</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Reasignación</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Cambio de un servidor de un puesto a otro del mismo nivel.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glossary-card" data-letter="R" data-term="Registro de Elegibles">
+                    <div class="flex items-start">
+                        <div class="term-letter">R</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Registro de Elegibles</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Lista de personas que aprobaron concurso y pueden ser nombradas (vigencia: 18 meses).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glossary-card" data-letter="R" data-term="Remuneración">
+                    <div class="flex items-start">
+                        <div class="term-letter">R</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Remuneración</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Contraprestación económica por servicios prestados.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glossary-card" data-letter="R" data-term="Rendición de Cuentas">
+                    <div class="flex items-start">
+                        <div class="term-letter">R</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Rendición de Cuentas</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Obligación de informar y justificar uso de recursos y decisiones.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- S -->
+                <div class="glossary-card" data-letter="S" data-term="Salario 13">
+                    <div class="flex items-start">
+                        <div class="term-letter">S</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Salario 13</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Beneficio anual equivalente a 1/12 de salarios del año (regalía pascual).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glossary-card" data-letter="S" data-term="Sector Público">
+                    <div class="flex items-start">
+                        <div class="term-letter">S</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Sector Público</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Conjunto de todas las entidades estatales.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glossary-card" data-letter="S" data-term="Servidor Público">
+                    <div class="flex items-start">
+                        <div class="term-letter">S</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Servidor Público</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Persona que ejerce función pública designada por autoridad competente.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glossary-card" data-letter="S" data-term="SISMAP">
+                    <div class="flex items-start">
+                        <div class="term-letter">S</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">SISMAP</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Sistema de Monitoreo de la Administración Pública - Plataforma tecnológica de gestión de RR.HH.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glossary-card" data-letter="S" data-term="Suspensión">
+                    <div class="flex items-start">
+                        <div class="term-letter">S</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Suspensión</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Separación temporal del cargo, con o sin disfrute de sueldo.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- T -->
+                <div class="glossary-card" data-letter="T" data-term="Transparencia">
+                    <div class="flex items-start">
+                        <div class="term-letter">T</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Transparencia</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Principio de acceso a información pública y visibilidad de gestión.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glossary-card" data-letter="T" data-term="Transversalidad">
+                    <div class="flex items-start">
+                        <div class="term-letter">T</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Transversalidad</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Políticas que aplican a toda la administración (ejemplo: género, medio ambiente).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- V -->
+                <div class="glossary-card" data-letter="V" data-term="Vacaciones">
+                    <div class="flex items-start">
+                        <div class="term-letter">V</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Vacaciones</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Período de descanso remunerado (15-30 días según antigüedad).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glossary-card" data-letter="V" data-term="Valores del Servicio Público">
+                    <div class="flex items-start">
+                        <div class="term-letter">V</div>
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Valores del Servicio Público</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Honestidad, lealtad, imparcialidad, responsabilidad, eficiencia.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-university text-white text-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-display font-bold text-lg">INAP</h3>
+                            <p class="text-sm text-gray-400">Instituto Nacional de Administración Pública</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Formando servidores públicos competentes y comprometidos con el desarrollo institucional de la República Dominicana.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-display font-semibold text-lg mb-4">Contacto</h4>
+                    <div class="space-y-2 text-sm text-gray-300">
+                        <p><i class="fas fa-envelope mr-2 text-blue-400"></i>jtapia@inap.gob.do</p>
+                        <p><i class="fas fa-phone mr-2 text-blue-400"></i>809-868-4994</p>
+                        <p><i class="fas fa-map-marker-alt mr-2 text-blue-400"></i>República Dominicana</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-display font-semibold text-lg mb-4">Recursos</h4>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.inap.gob.do" class="text-gray-300 hover:text-blue-400 block transition-colors">
+                            <i class="fas fa-external-link-alt mr-2"></i>Portal INAP
+                        </a>
+                        <a href="https://www.map.gob.do" class="text-gray-300 hover:text-blue-400 block transition-colors">
+                            <i class="fas fa-external-link-alt mr-2"></i>Portal MAP
+                        </a>
+                        <a href="https://transparencia.gob.do" class="text-gray-300 hover:text-blue-400 block transition-colors">
+                            <i class="fas fa-external-link-alt mr-2"></i>Portal Transparencia
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400 text-sm">
+                    © 2024 Johan Tapia, PhD - INAP. Curso de Inducción a la Administración Pública.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Progress bar
+        function updateProgressBar() {
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.body.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            document.getElementById('progress-bar').style.width = scrollPercent + '%';
+        }
+        
+        window.addEventListener('scroll', updateProgressBar);
+        
+        // Glossary functionality
+        class Glossary {
+            constructor() {
+                this.terms = document.querySelectorAll('.glossary-card');
+                this.searchInput = document.getElementById('search-input');
+                this.alphabetFilter = document.getElementById('alphabet-filter');
+                this.currentFilter = 'all';
+                
+                this.init();
+            }
+            
+            init() {
+                this.setupSearch();
+                this.setupAlphabetFilter();
+            }
+            
+            setupSearch() {
+                this.searchInput.addEventListener('input', (e) => {
+                    const searchTerm = e.target.value.toLowerCase();
+                    this.filterTerms(searchTerm, this.currentFilter);
+                });
+            }
+            
+            setupAlphabetFilter() {
+                this.alphabetFilter.addEventListener('click', (e) => {
+                    if (e.target.classList.contains('alphabet-letter')) {
+                        // Remove active class from all letters
+                        this.alphabetFilter.querySelectorAll('.alphabet-letter').forEach(letter => {
+                            letter.classList.remove('active');
+                        });
+                        
+                        // Add active class to clicked letter
+                        e.target.classList.add('active');
+                        
+                        // Update current filter
+                        this.currentFilter = e.target.dataset.letter;
+                        
+                        // Filter terms
+                        const searchTerm = this.searchInput.value.toLowerCase();
+                        this.filterTerms(searchTerm, this.currentFilter);
+                    }
+                });
+            }
+            
+            filterTerms(searchTerm, letterFilter) {
+                this.terms.forEach(term => {
+                    const termText = term.dataset.term.toLowerCase();
+                    const termLetter = term.dataset.letter;
+                    
+                    const matchesSearch = !searchTerm || termText.includes(searchTerm);
+                    const matchesLetter = letterFilter === 'all' || termLetter === letterFilter;
+                    
+                    if (matchesSearch && matchesLetter) {
+                        term.style.display = 'block';
+                        // Highlight search term
+                        if (searchTerm) {
+                            this.highlightTerm(term, searchTerm);
+                        }
+                    } else {
+                        term.style.display = 'none';
+                    }
+                });
+                
+                // Update results count
+                const visibleTerms = document.querySelectorAll('.glossary-card[style="display: block"], .glossary-card:not([style])');
+                console.log(`Mostrando ${visibleTerms.length} términos`);
+            }
+            
+            highlightTerm(termElement, searchTerm) {
+                const title = termElement.querySelector('h3');
+                const text = termElement.querySelector('p');
+                
+                // Highlight in title
+                if (title.textContent.toLowerCase().includes(searchTerm)) {
+                    const regex = new RegExp(`(${searchTerm})`, 'gi');
+                    title.innerHTML = title.textContent.replace(regex, '<span class="highlight">$1</span>');
+                }
+                
+                // Highlight in description
+                if (text.textContent.toLowerCase().includes(searchTerm)) {
+                    const regex = new RegExp(`(${searchTerm})`, 'gi');
+                    text.innerHTML = text.textContent.replace(regex, '<span class="highlight">$1</span>');
+                }
+            }
+        }
+        
+        // Initialize glossary
+        document.addEventListener('DOMContentLoaded', function() {
+            updateProgressBar();
+            new Glossary();
+            console.log('Glosario page loaded successfully');
+        });
+    </script>
+</body>
+</html>

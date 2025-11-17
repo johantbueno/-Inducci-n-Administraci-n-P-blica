@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casos Prácticos - Inducción a la Administración Pública - INAP</title>
+    <meta name="description" content="Casos prácticos y ejemplos reales de aplicación de la legislación dominicana">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            --primary-blue: #0f2b5b;
+            --secondary-blue: #1e40af;
+            --light-blue: #dbeafe;
+            --white: #ffffff;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-600: #64748b;
+            --gray-800: #1e293b;
+        }
+        
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background: linear-gradient(135deg, var(--white) 0%, var(--gray-50) 100%);
+            min-height: 100vh;
+        }
+        
+        .font-display {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+        }
+        
+        .case-card {
+            background: var(--white);
+            border: 1px solid var(--gray-100);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .case-card:hover {
+            border-color: var(--secondary-blue);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .case-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            backdrop-filter: blur(4px);
+        }
+        
+        .case-modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 16px;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            margin: 20px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--secondary-blue);
+        }
+        
+        .breadcrumb-item {
+            color: var(--gray-600);
+        }
+        
+        .breadcrumb-item.active {
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+        
+        .case-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--secondary-blue);
+            color: white;
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        .difficulty-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .difficulty-easy {
+            background: #dcfce7;
+            color: #166534;
+        }
+        
+        .difficulty-medium {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        
+        .difficulty-hard {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+        
+        .interactive-element {
+            transition: all 0.3s ease;
+        }
+        
+        .interactive-element:hover {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-4">
+                    <div class="flex-shrink-0">
+                        <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-university text-white text-lg"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h1 class="font-display font-bold text-lg text-gray-800">INAP</h1>
+                        <p class="text-xs text-gray-600">Inducción Administración Pública</p>
+                    </div>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Inicio</a>
+                        <a href="unidad1.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Unidad I</a>
+                        <a href="unidad2.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Unidad II</a>
+                        <a href="unidad3.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Unidad III</a>
+                        <a href="ley4108.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Ley 41-08</a>
+                        <a href="casos.html" class="nav-link text-blue-600 px-3 py-2 text-sm font-medium border-b-2 border-blue-600">Casos</a>
+                        <a href="glosario.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Glosario</a>
+                    </div>
+                </div>
+                
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Inicio</a>
+                <a href="unidad1.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Unidad I</a>
+                <a href="unidad2.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Unidad II</a>
+                <a href="unidad3.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Unidad III</a>
+                <a href="ley4108.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Ley 41-08</a>
+                <a href="casos.html" class="block px-3 py-2 text-blue-600 font-medium">Casos</a>
+                <a href="glosario.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Glosario</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="bg-gray-50 py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav class="flex" aria-label="Breadcrumb">
+                <ol class="flex items-center space-x-2">
+                    <li>
+                        <a href="index.html" class="breadcrumb-item hover:text-blue-600">
+                            <i class="fas fa-home"></i>
+                            <span class="sr-only">Inicio</span>
+                        </a>
+                    </li>
+                    <li>
+                        <i class="fas fa-chevron-right breadcrumb-item text-xs"></i>
+                    </li>
+                    <li class="breadcrumb-item active">
+                        Casos Prácticos y Ejemplos
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="font-display text-4xl lg:text-5xl font-bold mb-6">
+                    Casos Prácticos
+                </h1>
+                <h2 class="text-2xl lg:text-3xl font-light mb-4">
+                    Ejemplos y Ejercicios
+                </h2>
+                <p class="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+                    Casos reales de aplicación de la legislación dominicana y principios de la función pública para un aprendizaje práctico y efectivo.
+                </p>
+                <div class="mt-8 flex justify-center">
+                    <div class="bg-white bg-opacity-20 backdrop-blur-lg rounded-lg px-6 py-3">
+                        <div class="flex items-center space-x-4 text-sm">
+                            <span><i class="fas fa-book mr-2"></i>8 casos</span>
+                            <span><i class="fas fa-clock mr-2"></i>Duración variable</span>
+                            <span><i class="fas fa-users mr-2"></i>Interactivos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-display text-3xl font-bold text-gray-800 mb-4">Casos de Aplicación Práctica</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Analiza situaciones reales que enfrentan los servidores públicos y aprende cómo aplicar correctamente la legislación vigente.
+                </p>
+            </div>
+            
+            <div class="grid gap-6">
+                <!-- Caso 1 -->
+                <div class="case-card interactive-element" onclick="openCase('case1')">
+                    <div class="flex items-start justify-between">
+                        <div class="flex items-start">
+                            <div class="case-number mr-4">1</div>
+                            <div class="flex-1">
+                                <div class="flex items-center mb-2">
+                                    <h3 class="font-display text-xl font-bold text-gray-800 mr-3">Ingreso a la Carrera Administrativa</h3>
+                                    <span class="difficulty-badge difficulty-easy">Fácil</span>
+                                </div>
+                                <p class="text-gray-600 mb-3">
+                                    María es licenciada en Contabilidad y quiere trabajar en el Ministerio de Hacienda. ¿Cuál es el proceso correcto?
+                                </p>
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="fas fa-tag mr-2"></i>
+                                    <span>Ley 41-08, Carrera Administrativa, Concursos</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-blue-600">
+                            <i class="fas fa-chevron-right text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Caso 2 -->
+                <div class="case-card interactive-element" onclick="openCase('case2')">
+                    <div class="flex items-start justify-between">
+                        <div class="flex items-start">
+                            <div class="case-number mr-4">2</div>
+                            <div class="flex-1">
+                                <div class="flex items-center mb-2">
+                                    <h3 class="font-display text-xl font-bold text-gray-800 mr-3">Conflicto de Intereses</h3>
+                                    <span class="difficulty-badge difficulty-medium">Medio</span>
+                                </div>
+                                <p class="text-gray-600 mb-3">
+                                    Juan es encargado de compras y su hermano tiene una empresa que participa en licitaciones. ¿Qué debe hacer?
+                                </p>
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="fas fa-tag mr-2"></i>
+                                    <span>Ética Pública, Conflicto de Intereses, Ley 41-08</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-blue-600">
+                            <i class="fas fa-chevron-right text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Caso 3 -->
+                <div class="case-card interactive-element" onclick="openCase('case3')">
+                    <div class="flex items-start justify-between">
+                        <div class="flex items-start">
+                            <div class="case-number mr-4">3</div>
+                            <div class="flex-1">
+                                <div class="flex items-center mb-2">
+                                    <h3 class="font-display text-xl font-bold text-gray-800 mr-3">Solicitud de Información Pública</h3>
+                                    <span class="difficulty-badge difficulty-easy">Fácil</span>
+                                </div>
+                                <p class="text-gray-600 mb-3">
+                                    Pedro, periodista, quiere saber cuánto gana un director de institución pública. ¿Tiene derecho a esa información?
+                                </p>
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="fas fa-tag mr-2"></i>
+                                    <span>Ley 200-04, Acceso a Información, Transparencia</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-blue-600">
+                            <i class="fas fa-chevron-right text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Caso 4 -->
+                <div class="case-card interactive-element" onclick="openCase('case4')">
+                    <div class="flex items-start justify-between">
+                        <div class="flex items-start">
+                            <div class="case-number mr-4">4</div>
+                            <div class="flex-1">
+                                <div class="flex items-center mb-2">
+                                    <h3 class="font-display text-xl font-bold text-gray-800 mr-3">Evaluación de Desempeño Insatisfactorio</h3>
+                                    <span class="difficulty-badge difficulty-hard">Difícil</span>
+                                </div>
+                                <p class="text-gray-600 mb-3">
+                                    Carmen, analista de carrera, obtuvo calificación "Insatisfactorio". ¿Cuál es el proceso a seguir?
+                                </p>
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="fas fa-tag mr-2"></i>
+                                    <span>Evaluación de Desempeño, Carrera Administrativa, Procesos Disciplinarios</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-blue-600">
+                            <i class="fas fa-chevron-right text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Caso 5 -->
+                <div class="case-card interactive-element" onclick="openCase('case5')">
+                    <div class="flex items-start justify-between">
+                        <div class="flex items-start">
+                            <div class="case-number mr-4">5</div>
+                            <div class="flex-1">
+                                <div class="flex items-center mb-2">
+                                    <h3 class="font-display text-xl font-bold text-gray-800 mr-3">Acoso Sexual</h3>
+                                    <span class="difficulty-badge difficulty-hard">Difícil</span>
+                                </div>
+                                <p class="text-gray-600 mb-3">
+                                    Laura reporta que su supervisor hace comentarios inapropiados y tocamientos. ¿Cómo proceder?
+                                </p>
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="fas fa-tag mr-2"></i>
+                                    <span>Acoso Sexual, Protocolo de Denuncia, Protección de la Víctima</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-blue-600">
+                            <i class="fas fa-chevron-right text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Caso 6 -->
+                <div class="case-card interactive-element" onclick="openCase('case6')">
+                    <div class="flex items-start justify-between">
+                        <div class="flex items-start">
+                            <div class="case-number mr-4">6</div>
+                            <div class="flex-1">
+                                <div class="flex items-center mb-2">
+                                    <h3 class="font-display text-xl font-bold text-gray-800 mr-3">Uso Indebido de Recursos Públicos</h3>
+                                    <span class="difficulty-badge difficulty-medium">Medio</span>
+                                </div>
+                                <p class="text-gray-600 mb-3">
+                                    Roberto, chofer oficial, usa el vehículo institucional para asuntos personales. ¿Qué sanción corresponde?
+                                </p>
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="fas fa-tag mr-2"></i>
+                                    <span>Recursos Públicos, Uso Indebido, Régimen Disciplinario</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-blue-600">
+                            <i class="fas fa-chevron-right text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Caso 7 -->
+                <div class="case-card interactive-element" onclick="openCase('case7')">
+                    <div class="flex items-start justify-between">
+                        <div class="flex items-start">
+                            <div class="case-number mr-4">7</div>
+                            <div class="flex-1">
+                                <div class="flex items-center mb-2">
+                                    <h3 class="font-display text-xl font-bold text-gray-800 mr-3">Nepotismo</h3>
+                                    <span class="difficulty-badge difficulty-medium">Medio</span>
+                                </div>
+                                <p class="text-gray-600 mb-3">
+                                    Un director nombra a su esposa como su asistente directa. ¿Es esto permitido?
+                                </p>
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="fas fa-tag mr-2"></i>
+                                    <span>Nepotismo, Relaciones de Parentesco, Incompatibilidad</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-blue-600">
+                            <i class="fas fa-chevron-right text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Caso 8 -->
+                <div class="case-card interactive-element" onclick="openCase('case8')">
+                    <div class="flex items-start justify-between">
+                        <div class="flex items-start">
+                            <div class="case-number mr-4">8</div>
+                            <div class="flex-1">
+                                <div class="flex items-center mb-2">
+                                    <h3 class="font-display text-xl font-bold text-gray-800 mr-3">Gestión de Vacaciones</h3>
+                                    <span class="difficulty-badge difficulty-easy">Fácil</span>
+                                </div>
+                                <p class="text-gray-600 mb-3">
+                                    Patricia tiene 8 años en la institución y nunca ha tomado vacaciones completas. ¿Cómo gestionar su caso?
+                                </p>
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="fas fa-tag mr-2"></i>
+                                    <span>Vacaciones, Derechos Laborales, Acumulación</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-blue-600">
+                            <i class="fas fa-chevron-right text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Case Modals -->
+    <!-- Caso 1 Modal -->
+    <div id="case1-modal" class="case-modal">
+        <div class="modal-content">
+            <div class="p-8">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <h2 class="font-display text-2xl font-bold text-gray-800 mb-2">Caso 1: Ingreso a la Carrera Administrativa</h2>
+                        <span class="difficulty-badge difficulty-easy">Fácil</span>
+                    </div>
+                    <button onclick="closeCase('case1')" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+                
+                <div class="prose max-w-none">
+                    <div class="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
+                        <h3 class="font-semibold text-blue-800 mb-2">Situación:</h3>
+                        <p class="text-blue-700">
+                            María es licenciada en Contabilidad y quiere trabajar en el Ministerio de Hacienda como Analista Contable I.
+                        </p>
+                    </div>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Proceso Correcto:</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-gray-800 mb-3">
+                                <i class="fas fa-search mr-2 text-blue-600"></i>
+                                1. Consulta de Vacantes
+                            </h4>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li>• Portal MAP: www.map.gob.do</li>
+                                <li>• Portal empleate.gob.do</li>
+                                <li>• Revisar requisitos del cargo</li>
+                                <li>• Verificar salario y ubicación</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-gray-800 mb-3">
+                                <i class="fas fa-file-alt mr-2 text-green-600"></i>
+                                2. Aplicación al Concurso
+                            </h4>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li>• Llenar formulario en línea</li>
+                                <li>• Adjuntar documentos requeridos</li>
+                                <li>• Certificado de nacimiento</li>
+                                <li>• Título y certificaciones</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-gray-800 mb-3">
+                                <i class="fas fa-clipboard-check mr-2 text-purple-600"></i>
+                                3. Evaluación
+                            </h4>
+                            <div class="text-sm text-gray-700 space-y-1">
+                                <div>• Prueba técnica: 40%</div>
+                                <div>• Prueba psicométrica: 20%</div>
+                                <div>• Evaluación curricular: 20%</div>
+                                <div>• Entrevista: 20%</div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-gray-800 mb-3">
+                                <i class="fas fa-graduation-cap mr-2 text-red-600"></i>
+                                4. Inducción y Prueba
+                            </h4>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li>• 2 semanas en INAP</li>
+                                <li>• Período de prueba: 12 meses</li>
+                                <li>• Evaluaciones trimestrales</li>
+                                <li>• Acompañamiento de supervisor</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-green-50 border-l-4 border-green-400 p-4">
+                        <h4 class="font-semibold text-green-800 mb-2">
+                            <i class="fas fa-lightbulb mr-2"></i>
+                            Resultado Exitoso:
+                        </h4>
+                        <p class="text-green-700">
+                            María obtiene 85 puntos (mínimo 70), ocupa 2do lugar de 50 aplicantes, es nombrada y después de 12 meses de prueba exitosa, obtiene su certificado de carrera y estabilidad laboral.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Caso 2 Modal -->
+    <div id="case2-modal" class="case-modal">
+        <div class="modal-content">
+            <div class="p-8">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <h2 class="font-display text-2xl font-bold text-gray-800 mb-2">Caso 2: Conflicto de Intereses</h2>
+                        <span class="difficulty-badge difficulty-medium">Medio</span>
+                    </div>
+                    <button onclick="closeCase('case2')" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+                
+                <div class="prose max-w-none">
+                    <div class="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
+                        <h3 class="font-semibold text-blue-800 mb-2">Situación:</h3>
+                        <p class="text-blue-700">
+                            Juan es encargado de compras en el Ministerio de Obras Públicas. Su hermano tiene una ferretería y participa en licitación para vender materiales.
+                        </p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div class="bg-red-50 border border-red-200 rounded-lg p-4">
+                            <h4 class="font-semibold text-red-800 mb-3">
+                                <i class="fas fa-times-circle mr-2"></i>
+                                ¿Qué NO debe hacer Juan?
+                            </h4>
+                            <ul class="space-y-2 text-sm text-red-700">
+                                <li>• Pensar "nadie se dará cuenta"</li>
+                                <li>• Creer que puede ser objetivo</li>
+                                <li>• Favorecer a otro oferente para "compensar"</li>
+                                <li>• Participar del proceso sin declarar</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                            <h4 class="font-semibold text-green-800 mb-3">
+                                <i class="fas fa-check-circle mr-2"></i>
+                                ¿Qué SÍ debe hacer Juan?
+                            </h4>
+                            <ul class="space-y-2 text-sm text-green-700">
+                                <li>• Declararse impedido por escrito</li>
+                                <li>• Explicar que su hermano es oferente</li>
+                                <li>• Solicitar que otro funcionario evalúe</li>
+                                <li>• No participar en ninguna fase del proceso</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                        <h4 class="font-semibold text-yellow-800 mb-2">
+                            <i class="fas fa-gavel mr-2"></i>
+                            Fundamento Legal:
+                        </h4>
+                        <ul class="text-sm text-yellow-700 space-y-1">
+                            <li>• Ley 41-08, Art. 80, numeral 16 (conflicto de intereses)</li>
+                            <li>• Ley 340-06 de Compras (impedimentos)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-red-50 border-l-4 border-red-400 p-4">
+                        <h4 class="font-semibold text-red-800 mb-2">
+                            <i class="fas fa-exclamation-triangle mr-2"></i>
+                            Consecuencias de no declararse impedido:
+                        </h4>
+                        <ul class="text-sm text-red-700 space-y-1">
+                            <li>• Falta de tercer grado</li>
+                            <li>• Destitución</li>
+                            <li>• Inhabilitación 5 años</li>
+                            <li>• Posible proceso penal</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Caso 3 Modal -->
+    <div id="case3-modal" class="case-modal">
+        <div class="modal-content">
+            <div class="p-8">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <h2 class="font-display text-2xl font-bold text-gray-800 mb-2">Caso 3: Solicitud de Información Pública</h2>
+                        <span class="difficulty-badge difficulty-easy">Fácil</span>
+                    </div>
+                    <button onclick="closeCase('case3')" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+                
+                <div class="prose max-w-none">
+                    <div class="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
+                        <h3 class="font-semibold text-blue-800 mb-2">Situación:</h3>
+                        <p class="text-blue-700">
+                            Pedro, periodista, quiere saber cuánto gana el director de una institución y cuánto gasta en combustible mensualmente.
+                        </p>
+                    </div>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Procedimiento de Solicitud:</h3>
+                    
+                    <div class="bg-gray-50 p-4 rounded-lg mb-6">
+                        <h4 class="font-semibold text-gray-800 mb-3">Modelo de Solicitud:</h4>
+                        <div class="bg-white p-4 border rounded text-sm">
+                            <p class="font-semibold mb-2">A: Responsable de Acceso a Información</p>
+                            <p class="font-semibold mb-4">Institución X</p>
+                            
+                            <p class="font-semibold mb-2">SOLICITO:</p>
+                            <ol class="list-decimal list-inside space-y-1 mb-4">
+                                <li>Salario del Director General (año 2024)</li>
+                                <li>Gasto mensual en combustible (enero-octubre 2024)</li>
+                            </ol>
+                            
+                            <p class="mb-2"><strong>Para:</strong> Investigación periodística</p>
+                            <p class="mb-4"><strong>Respuesta preferida:</strong> Correo electrónico</p>
+                            
+                            <p><strong>Firma:</strong> ________________</p>
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                            <h4 class="font-semibold text-green-800 mb-3">
+                                <i class="fas fa-check-circle mr-2"></i>
+                                ¿Pueden negar la información?
+                            </h4>
+                            <p class="text-sm text-green-700 mb-3">
+                                <strong>NO</strong>, porque:
+                            </p>
+                            <ul class="text-sm text-green-700 space-y-1">
+                                <li>• Son datos publicables por ley</li>
+                                <li>• No afectan seguridad ni privacidad</li>
+                                <li>• Están en presupuesto público</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-red-50 border border-red-200 rounded-lg p-4">
+                            <h4 class="font-semibold text-red-800 mb-3">
+                                <i class="fas fa-times-circle mr-2"></i>
+                                ¿Cuándo SÍ podrían negar?
+                            </h4>
+                            <ul class="text-sm text-red-700 space-y-1">
+                                <li>• Expediente médico del director</li>
+                                <li>• Detalles de investigación en curso</li>
+                                <li>• Estrategia de licitación en proceso</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                        <h4 class="font-semibold text-yellow-800 mb-2">
+                            <i class="fas fa-clock mr-2"></i>
+                            Tiempos de Respuesta:
+                        </h4>
+                        <ul class="text-sm text-yellow-700 space-y-1">
+                            <li>• OAI tiene 15 días laborables para responder</li>
+                            <li>• Si niegan sin justificación: recurso ante Comisión de Acceso</li>
+                            <li>• Funcionario puede ser sancionado por negativa injustificada</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-university text-white text-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-display font-bold text-lg">INAP</h3>
+                            <p class="text-sm text-gray-400">Instituto Nacional de Administración Pública</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Formando servidores públicos competentes y comprometidos con el desarrollo institucional de la República Dominicana.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-display font-semibold text-lg mb-4">Contacto</h4>
+                    <div class="space-y-2 text-sm text-gray-300">
+                        <p><i class="fas fa-envelope mr-2 text-blue-400"></i>jtapia@inap.gob.do</p>
+                        <p><i class="fas fa-phone mr-2 text-blue-400"></i>809-868-4994</p>
+                        <p><i class="fas fa-map-marker-alt mr-2 text-blue-400"></i>República Dominicana</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-display font-semibold text-lg mb-4">Recursos</h4>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.inap.gob.do" class="text-gray-300 hover:text-blue-400 block transition-colors">
+                            <i class="fas fa-external-link-alt mr-2"></i>Portal INAP
+                        </a>
+                        <a href="https://www.map.gob.do" class="text-gray-300 hover:text-blue-400 block transition-colors">
+                            <i class="fas fa-external-link-alt mr-2"></i>Portal MAP
+                        </a>
+                        <a href="https://transparencia.gob.do" class="text-gray-300 hover:text-blue-400 block transition-colors">
+                            <i class="fas fa-external-link-alt mr-2"></i>Portal Transparencia
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400 text-sm">
+                    © 2024 Johan Tapia, PhD - INAP. Curso de Inducción a la Administración Pública.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Case modal functions
+        function openCase(caseId) {
+            const modal = document.getElementById(caseId + '-modal');
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+        
+        function closeCase(caseId) {
+            const modal = document.getElementById(caseId + '-modal');
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+        
+        // Close modal when clicking outside
+        document.querySelectorAll('.case-modal').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.case-modal.active').forEach(modal => {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+            }
+        });
+        
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Casos page loaded successfully');
+        });
+    </script>
+</body>
+</html>

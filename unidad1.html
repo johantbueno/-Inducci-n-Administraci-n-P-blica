@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad I: Nociones sobre Organización del Estado - INAP</title>
+    <meta name="description" content="Unidad I del curso de Inducción a la Administración Pública - Conceptos fundamentales sobre el Estado">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            --primary-blue: #0f2b5b;
+            --secondary-blue: #1e40af;
+            --light-blue: #dbeafe;
+            --white: #ffffff;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-600: #64748b;
+            --gray-800: #1e293b;
+        }
+        
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background: linear-gradient(135deg, var(--white) 0%, var(--gray-50) 100%);
+            min-height: 100vh;
+        }
+        
+        .font-display {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .accordion-content.active {
+            max-height: 1000px;
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--secondary-blue);
+        }
+        
+        .breadcrumb-item {
+            color: var(--gray-600);
+        }
+        
+        .breadcrumb-item.active {
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+        
+        .concept-card {
+            background: var(--white);
+            border: 1px solid var(--gray-100);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .concept-card:hover {
+            border-color: var(--secondary-blue);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .example-box {
+            background: var(--light-blue);
+            border-left: 4px solid var(--secondary-blue);
+            padding: 16px;
+            margin: 16px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .progress-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gray-100);
+            z-index: 1000;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--secondary-blue) 0%, var(--primary-blue) 100%);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Progress Indicator -->
+    <div class="progress-indicator">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-4">
+                    <div class="flex-shrink-0">
+                        <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-university text-white text-lg"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h1 class="font-display font-bold text-lg text-gray-800">INAP</h1>
+                        <p class="text-xs text-gray-600">Inducción Administración Pública</p>
+                    </div>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Inicio</a>
+                        <a href="unidad1.html" class="nav-link text-blue-600 px-3 py-2 text-sm font-medium border-b-2 border-blue-600">Unidad I</a>
+                        <a href="unidad2.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Unidad II</a>
+                        <a href="unidad3.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Unidad III</a>
+                        <a href="ley4108.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Ley 41-08</a>
+                        <a href="casos.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Casos</a>
+                        <a href="glosario.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Glosario</a>
+                    </div>
+                </div>
+                
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Inicio</a>
+                <a href="unidad1.html" class="block px-3 py-2 text-blue-600 font-medium">Unidad I</a>
+                <a href="unidad2.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Unidad II</a>
+                <a href="unidad3.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Unidad III</a>
+                <a href="ley4108.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Ley 41-08</a>
+                <a href="casos.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Casos</a>
+                <a href="glosario.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Glosario</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="bg-gray-50 py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav class="flex" aria-label="Breadcrumb">
+                <ol class="flex items-center space-x-2">
+                    <li>
+                        <a href="index.html" class="breadcrumb-item hover:text-blue-600">
+                            <i class="fas fa-home"></i>
+                            <span class="sr-only">Inicio</span>
+                        </a>
+                    </li>
+                    <li>
+                        <i class="fas fa-chevron-right breadcrumb-item text-xs"></i>
+                    </li>
+                    <li class="breadcrumb-item active">
+                        Unidad I: Nociones sobre Organización del Estado
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="font-display text-4xl lg:text-5xl font-bold mb-6">
+                    Unidad I
+                </h1>
+                <h2 class="text-2xl lg:text-3xl font-light mb-4">
+                    Nociones sobre Organización del Estado
+                </h2>
+                <p class="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+                    Conceptos fundamentales sobre el Estado, gobierno, sector público y la organización de los tres poderes del Estado dominicano.
+                </p>
+                <div class="mt-8 flex justify-center">
+                    <div class="bg-white bg-opacity-20 backdrop-blur-lg rounded-lg px-6 py-3">
+                        <div class="flex items-center space-x-4 text-sm">
+                            <span><i class="fas fa-clock mr-2"></i>Duración: 2 horas</span>
+                            <span><i class="fas fa-book mr-2"></i>3 temas</span>
+                            <span><i class="fas fa-users mr-2"></i>Para todos los niveles</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-4 gap-8">
+                <!-- Sidebar -->
+                <div class="lg:col-span-1">
+                    <div class="sticky top-24">
+                        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+                            <h3 class="font-display text-lg font-semibold text-gray-800 mb-4">
+                                <i class="fas fa-list mr-2 text-blue-600"></i>
+                                Contenido de la Unidad
+                            </h3>
+                            <nav class="space-y-2">
+                                <a href="#conceptos" class="block px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-md transition-colors">
+                                    <i class="fas fa-circle text-xs mr-2"></i>1.1 Conceptos Fundamentales
+                                </a>
+                                <a href="#poderes" class="block px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-md transition-colors">
+                                    <i class="fas fa-circle text-xs mr-2"></i>1.2 Los Tres Poderes del Estado
+                                </a>
+                                <a href="#gobiernos" class="block px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-md transition-colors">
+                                    <i class="fas fa-circle text-xs mr-2"></i>1.3 Gobierno Nacional vs. Local
+                                </a>
+                            </nav>
+                        </div>
+                        
+                        <div class="bg-blue-50 rounded-lg p-6">
+                            <h4 class="font-display font-semibold text-blue-800 mb-3">
+                                <i class="fas fa-lightbulb mr-2"></i>
+                                Consejo del Facilitador
+                            </h4>
+                            <p class="text-sm text-blue-700 leading-relaxed">
+                                "Comprender la estructura del Estado es fundamental para ejercer correctamente la función pública. Cada servidor público debe conocer cómo se organiza y funciona el sistema."
+                            </p>
+                            <div class="mt-4 text-xs text-blue-600">
+                                — Johan Tapia, PhD
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Main Content -->
+                <div class="lg:col-span-3">
+                    <!-- Section 1.1 -->
+                    <section id="conceptos" class="mb-12">
+                        <div class="concept-card">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-sitemap text-blue-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h2 class="font-display text-2xl font-bold text-gray-800">1.1 Conceptos Fundamentales</h2>
+                                    <p class="text-gray-600">Estado, Gobierno y Sector Público</p>
+                                </div>
+                            </div>
+                            
+                            <div class="prose max-w-none">
+                                <h3 class="text-xl font-semibold text-gray-800 mb-4">El Estado</h3>
+                                <p class="text-gray-700 leading-relaxed mb-4">
+                                    El Estado es la organización política de una nación que ejerce autoridad sobre un territorio y su población, estableciendo normas, administrando recursos y garantizando la seguridad y el bienestar de sus ciudadanos.
+                                </p>
+                                
+                                <div class="grid md:grid-cols-3 gap-4 mb-6">
+                                    <div class="bg-blue-50 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-blue-800 mb-2">
+                                            <i class="fas fa-map mr-2"></i>Territorio
+                                        </h4>
+                                        <p class="text-sm text-blue-700">Espacio geográfico donde se ejerce la soberanía</p>
+                                    </div>
+                                    <div class="bg-green-50 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-green-800 mb-2">
+                                            <i class="fas fa-users mr-2"></i>Población
+                                        </h4>
+                                        <p class="text-sm text-green-700">Conjunto de personas que habitan ese territorio</p>
+                                    </div>
+                                    <div class="bg-purple-50 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-purple-800 mb-2">
+                                            <i class="fas fa-crown mr-2"></i>Poder Público
+                                        </h4>
+                                        <p class="text-sm text-purple-700">Autoridad reconocida para gobernar</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="example-box">
+                                    <h4 class="font-semibold text-blue-800 mb-2">
+                                        <i class="fas fa-flag mr-2"></i>Ejemplo Práctico
+                                    </h4>
+                                    <p class="text-blue-700">
+                                        La República Dominicana como Estado tiene un territorio definido (48,671 km²), una población (aproximadamente 11 millones de habitantes) y un gobierno organizado en tres poderes.
+                                    </p>
+                                </div>
+                                
+                                <h3 class="text-xl font-semibold text-gray-800 mb-4 mt-8">El Gobierno</h3>
+                                <p class="text-gray-700 leading-relaxed mb-4">
+                                    El Gobierno es la autoridad encargada de dirigir y administrar los asuntos públicos del Estado, compuesta por el presidente, ministros y otros funcionarios.
+                                </p>
+                                
+                                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                                    <div class="flex">
+                                        <div class="flex-shrink-0">
+                                            <i class="fas fa-exclamation-triangle text-yellow-400"></i>
+                                        </div>
+                                        <div class="ml-3">
+                                            <h4 class="text-sm font-medium text-yellow-800">Diferencia Clave</h4>
+                                            <div class="mt-2 text-sm text-yellow-700">
+                                                <p><strong>Estado:</strong> Entidad permanente y abstracta</p>
+                                                <p><strong>Gobierno:</strong> Administración temporal que dirige el Estado</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="example-box">
+                                    <h4 class="font-semibold text-blue-800 mb-2">
+                                        <i class="fas fa-history mr-2"></i>Ejemplo Histórico
+                                    </h4>
+                                    <p class="text-blue-700">
+                                        El Estado dominicano existe desde 1844, pero ha tenido múltiples gobiernos que cambian cada cuatro años mediante elecciones.
+                                    </p>
+                                </div>
+                                
+                                <h3 class="text-xl font-semibold text-gray-800 mb-4 mt-8">El Sector Público</h3>
+                                <p class="text-gray-700 leading-relaxed mb-4">
+                                    El Sector Público es el conjunto de todas las entidades estatales y organismos públicos que prestan servicios y gestionan recursos en beneficio de la sociedad.
+                                </p>
+                                
+                                <div class="grid md:grid-cols-2 gap-4 mb-6">
+                                    <div class="bg-gray-50 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-gray-800 mb-3">Componentes Principales</h4>
+                                        <ul class="space-y-2 text-sm text-gray-700">
+                                            <li class="flex items-center">
+                                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                                Poder Ejecutivo (Ministerios, Direcciones)
+                                            </li>
+                                            <li class="flex items-center">
+                                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                                Poder Legislativo (Congreso Nacional)
+                                            </li>
+                                            <li class="flex items-center">
+                                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                                Poder Judicial (Tribunales)
+                                            </li>
+                                            <li class="flex items-center">
+                                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                                Órganos constitucionales (JCE, Cámara de Cuentas)
+                                            </li>
+                                            <li class="flex items-center">
+                                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                                Ayuntamientos
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-gray-50 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-gray-800 mb-3">Funciones Principales</h4>
+                                        <ul class="space-y-2 text-sm text-gray-700">
+                                            <li class="flex items-center">
+                                                <i class="fas fa-arrow-right text-blue-500 mr-2"></i>
+                                                Prestar servicios públicos
+                                            </li>
+                                            <li class="flex items-center">
+                                                <i class="fas fa-arrow-right text-blue-500 mr-2"></i>
+                                                Regular actividades privadas
+                                            </li>
+                                            <li class="flex items-center">
+                                                <i class="fas fa-arrow-right text-blue-500 mr-2"></i>
+                                                Fomentar el desarrollo
+                                            </li>
+                                            <li class="flex items-center">
+                                                <i class="fas fa-arrow-right text-blue-500 mr-2"></i>
+                                                Garantizar derechos ciudadanos
+                                            </li>
+                                            <li class="flex items-center">
+                                                <i class="fas fa-arrow-right text-blue-500 mr-2"></i>
+                                                Administrar recursos públicos
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Section 1.2 -->
+                    <section id="poderes" class="mb-12">
+                        <div class="concept-card">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-balance-scale text-green-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h2 class="font-display text-2xl font-bold text-gray-800">1.2 Los Tres Poderes del Estado</h2>
+                                    <p class="text-gray-600">Separación de poderes en la República Dominicana</p>
+                                </div>
+                            </div>
+                            
+                            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                                <!-- Poder Legislativo -->
+                                <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+                                    <div class="text-center mb-4">
+                                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                            <i class="fas fa-gavel text-red-600 text-2xl"></i>
+                                        </div>
+                                        <h3 class="font-display text-xl font-bold text-red-800">Poder Legislativo</h3>
+                                    </div>
+                                    <div class="space-y-3">
+                                        <div>
+                                            <h4 class="font-semibold text-red-700 mb-2">Función Principal</h4>
+                                            <p class="text-sm text-red-600">Crear, modificar y derogar leyes</p>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-red-700 mb-2">Estructura</h4>
+                                            <ul class="text-sm text-red-600 space-y-1">
+                                                <li>• Congreso Nacional</li>
+                                                <li>• Senado (32 senadores)</li>
+                                                <li>• Cámara de Diputados (190 diputados)</li>
+                                            </ul>
+                                        </div>
+                                        <div class="bg-red-100 p-3 rounded">
+                                            <h5 class="font-medium text-red-800 mb-1">Ejemplo</h5>
+                                            <p class="text-xs text-red-700">Cuando el Congreso aprobó la Ley 41-08 de Función Pública</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Poder Judicial -->
+                                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                                    <div class="text-center mb-4">
+                                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                            <i class="fas fa-scales text-blue-600 text-2xl"></i>
+                                        </div>
+                                        <h3 class="font-display text-xl font-bold text-blue-800">Poder Judicial</h3>
+                                    </div>
+                                    <div class="space-y-3">
+                                        <div>
+                                            <h4 class="font-semibold text-blue-700 mb-2">Función Principal</h4>
+                                            <p class="text-sm text-blue-600">Administrar justicia e interpretar las leyes</p>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-blue-700 mb-2">Estructura</h4>
+                                            <ul class="text-sm text-blue-600 space-y-1">
+                                                <li>• Suprema Corte de Justicia</li>
+                                                <li>• Cortes de Apelación</li>
+                                                <li>• Tribunales de Primera Instancia</li>
+                                                <li>• Juzgados de Paz</li>
+                                            </ul>
+                                        </div>
+                                        <div class="bg-blue-100 p-3 rounded">
+                                            <h5 class="font-medium text-blue-800 mb-1">Ejemplo</h5>
+                                            <p class="text-xs text-blue-700">Tribunal Contencioso Administrativo</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Poder Ejecutivo -->
+                                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                                    <div class="text-center mb-4">
+                                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                            <i class="fas fa-crown text-green-600 text-2xl"></i>
+                                        </div>
+                                        <h3 class="font-display text-xl font-bold text-green-800">Poder Ejecutivo</h3>
+                                    </div>
+                                    <div class="space-y-3">
+                                        <div>
+                                            <h4 class="font-semibold text-green-700 mb-2">Función Principal</h4>
+                                            <p class="text-sm text-green-600">Ejecutar las leyes y administrar el Estado</p>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-green-700 mb-2">Estructura</h4>
+                                            <ul class="text-sm text-green-600 space-y-1">
+                                                <li>• Presidencia de la República</li>
+                                                <li>• Vicepresidencia</li>
+                                                <li>• Ministerios (19)</li>
+                                                <li>• Direcciones Generales</li>
+                                                <li>• Organismos descentralizados</li>
+                                            </ul>
+                                        </div>
+                                        <div class="bg-green-100 p-3 rounded">
+                                            <h5 class="font-medium text-green-800 mb-1">Ejemplo</h5>
+                                            <p class="text-xs text-green-700">Ministerio de Educación</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="example-box">
+                                <h4 class="font-semibold text-blue-800 mb-2">
+                                    <i class="fas fa-lightbulb mr-2"></i>Caso Práctico
+                                </h4>
+                                <p class="text-blue-700 mb-3">
+                                    Cuando un ciudadano solicita una cédula de identidad en la Junta Central Electoral, está interactuando con la administración pública. El proceso desde que llena el formulario hasta que recibe su documento involucra múltiples servidores públicos trabajando bajo normas específicas.
+                                </p>
+                                <div class="bg-white bg-opacity-50 p-3 rounded">
+                                    <p class="text-sm text-blue-800">
+                                        <strong>Análisis:</strong> Este ejemplo muestra cómo los tres poderes trabajan en coordinación: el Legislativo crea las leyes que regulan el proceso, el Ejecutivo implementa el servicio a través de la JCE, y el Judicial puede intervenir si hay disputas.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Section 1.3 -->
+                    <section id="gobiernos" class="mb-12">
+                        <div class="concept-card">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-building text-purple-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h2 class="font-display text-2xl font-bold text-gray-800">1.3 Gobierno Nacional vs. Gobierno Local</h2>
+                                    <p class="text-gray-600">Organización territorial y competencias</p>
+                                </div>
+                            </div>
+                            
+                            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                                <!-- Gobierno Nacional -->
+                                <div class="bg-gray-50 rounded-lg p-6">
+                                    <div class="flex items-center mb-4">
+                                        <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-3">
+                                            <i class="fas fa-flag text-red-600 text-xl"></i>
+                                        </div>
+                                        <h3 class="font-display text-xl font-bold text-gray-800">Gobierno Nacional</h3>
+                                    </div>
+                                    
+                                    <div class="space-y-4">
+                                        <div>
+                                            <h4 class="font-semibold text-gray-800 mb-2">Características</h4>
+                                            <ul class="space-y-1 text-sm text-gray-700">
+                                                <li class="flex items-center">
+                                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                                    Alcance en todo el territorio nacional
+                                                </li>
+                                                <li class="flex items-center">
+                                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                                    Establece políticas de Estado
+                                                </li>
+                                                <li class="flex items-center">
+                                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                                    Gestiona recursos nacionales
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="bg-white p-4 rounded-lg border">
+                                            <h5 class="font-medium text-gray-800 mb-2">Ejemplo</h5>
+                                            <p class="text-sm text-gray-700">
+                                                El Ministerio de Salud Pública define las políticas de salud para todo el país, como las campañas de vacunación nacional.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Gobierno Local -->
+                                <div class="bg-gray-50 rounded-lg p-6">
+                                    <div class="flex items-center mb-4">
+                                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
+                                            <i class="fas fa-home text-blue-600 text-xl"></i>
+                                        </div>
+                                        <h3 class="font-display text-xl font-bold text-gray-800">Gobierno Local</h3>
+                                    </div>
+                                    
+                                    <div class="space-y-4">
+                                        <div>
+                                            <h4 class="font-semibold text-gray-800 mb-2">Base Legal</h4>
+                                            <p class="text-sm text-gray-700 mb-2">Ley 176-07 del Distrito Nacional y los Municipios</p>
+                                            
+                                            <h5 class="font-medium text-gray-800 mb-2">Estructura</h5>
+                                            <ul class="space-y-1 text-sm text-gray-700">
+                                                <li>• 158 Municipios en RD</li>
+                                                <li>• 232 Distritos Municipales</li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div>
+                                            <h4 class="font-semibold text-gray-800 mb-2">Órganos</h4>
+                                            <div class="grid grid-cols-2 gap-2 text-sm">
+                                                <div class="bg-white p-2 rounded border">
+                                                    <strong>Ayuntamiento</strong><br>
+                                                    <small>Alcaldía (Ejecutivo)<br>
+                                                    Concejo (Legislativo)</small>
+                                                </div>
+                                                <div class="bg-white p-2 rounded border">
+                                                    <strong>Junta de Distrito</strong><br>
+                                                    <small>Director/a<br>
+                                                    Junta de Vocales</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="bg-white p-4 rounded-lg border">
+                                            <h5 class="font-medium text-gray-800 mb-2">Competencias Municipales</h5>
+                                            <ul class="text-sm text-gray-700 space-y-1">
+                                                <li>• Ornato público</li>
+                                                <li>• Limpieza de vías</li>
+                                                <li>• Mercados municipales</li>
+                                                <li>• Cementerios</li>
+                                                <li>• Parques</li>
+                                                <li>• Licencias de construcción</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="example-box">
+                                <h4 class="font-semibold text-blue-800 mb-2">
+                                    <i class="fas fa-tree mr-2"></i>Ejemplo Práctico
+                                </h4>
+                                <p class="text-blue-700">
+                                    El Ayuntamiento del Distrito Nacional administra el Parque Mirador Sur, mientras que el gobierno central administra el Parque Nacional Los Haitises. Ambos son espacios públicos, pero con niveles de gobierno diferentes.
+                                </p>
+                            </div>
+                            
+                            <div class="bg-green-50 border-l-4 border-green-400 p-4 mt-6">
+                                <div class="flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="fas fa-info-circle text-green-400 text-xl"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <h4 class="text-sm font-medium text-green-800">Importante Recordar</h4>
+                                        <div class="mt-2 text-sm text-green-700">
+                                            <p>La coordinación entre gobierno nacional y local es esencial para el desarrollo integral del país. Cada nivel tiene competencias específicas que se complementan.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Navigation Buttons -->
+                    <div class="flex justify-between items-center mt-12 pt-8 border-t border-gray-200">
+                        <a href="index.html" class="flex items-center px-6 py-3 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
+                            <i class="fas fa-arrow-left mr-2"></i>
+                            Volver al Inicio
+                        </a>
+                        
+                        <a href="unidad2.html" class="flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                            Siguiente: Unidad II
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-university text-white text-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-display font-bold text-lg">INAP</h3>
+                            <p class="text-sm text-gray-400">Instituto Nacional de Administración Pública</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Formando servidores públicos competentes y comprometidos con el desarrollo institucional de la República Dominicana.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-display font-semibold text-lg mb-4">Contacto</h4>
+                    <div class="space-y-2 text-sm text-gray-300">
+                        <p><i class="fas fa-envelope mr-2 text-blue-400"></i>jtapia@inap.gob.do</p>
+                        <p><i class="fas fa-phone mr-2 text-blue-400"></i>809-868-4994</p>
+                        <p><i class="fas fa-map-marker-alt mr-2 text-blue-400"></i>República Dominicana</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-display font-semibold text-lg mb-4">Recursos</h4>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.inap.gob.do" class="text-gray-300 hover:text-blue-400 block transition-colors">
+                            <i class="fas fa-external-link-alt mr-2"></i>Portal INAP
+                        </a>
+                        <a href="https://www.map.gob.do" class="text-gray-300 hover:text-blue-400 block transition-colors">
+                            <i class="fas fa-external-link-alt mr-2"></i>Portal MAP
+                        </a>
+                        <a href="https://transparencia.gob.do" class="text-gray-300 hover:text-blue-400 block transition-colors">
+                            <i class="fas fa-external-link-alt mr-2"></i>Portal Transparencia
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400 text-sm">
+                    © 2024 Johan Tapia, PhD - INAP. Curso de Inducción a la Administración Pública.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Progress bar
+        function updateProgressBar() {
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.body.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            document.getElementById('progress-bar').style.width = scrollPercent + '%';
+        }
+        
+        window.addEventListener('scroll', updateProgressBar);
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            updateProgressBar();
+            console.log('Unidad I page loaded successfully');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad II: Fines del Estado y Administración Pública - INAP</title>
+    <meta name="description" content="Unidad II del curso de Inducción a la Administración Pública - Principios y fines del Estado">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            --primary-blue: #0f2b5b;
+            --secondary-blue: #1e40af;
+            --light-blue: #dbeafe;
+            --white: #ffffff;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-600: #64748b;
+            --gray-800: #1e293b;
+        }
+        
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background: linear-gradient(135deg, var(--white) 0%, var(--gray-50) 100%);
+            min-height: 100vh;
+        }
+        
+        .font-display {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+        }
+        
+        .principle-card {
+            background: var(--white);
+            border: 1px solid var(--gray-100);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .principle-card:hover {
+            border-color: var(--secondary-blue);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--secondary-blue);
+        }
+        
+        .breadcrumb-item {
+            color: var(--gray-600);
+        }
+        
+        .breadcrumb-item.active {
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+        
+        .example-box {
+            background: var(--light-blue);
+            border-left: 4px solid var(--secondary-blue);
+            padding: 16px;
+            margin: 16px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .progress-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gray-100);
+            z-index: 1000;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--secondary-blue) 0%, var(--primary-blue) 100%);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        
+        .principle-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: var(--secondary-blue);
+            color: white;
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Progress Indicator -->
+    <div class="progress-indicator">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-4">
+                    <div class="flex-shrink-0">
+                        <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-university text-white text-lg"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h1 class="font-display font-bold text-lg text-gray-800">INAP</h1>
+                        <p class="text-xs text-gray-600">Inducción Administración Pública</p>
+                    </div>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Inicio</a>
+                        <a href="unidad1.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Unidad I</a>
+                        <a href="unidad2.html" class="nav-link text-blue-600 px-3 py-2 text-sm font-medium border-b-2 border-blue-600">Unidad II</a>
+                        <a href="unidad3.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Unidad III</a>
+                        <a href="ley4108.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Ley 41-08</a>
+                        <a href="casos.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Casos</a>
+                        <a href="glosario.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Glosario</a>
+                    </div>
+                </div>
+                
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Inicio</a>
+                <a href="unidad1.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Unidad I</a>
+                <a href="unidad2.html" class="block px-3 py-2 text-blue-600 font-medium">Unidad II</a>
+                <a href="unidad3.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Unidad III</a>
+                <a href="ley4108.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Ley 41-08</a>
+                <a href="casos.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Casos</a>
+                <a href="glosario.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Glosario</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="bg-gray-50 py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav class="flex" aria-label="Breadcrumb">
+                <ol class="flex items-center space-x-2">
+                    <li>
+                        <a href="index.html" class="breadcrumb-item hover:text-blue-600">
+                            <i class="fas fa-home"></i>
+                            <span class="sr-only">Inicio</span>
+                        </a>
+                    </li>
+                    <li>
+                        <i class="fas fa-chevron-right breadcrumb-item text-xs"></i>
+                    </li>
+                    <li class="breadcrumb-item active">
+                        Unidad II: Fines del Estado y Administración Pública
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="font-display text-4xl lg:text-5xl font-bold mb-6">
+                    Unidad II
+                </h1>
+                <h2 class="text-2xl lg:text-3xl font-light mb-4">
+                    Fines del Estado y Administración Pública
+                </h2>
+                <p class="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+                    Principios de actuación administrativa, funciones del Estado y el rol fundamental de la administración pública en el desarrollo nacional.
+                </p>
+                <div class="mt-8 flex justify-center">
+                    <div class="bg-white bg-opacity-20 backdrop-blur-lg rounded-lg px-6 py-3">
+                        <div class="flex items-center space-x-4 text-sm">
+                            <span><i class="fas fa-clock mr-2"></i>Duración: 2.5 horas</span>
+                            <span><i class="fas fa-book mr-2"></i>4 temas</span>
+                            <span><i class="fas fa-users mr-2"></i>Para todos los niveles</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-4 gap-8">
+                <!-- Sidebar -->
+                <div class="lg:col-span-1">
+                    <div class="sticky top-24">
+                        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+                            <h3 class="font-display text-lg font-semibold text-gray-800 mb-4">
+                                <i class="fas fa-list mr-2 text-blue-600"></i>
+                                Contenido de la Unidad
+                            </h3>
+                            <nav class="space-y-2">
+                                <a href="#fines" class="block px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-md transition-colors">
+                                    <i class="fas fa-circle text-xs mr-2"></i>2.1 Fines del Estado
+                                </a>
+                                <a href="#rol" class="block px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-md transition-colors">
+                                    <i class="fas fa-circle text-xs mr-2"></i>2.2 Rol de la Administración Pública
+                                </a>
+                                <a href="#principios" class="block px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-md transition-colors">
+                                    <i class="fas fa-circle text-xs mr-2"></i>2.3 Principios de Actuación
+                                </a>
+                                <a href="#organos" class="block px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-md transition-colors">
+                                    <i class="fas fa-circle text-xs mr-2"></i>2.4 Órganos Rectores
+                                </a>
+                            </nav>
+                        </div>
+                        
+                        <div class="bg-green-50 rounded-lg p-6">
+                            <h4 class="font-display font-semibold text-green-800 mb-3">
+                                <i class="fas fa-lightbulb mr-2"></i>
+                                Consejo del Facilitador
+                            </h4>
+                            <p class="text-sm text-green-700 leading-relaxed">
+                                "Los principios de actuación administrativa no son solo reglas, son valores que deben guiar cada decisión. La eficiencia y eficacia deben ir de la mano con la ética y transparencia."
+                            </p>
+                            <div class="mt-4 text-xs text-green-600">
+                                — Johan Tapia, PhD
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Main Content -->
+                <div class="lg:col-span-3">
+                    <!-- Section 2.1 -->
+                    <section id="fines" class="mb-12">
+                        <div class="principle-card">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-bullseye text-blue-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h2 class="font-display text-2xl font-bold text-gray-800">2.1 Fines del Estado</h2>
+                                    <p class="text-gray-600">Propósitos fundamentales de la organización estatal</p>
+                                </div>
+                            </div>
+                            
+                            <div class="prose max-w-none">
+                                <p class="text-gray-700 leading-relaxed mb-6">
+                                    El Estado dominicano existe para cumplir propósitos esenciales que garantizan el bienestar y desarrollo de la sociedad. Estos fines se materializan a través de la administración pública.
+                                </p>
+                                
+                                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                                    <!-- Garantizar derechos fundamentales -->
+                                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                                        <div class="text-center mb-4">
+                                            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                                <i class="fas fa-shield-alt text-blue-600 text-2xl"></i>
+                                            </div>
+                                            <h3 class="font-display text-lg font-bold text-blue-800">Garantizar derechos fundamentales</h3>
+                                        </div>
+                                        <ul class="space-y-2 text-sm text-blue-700">
+                                            <li class="flex items-center">
+                                                <i class="fas fa-check text-blue-500 mr-2"></i>
+                                                Vida, libertad, seguridad
+                                            </li>
+                                            <li class="flex items-center">
+                                                <i class="fas fa-check text-blue-500 mr-2"></i>
+                                                Educación, salud, trabajo
+                                            </li>
+                                            <li class="flex items-center">
+                                                <i class="fas fa-check text-blue-500 mr-2"></i>
+                                                Protección social
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <!-- Promover el bien común -->
+                                    <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                                        <div class="text-center mb-4">
+                                            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                                <i class="fas fa-handshake text-green-600 text-2xl"></i>
+                                            </div>
+                                            <h3 class="font-display text-lg font-bold text-green-800">Promover el bien común</h3>
+                                        </div>
+                                        <ul class="space-y-2 text-sm text-green-700">
+                                            <li class="flex items-center">
+                                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                                Desarrollo económico
+                                            </li>
+                                            <li class="flex items-center">
+                                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                                Justicia social
+                                            </li>
+                                            <li class="flex items-center">
+                                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                                Protección ambiental
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <!-- Mantener el orden público -->
+                                    <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                                        <div class="text-center mb-4">
+                                            <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                                <i class="fas fa-balance-scale text-purple-600 text-2xl"></i>
+                                            </div>
+                                            <h3 class="font-display text-lg font-bold text-purple-800">Mantener el orden público</h3>
+                                        </div>
+                                        <ul class="space-y-2 text-sm text-purple-700">
+                                            <li class="flex items-center">
+                                                <i class="fas fa-check text-purple-500 mr-2"></i>
+                                                Seguridad ciudadana
+                                            </li>
+                                            <li class="flex items-center">
+                                                <i class="fas fa-check text-purple-500 mr-2"></i>
+                                                Convivencia pacífica
+                                            </li>
+                                            <li class="flex items-center">
+                                                <i class="fas fa-check text-purple-500 mr-2"></i>
+                                                Estado de derecho
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="example-box">
+                                    <h4 class="font-semibold text-blue-800 mb-2">
+                                        <i class="fas fa-heart mr-2"></i>Ejemplo Práctico
+                                    </h4>
+                                    <p class="text-blue-700">
+                                        El programa de pensión Solidaria "Supérate" cumple el fin estatal de garantizar protección social a los adultos mayores en condición de pobreza, promoviendo el bien común y la justicia social.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Section 2.2 -->
+                    <section id="rol" class="mb-12">
+                        <div class="principle-card">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-cogs text-green-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h2 class="font-display text-2xl font-bold text-gray-800">2.2 Rol de la Administración Pública</h2>
+                                    <p class="text-gray-600">El Estado en acción</p>
+                                </div>
+                            </div>
+                            
+                            <div class="prose max-w-none">
+                                <p class="text-gray-700 leading-relaxed mb-6">
+                                    La administración pública es el Estado en acción, el medio para hacer realidad los fines estatales. Es el conjunto de órganos y entidades encargadas de implementar políticas públicas y gestionar recursos del Estado.
+                                </p>
+                                
+                                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                                    <div>
+                                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Funciones Principales</h3>
+                                        <div class="space-y-4">
+                                            <div class="flex items-start">
+                                                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                                                    <i class="fas fa-users text-blue-600 text-sm"></i>
+                                                </div>
+                                                <div>
+                                                    <h4 class="font-semibold text-gray-800">Proveer servicios públicos</h4>
+                                                    <p class="text-sm text-gray-600">Educación, salud, seguridad, infraestructura</p>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="flex items-start">
+                                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                                                    <i class="fas fa-gavel text-green-600 text-sm"></i>
+                                                </div>
+                                                <div>
+                                                    <h4 class="font-semibold text-gray-800">Regular actividades privadas</h4>
+                                                    <p class="text-sm text-gray-600">Licencias, permisos, fiscalización</p>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="flex items-start">
+                                                <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                                                    <i class="fas fa-chart-line text-purple-600 text-sm"></i>
+                                                </div>
+                                                <div>
+                                                    <h4 class="font-semibold text-gray-800">Fomentar el desarrollo</h4>
+                                                    <p class="text-sm text-gray-600">Programas sociales, infraestructura</p>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="flex items-start">
+                                                <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                                                    <i class="fas fa-shield-alt text-red-600 text-sm"></i>
+                                                </div>
+                                                <div>
+                                                    <h4 class="font-semibold text-gray-800">Garantizar derechos ciudadanos</h4>
+                                                    <p class="text-sm text-gray-600">Protección, igualdad, acceso a servicios</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div>
+                                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Características</h3>
+                                        <div class="bg-gray-50 p-4 rounded-lg">
+                                            <ul class="space-y-2 text-sm text-gray-700">
+                                                <li class="flex items-center">
+                                                    <i class="fas fa-arrow-right text-blue-500 mr-2"></i>
+                                                    Pública: servicio a la ciudadanía
+                                                </li>
+                                                <li class="flex items-center">
+                                                    <i class="fas fa-arrow-right text-blue-500 mr-2"></i>
+                                                    Legal: sujeta a normas jurídicas
+                                                </li>
+                                                <li class="flex items-center">
+                                                    <i class="fas fa-arrow-right text-blue-500 mr-2"></i>
+                                                    Colectiva: beneficio general
+                                                </li>
+                                                <li class="flex items-center">
+                                                    <i class="fas fa-arrow-right text-blue-500 mr-2"></i>
+                                                    Obligatoria: para todos los ciudadanos
+                                                </li>
+                                                <li class="flex items-center">
+                                                    <i class="fas fa-arrow-right text-blue-500 mr-2"></i>
+                                                    Financiada con recursos públicos
+                                                </li>
+                                                <li class="flex items-center">
+                                                    <i class="fas fa-arrow-right text-blue-500 mr-2"></i>
+                                                    Controlada social y jurídicamente
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="example-box">
+                                    <h4 class="font-semibold text-blue-800 mb-2">
+                                        <i class="fas fa-school mr-2"></i>Ejemplo Concreto
+                                    </h4>
+                                    <p class="text-blue-700">
+                                        El Ministerio de Educación ejecuta las políticas educativas aprobadas por ley, administrando las escuelas públicas, capacitando docentes y garantizando el acceso a la educación para todos los niños y jóvenes del país.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Section 2.3 -->
+                    <section id="principios" class="mb-12">
+                        <div class="principle-card">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-compass text-purple-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h2 class="font-display text-2xl font-bold text-gray-800">2.3 Principios de Actuación</h2>
+                                    <p class="text-gray-600">Los 10 mandamientos de la buena administración</p>
+                                </div>
+                            </div>
+                            
+                            <div class="prose max-w-none">
+                                <p class="text-gray-700 leading-relaxed mb-6">
+                                    Según la Constitución (Art. 138) y la Ley 107-13, la administración pública debe regirse por 10 principios fundamentales que garantizan una gestión ética, eficiente y transparente.
+                                </p>
+                                
+                                <div class="grid gap-4">
+                                    <!-- Principio 1: Eficacia -->
+                                    <div class="bg-white border border-gray-200 rounded-lg p-4 hover:border-blue-300 transition-colors">
+                                        <div class="flex items-start">
+                                            <div class="principle-number mr-4 mt-1">1</div>
+                                            <div class="flex-1">
+                                                <h3 class="text-lg font-semibold text-gray-800 mb-2">Eficacia</h3>
+                                                <p class="text-gray-700 text-sm mb-3">
+                                                    Capacidad de lograr los resultados esperados y cumplir con la misión institucional.
+                                                </p>
+                                                <div class="bg-blue-50 p-3 rounded">
+                                                    <h4 class="font-medium text-blue-800 mb-1">Ejemplo:</h4>
+                                                    <p class="text-sm text-blue-700">
+                                                        Una ventanilla del Ministerio de Trabajo que logra procesar el 95% de las solicitudes de certificaciones laborales en el tiempo establecido está siendo eficaz.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Principio 2: Eficiencia -->
+                                    <div class="bg-white border border-gray-200 rounded-lg p-4 hover:border-blue-300 transition-colors">
+                                        <div class="flex items-start">
+                                            <div class="principle-number mr-4 mt-1">2</div>
+                                            <div class="flex-1">
+                                                <h3 class="text-lg font-semibold text-gray-800 mb-2">Eficiencia</h3>
+                                                <p class="text-gray-700 text-sm mb-3">
+                                                    Lograr los objetivos con el menor uso de recursos posible.
+                                                </p>
+                                                <div class="bg-green-50 p-3 rounded">
+                                                    <h4 class="font-medium text-green-800 mb-1">Ejemplo:</h4>
+                                                    <p class="text-sm text-green-700">
+                                                        Implementar un sistema digital para renovación de licencias que reduce el tiempo de 3 horas a 30 minutos, ahorrando costos operativos y tiempo ciudadano.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Principio 3: Jerarquía -->
+                                    <div class="bg-white border border-gray-200 rounded-lg p-4 hover:border-blue-300 transition-colors">
+                                        <div class="flex items-start">
+                                            <div class="principle-number mr-4 mt-1">3</div>
+                                            <div class="flex-1">
+                                                <h3 class="text-lg font-semibold text-gray-800 mb-2">Jerarquía</h3>
+                                                <p class="text-gray-700 text-sm mb-3">
+                                                    Organización en niveles de autoridad con responsabilidades definidas.
+                                                </p>
+                                                <div class="bg-purple-50 p-3 rounded">
+                                                    <h4 class="font-medium text-purple-800 mb-1">Estructura típica:</h4>
+                                                    <div class="text-sm text-purple-700 space-y-1">
+                                                        <div>Ministro/a</div>
+                                                        <div class="ml-4">↓</div>
+                                                        <div class="ml-4">Viceministro/a</div>
+                                                        <div class="ml-8">↓</div>
+                                                        <div class="ml-8">Director/a General</div>
+                                                        <div class="ml-12">↓</div>
+                                                        <div class="ml-12">Director/a de Área</div>
+                                                        <div class="ml-16">↓</div>
+                                                        <div class="ml-16">Encargado/a de Departamento</div>
+                                                        <div class="ml-20">↓</div>
+                                                        <div class="ml-20">Técnico/a</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Principio 4: Objetividad -->
+                                    <div class="bg-white border border-gray-200 rounded-lg p-4 hover:border-blue-300 transition-colors">
+                                        <div class="flex items-start">
+                                            <div class="principle-number mr-4 mt-1">4</div>
+                                            <div class="flex-1">
+                                                <h3 class="text-lg font-semibold text-gray-800 mb-2">Objetividad</h3>
+                                                <p class="text-gray-700 text-sm mb-3">
+                                                    Tomar decisiones basadas en criterios técnicos, sin favoritismos ni prejuicios.
+                                                </p>
+                                                <div class="grid md:grid-cols-2 gap-3">
+                                                    <div class="bg-red-50 p-3 rounded border-l-4 border-red-400">
+                                                        <h4 class="font-medium text-red-800 mb-1">Incorrecto:</h4>
+                                                        <p class="text-xs text-red-700">
+                                                            Un encargado de compras que favorece a un proveedor porque es su amigo, ignorando mejores ofertas.
+                                                        </p>
+                                                    </div>
+                                                    <div class="bg-green-50 p-3 rounded border-l-4 border-green-400">
+                                                        <h4 class="font-medium text-green-800 mb-1">Correcto:</h4>
+                                                        <p class="text-xs text-green-700">
+                                                            Evaluar todas las propuestas con la misma matriz de criterios: precio, calidad, plazo de entrega, experiencia.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Principio 5: Igualdad -->
+                                    <div class="bg-white border border-gray-200 rounded-lg p-4 hover:border-blue-300 transition-colors">
+                                        <div class="flex items-start">
+                                            <div class="principle-number mr-4 mt-1">5</div>
+                                            <div class="flex-1">
+                                                <h3 class="text-lg font-semibold text-gray-800 mb-2">Igualdad</h3>
+                                                <p class="text-gray-700 text-sm mb-3">
+                                                    Tratar a todos los ciudadanos por igual, sin discriminación.
+                                                </p>
+                                                <div class="bg-yellow-50 p-3 rounded">
+                                                    <h4 class="font-medium text-yellow-800 mb-1">Ejemplo:</h4>
+                                                    <p class="text-sm text-yellow-700">
+                                                        En una fila para solicitar un servicio, se atiende por orden de llegada, sin importar posición social, género o edad (excepto prioridades legales como embarazadas o adultos mayores).
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Principio 6: Transparencia -->
+                                    <div class="bg-white border border-gray-200 rounded-lg p-4 hover:border-blue-300 transition-colors">
+                                        <div class="flex items-start">
+                                            <div class="principle-number mr-4 mt-1">6</div>
+                                            <div class="flex-1">
+                                                <h3 class="text-lg font-semibold text-gray-800 mb-2">Transparencia</h3>
+                                                <p class="text-gray-700 text-sm mb-3">
+                                                    Garantizar acceso a la información pública y rendir cuentas.
+                                                </p>
+                                                <div class="bg-blue-50 p-3 rounded">
+                                                    <h4 class="font-medium text-blue-800 mb-1">Manifestaciones:</h4>
+                                                    <ul class="text-sm text-blue-700 space-y-1">
+                                                        <li>• Portal de transparencia institucional</li>
+                                                        <li>• Publicación de nóminas</li>
+                                                        <li>• Acceso a información sobre contrataciones</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Principio 7: Publicidad -->
+                                    <div class="bg-white border border-gray-200 rounded-lg p-4 hover:border-blue-300 transition-colors">
+                                        <div class="flex items-start">
+                                            <div class="principle-number mr-4 mt-1">7</div>
+                                            <div class="flex-1">
+                                                <h3 class="text-lg font-semibold text-gray-800 mb-2">Publicidad</h3>
+                                                <p class="text-gray-700 text-sm mb-3">
+                                                    Dar a conocer proactivamente las decisiones que afectan a los ciudadanos.
+                                                </p>
+                                                <div class="bg-green-50 p-3 rounded">
+                                                    <h4 class="font-medium text-green-800 mb-1">Ejemplo:</h4>
+                                                    <p class="text-sm text-green-700">
+                                                        Publicar en periódicos y redes sociales las convocatorias a concursos para ingresar a la carrera administrativa.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Principio 8: Economía -->
+                                    <div class="bg-white border border-gray-200 rounded-lg p-4 hover:border-blue-300 transition-colors">
+                                        <div class="flex items-start">
+                                            <div class="principle-number mr-4 mt-1">8</div>
+                                            <div class="flex-1">
+                                                <h3 class="text-lg font-semibold text-gray-800 mb-2">Economía (Eficiencia Presupuestaria)</h3>
+                                                <p class="text-gray-700 text-sm mb-3">
+                                                    Uso óptimo de los recursos públicos.
+                                                </p>
+                                                <div class="bg-purple-50 p-3 rounded">
+                                                    <h4 class="font-medium text-purple-800 mb-1">Ejemplo:</h4>
+                                                    <p class="text-sm text-purple-700">
+                                                        Usar videoconferencias en lugar de viajes aéreos cuando sea posible, ahorrando recursos del Estado.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Principio 9: Coordinación -->
+                                    <div class="bg-white border border-gray-200 rounded-lg p-4 hover:border-blue-300 transition-colors">
+                                        <div class="flex items-start">
+                                            <div class="principle-number mr-4 mt-1">9</div>
+                                            <div class="flex-1">
+                                                <h3 class="text-lg font-semibold text-gray-800 mb-2">Coordinación</h3>
+                                                <p class="text-gray-700 text-sm mb-3">
+                                                    Trabajo articulado entre instituciones para evitar duplicidades.
+                                                </p>
+                                                <div class="bg-blue-50 p-3 rounded">
+                                                    <h4 class="font-medium text-blue-800 mb-1">Ejemplo:</h4>
+                                                    <p class="text-sm text-blue-700">
+                                                        El Gabinete de Coordinación de Políticas Sociales (GCPS) coordina programas sociales de diferentes ministerios para evitar que una familia reciba múltiples ayudas mientras otra no recibe ninguna.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Principio 10: Juridicidad -->
+                                    <div class="bg-white border border-gray-200 rounded-lg p-4 hover:border-blue-300 transition-colors">
+                                        <div class="flex items-start">
+                                            <div class="principle-number mr-4 mt-1">10</div>
+                                            <div class="flex-1">
+                                                <h3 class="text-lg font-semibold text-gray-800 mb-2">Juridicidad</h3>
+                                                <p class="text-gray-700 text-sm mb-3">
+                                                    Actuar conforme a todo el ordenamiento jurídico (Constitución, leyes, reglamentos).
+                                                </p>
+                                                <div class="bg-gray-50 p-3 rounded">
+                                                    <h4 class="font-medium text-gray-800 mb-2">Pirámide normativa:</h4>
+                                                    <div class="text-sm text-gray-700 space-y-1 text-center">
+                                                        <div class="bg-red-100 p-2 rounded font-semibold">Constitución</div>
+                                                        <div class="text-gray-400">↓</div>
+                                                        <div class="bg-orange-100 p-2 rounded">Leyes Orgánicas</div>
+                                                        <div class="text-gray-400">↓</div>
+                                                        <div class="bg-yellow-100 p-2 rounded">Leyes Ordinarias</div>
+                                                        <div class="text-gray-400">↓</div>
+                                                        <div class="bg-green-100 p-2 rounded">Decretos</div>
+                                                        <div class="text-gray-400">↓</div>
+                                                        <div class="bg-blue-100 p-2 rounded">Resoluciones</div>
+                                                        <div class="text-gray-400">↓</div>
+                                                        <div class="bg-purple-100 p-2 rounded">Instructivos</div>
+                                                    </div>
+                                                </div>
+                                                <div class="mt-3 bg-red-50 p-3 rounded border-l-4 border-red-400">
+                                                    <p class="text-sm text-red-700">
+                                                        <strong>Importante:</strong> Un director no puede crear un procedimiento que contradiga lo establecido en una ley, aunque parezca más eficiente.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Section 2.4 -->
+                    <section id="organos" class="mb-12">
+                        <div class="principle-card">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-sitemap text-red-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h2 class="font-display text-2xl font-bold text-gray-800">2.4 Órganos Rectores de la Administración Pública</h2>
+                                    <p class="text-gray-600">Instituciones que supervisan y regulan la función pública</p>
+                                </div>
+                            </div>
+                            
+                            <div class="prose max-w-none">
+                                <p class="text-gray-700 leading-relaxed mb-6">
+                                    Los órganos rectores establecen políticas, normas y supervisan el funcionamiento de la administración pública, garantizando el cumplimiento de los principios y el correcto desempeño de los servidores públicos.
+                                </p>
+                                
+                                <div class="overflow-x-auto mb-8">
+                                    <table class="w-full bg-white rounded-lg shadow border">
+                                        <thead class="bg-gray-50">
+                                            <tr>
+                                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Órgano</th>
+                                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Función Principal</th>
+                                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Ejemplo de Actuación</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="bg-white divide-y divide-gray-200">
+                                            <tr class="hover:bg-gray-50">
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <div class="flex items-center">
+                                                        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                                                            <i class="fas fa-building text-blue-600 text-sm"></i>
+                                                        </div>
+                                                        <div>
+                                                            <div class="text-sm font-medium text-gray-900">MAP</div>
+                                                            <div class="text-sm text-gray-500">Ministerio de Administración Pública</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="px-6 py-4 text-sm text-gray-700">
+                                                    Rector del empleo público y fortalecimiento institucional
+                                                </td>
+                                                <td class="px-6 py-4 text-sm text-gray-700">
+                                                    Aprueba las estructuras organizacionales de las instituciones
+                                                </td>
+                                            </tr>
+                                            <tr class="hover:bg-gray-50">
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <div class="flex items-center">
+                                                        <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                                            <i class="fas fa-chart-bar text-green-600 text-sm"></i>
+                                                        </div>
+                                                        <div>
+                                                            <div class="text-sm font-medium text-gray-900">DIGEPRES</div>
+                                                            <div class="text-sm text-gray-500">Dirección General de Presupuesto</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="px-6 py-4 text-sm text-gray-700">
+                                                    Rector del sistema presupuestario
+                                                </td>
+                                                <td class="px-6 py-4 text-sm text-gray-700">
+                                                    Elabora el anteproyecto de Presupuesto Nacional
+                                                </td>
+                                            </tr>
+                                            <tr class="hover:bg-gray-50">
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <div class="flex items-center">
+                                                        <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-3">
+                                                            <i class="fas fa-handshake text-purple-600 text-sm"></i>
+                                                        </div>
+                                                        <div>
+                                                            <div class="text-sm font-medium text-gray-900">DGCP</div>
+                                                            <div class="text-sm text-gray-500">Dirección General de Contrataciones Públicas</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="px-6 py-4 text-sm text-gray-700">
+                                                    Rector de compras y contrataciones públicas
+                                                </td>
+                                                <td class="px-6 py-4 text-sm text-gray-700">
+                                                    Regula los procesos de licitación
+                                                </td>
+                                            </tr>
+                                            <tr class="hover:bg-gray-50">
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <div class="flex items-center">
+                                                        <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-3">
+                                                            <i class="fas fa-eye text-red-600 text-sm"></i>
+                                                        </div>
+                                                        <div>
+                                                            <div class="text-sm font-medium text-gray-900">DIGEIG</div>
+                                                            <div class="text-sm text-gray-500">Dirección General de Ética e Integridad Gubernamental</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="px-6 py-4 text-sm text-gray-700">
+                                                    Rector de ética y transparencia
+                                                </td>
+                                                <td class="px-6 py-4 text-sm text-gray-700">
+                                                    Supervisa el cumplimiento de la Ley 200-04
+                                                </td>
+                                            </tr>
+                                            <tr class="hover:bg-gray-50">
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <div class="flex items-center">
+                                                        <div class="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center mr-3">
+                                                            <i class="fas fa-search text-yellow-600 text-sm"></i>
+                                                        </div>
+                                                        <div>
+                                                            <div class="text-sm font-medium text-gray-900">Contraloría General</div>
+                                                            <div class="text-sm text-gray-500">Contraloría General de la República</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="px-6 py-4 text-sm text-gray-700">
+                                                    Control interno del Poder Ejecutivo
+                                                </td>
+                                                <td class="px-6 py-4 text-sm text-gray-700">
+                                                    Autoriza órdenes de pago
+                                                </td>
+                                            </tr>
+                                            <tr class="hover:bg-gray-50">
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <div class="flex items-center">
+                                                        <div class="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center mr-3">
+                                                            <i class="fas fa-balance-scale text-indigo-600 text-sm"></i>
+                                                        </div>
+                                                        <div>
+                                                            <div class="text-sm font-medium text-gray-900">Cámara de Cuentas</div>
+                                                            <div class="text-sm text-gray-500">Cámara de Cuentas de la República</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="px-6 py-4 text-sm text-gray-700">
+                                                    Control externo de recursos públicos
+                                                </td>
+                                                <td class="px-6 py-4 text-sm text-gray-700">
+                                                    Audita el uso de fondos públicos
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                <div class="example-box">
+                                    <h4 class="font-semibold text-blue-800 mb-2">
+                                        <i class="fas fa-cogs mr-2"></i>Caso Práctico
+                                    </h4>
+                                    <p class="text-blue-700 mb-3">
+                                        Para crear una nueva plaza en tu institución, necesitas:
+                                    </p>
+                                    <ol class="list-decimal list-inside text-sm text-blue-700 space-y-1">
+                                        <li>Justificación técnica aprobada por MAP</li>
+                                        <li>Disponibilidad presupuestaria certificada por DIGEPRES</li>
+                                        <li>Inclusión en la estructura de cargos aprobada por MAP</li>
+                                        <li>Publicación del concurso según normas de MAP</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Navigation Buttons -->
+                    <div class="flex justify-between items-center mt-12 pt-8 border-t border-gray-200">
+                        <a href="unidad1.html" class="flex items-center px-6 py-3 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
+                            <i class="fas fa-arrow-left mr-2"></i>
+                            Anterior: Unidad I
+                        </a>
+                        
+                        <a href="unidad3.html" class="flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                            Siguiente: Unidad III
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-university text-white text-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-display font-bold text-lg">INAP</h3>
+                            <p class="text-sm text-gray-400">Instituto Nacional de Administración Pública</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Formando servidores públicos competentes y comprometidos con el desarrollo institucional de la República Dominicana.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-display font-semibold text-lg mb-4">Contacto</h4>
+                    <div class="space-y-2 text-sm text-gray-300">
+                        <p><i class="fas fa-envelope mr-2 text-blue-400"></i>jtapia@inap.gob.do</p>
+                        <p><i class="fas fa-phone mr-2 text-blue-400"></i>809-868-4994</p>
+                        <p><i class="fas fa-map-marker-alt mr-2 text-blue-400"></i>República Dominicana</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-display font-semibold text-lg mb-4">Recursos</h4>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.inap.gob.do" class="text-gray-300 hover:text-blue-400 block transition-colors">
+                            <i class="fas fa-external-link-alt mr-2"></i>Portal INAP
+                        </a>
+                        <a href="https://www.map.gob.do" class="text-gray-300 hover:text-blue-400 block transition-colors">
+                            <i class="fas fa-external-link-alt mr-2"></i>Portal MAP
+                        </a>
+                        <a href="https://transparencia.gob.do" class="text-gray-300 hover:text-blue-400 block transition-colors">
+                            <i class="fas fa-external-link-alt mr-2"></i>Portal Transparencia
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400 text-sm">
+                    © 2024 Johan Tapia, PhD - INAP. Curso de Inducción a la Administración Pública.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Progress bar
+        function updateProgressBar() {
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.body.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            document.getElementById('progress-bar').style.width = scrollPercent + '%';
+        }
+        
+        window.addEventListener('scroll', updateProgressBar);
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            updateProgressBar();
+            console.log('Unidad II page loaded successfully');
+        });
+    </script>
+</body>
+</html>

@@ -6,151 +6,16 @@
     <title>Inducción a la Administración Pública</title>
     <meta name="description" content="Curso de Inducción a la Administración Pública para servidores públicos dominicanos">
     <meta name="author" content="Johan Tapia, PhD">
+    <meta name="theme-color" content="#0f2b5b">
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Custom Styles -->
-    <style>
-        :root {
-            --primary-blue: #0f2b5b;
-            --secondary-blue: #1e40af;
-            --light-blue: #dbeafe;
-            --white: #ffffff;
-            --gray-50: #f8fafc;
-            --gray-100: #f1f5f9;
-            --gray-600: #64748b;
-            --gray-800: #1e293b;
-        }
-        
-        body {
-            font-family: 'Source Sans Pro', sans-serif;
-            background: linear-gradient(135deg, var(--white) 0%, var(--gray-50) 100%);
-            min-height: 100vh;
-        }
-        
-        .font-display {
-            font-family: 'Inter', sans-serif;
-        }
-        
-        .hero-gradient {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
-        }
-        
-        .card-hover {
-            transition: all 0.3s ease;
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        
-        .animate-fade-in {
-            animation: fadeIn 0.6s ease-out;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .animate-slide-in {
-            animation: slideIn 0.8s ease-out;
-        }
-        
-        @keyframes slideIn {
-            from { opacity: 0; transform: translateX(-30px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-        
-        .nav-link {
-            position: relative;
-            transition: all 0.3s ease;
-        }
-        
-        .nav-link:hover {
-            color: var(--secondary-blue);
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--secondary-blue);
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        
-        .progress-bar {
-            background: linear-gradient(90deg, var(--secondary-blue) 0%, var(--primary-blue) 100%);
-            height: 4px;
-            border-radius: 2px;
-            transition: width 0.5s ease;
-        }
-        
-        .unit-card {
-            background: var(--white);
-            border: 1px solid var(--gray-100);
-            border-radius: 12px;
-            padding: 24px;
-            transition: all 0.3s ease;
-        }
-        
-        .unit-card:hover {
-            border-color: var(--secondary-blue);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        }
-        
-        .floating-element {
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-        
-        .pulse-dot {
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-        
-        .progress-indicator {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: var(--gray-100);
-            z-index: 1000;
-        }
-        
-        .progress-bar {
-            height: 100%;
-            background: linear-gradient(90deg, var(--secondary-blue) 0%, var(--primary-blue) 100%);
-            width: 0%;
-            transition: width 0.3s ease;
-        }
-    </style>
+    <link rel="stylesheet" href="site.css">
 </head>
 <body>
     <!-- Progress Indicator -->
@@ -159,19 +24,13 @@
     </div>
 
     <!-- Navigation -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
+    <nav class="site-nav sticky top-0 z-50" aria-label="Principal">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <div class="flex items-center space-x-4">
-                    <div class="flex-shrink-0">
-                        <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
-                            <i class="fas fa-university text-white text-lg"></i>
-                        </div>
-                    </div>
-                    <div>
-                        <h1 class="font-display font-bold text-lg text-gray-800">Curso</h1>
-                        <p class="text-xs text-gray-600">Inducción Administración Pública</p>
-                    </div>
+                <div class="flex items-center min-w-0">
+                    <a href="index.html" class="inline-flex min-w-0 rounded-md focus-visible:outline-offset-2" aria-label="Inicio — INAP">
+                        <img src="assets/inap-logo.png" alt="Instituto Nacional de Administración Pública (INAP). Gobierno de la República Dominicana." class="brand-logo" width="320" height="80" decoding="async">
+                    </a>
                 </div>
                 
                 <div class="hidden md:block">
@@ -209,7 +68,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="inicio" class="hero-gradient text-white py-24">
+    <section id="inicio" class="hero-gradient text-white py-24 relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div class="text-white">
@@ -221,11 +80,11 @@
                             Curso integral para servidores públicos dominicanos sobre la estructura, principios y marco legal de la administración pública.
                         </p>
                         <div class="flex flex-col sm:flex-row gap-4">
-                            <button onclick="startCourse()" class="bg-white text-blue-800 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105">
+                            <button type="button" onclick="startCourse()" class="bg-white text-blue-800 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-all duration-300 shadow-md hover:shadow-lg">
                                 <i class="fas fa-play mr-2"></i>
                                 Comenzar Curso
                             </button>
-                            <button onclick="showProgress()" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-800 transition-all duration-300">
+                            <button type="button" onclick="showProgress()" class="border-2 border-white/90 text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-800 transition-all duration-300">
                                 <i class="fas fa-chart-line mr-2"></i>
                                 Ver Progreso
                             </button>
@@ -263,8 +122,8 @@
         </div>
         
         <!-- Decorative elements -->
-        <div class="absolute top-20 right-20 w-32 h-32 bg-white bg-opacity-10 rounded-full pulse-dot"></div>
-        <div class="absolute bottom-20 left-20 w-24 h-24 bg-white bg-opacity-5 rounded-full"></div>
+        <div class="pointer-events-none absolute top-20 right-[8%] w-40 h-40 bg-white/10 rounded-full pulse-dot hidden sm:block" aria-hidden="true"></div>
+        <div class="pointer-events-none absolute bottom-16 left-[6%] w-28 h-28 bg-white/5 rounded-full hidden sm:block" aria-hidden="true"></div>
     </section>
 
     <!-- Course Overview -->
@@ -296,7 +155,7 @@
                         <span class="text-sm text-blue-600 font-medium">3 temas</span>
                         <div class="flex items-center">
                             <div class="w-16 h-2 bg-gray-200 rounded-full mr-2">
-                                <div class="progress-bar w-1/3"></div>
+                                <div class="unit-progress-fill w-1/3"></div>
                             </div>
                             <span class="text-xs text-gray-500">33%</span>
                         </div>
@@ -321,7 +180,7 @@
                         <span class="text-sm text-green-600 font-medium">4 temas</span>
                         <div class="flex items-center">
                             <div class="w-16 h-2 bg-gray-200 rounded-full mr-2">
-                                <div class="progress-bar w-0"></div>
+                                <div class="unit-progress-fill w-0"></div>
                             </div>
                             <span class="text-xs text-gray-500">0%</span>
                         </div>
@@ -346,7 +205,7 @@
                         <span class="text-sm text-purple-600 font-medium">3 temas</span>
                         <div class="flex items-center">
                             <div class="w-16 h-2 bg-gray-200 rounded-full mr-2">
-                                <div class="progress-bar w-0"></div>
+                                <div class="unit-progress-fill w-0"></div>
                             </div>
                             <span class="text-xs text-gray-500">0%</span>
                         </div>
@@ -371,7 +230,7 @@
                         <span class="text-sm text-red-600 font-medium">6 temas</span>
                         <div class="flex items-center">
                             <div class="w-16 h-2 bg-gray-200 rounded-full mr-2">
-                                <div class="progress-bar w-0"></div>
+                                <div class="unit-progress-fill w-0"></div>
                             </div>
                             <span class="text-xs text-gray-500">0%</span>
                         </div>
@@ -396,7 +255,7 @@
                         <span class="text-sm text-yellow-600 font-medium">8 casos</span>
                         <div class="flex items-center">
                             <div class="w-16 h-2 bg-gray-200 rounded-full mr-2">
-                                <div class="progress-bar w-0"></div>
+                                <div class="unit-progress-fill w-0"></div>
                             </div>
                             <span class="text-xs text-gray-500">0%</span>
                         </div>
@@ -421,7 +280,7 @@
                         <span class="text-sm text-indigo-600 font-medium">100+ términos</span>
                         <div class="flex items-center">
                             <div class="w-16 h-2 bg-gray-200 rounded-full mr-2">
-                                <div class="progress-bar w-0"></div>
+                                <div class="unit-progress-fill w-0"></div>
                             </div>
                             <span class="text-xs text-gray-500">0%</span>
                         </div>
@@ -432,17 +291,13 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12">
+    <footer class="site-footer text-white py-14">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-3 gap-8">
                 <div>
-                    <div class="flex items-center mb-4">
-                        <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center mr-3">
-                            <i class="fas fa-university text-white text-lg"></i>
-                        </div>
-                        <div>
-                            <h3 class="font-display font-bold text-lg">Curso</h3>
-                            <p class="text-sm text-gray-400">Inducción Administración Pública</p>
+                    <div class="mb-4">
+                        <div class="inline-flex rounded-md bg-white p-2 shadow-sm">
+                            <img src="assets/inap-logo.png" alt="Instituto Nacional de Administración Pública (INAP). Gobierno de la República Dominicana." class="brand-logo-footer" width="280" height="72" decoding="async">
                         </div>
                     </div>
                     <p class="text-gray-300 text-sm leading-relaxed">
@@ -477,7 +332,7 @@
             
             <div class="border-t border-gray-700 mt-8 pt-8 text-center">
                 <p class="text-gray-400 text-sm">
-                    © 2024 Johan Tapia, PhD. Curso de Inducción a la Administración Pública.
+                    © 2026 Johan Tapia, PhD. Curso de Inducción a la Administración Pública.
                 </p>
             </div>
         </div>

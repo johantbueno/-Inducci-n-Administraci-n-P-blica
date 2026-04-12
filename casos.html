@@ -5,168 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Casos Prácticos - Inducción a la Administración Pública - INAP</title>
     <meta name="description" content="Casos prácticos y ejemplos reales de aplicación de la legislación dominicana">
+    <meta name="theme-color" content="#0f2b5b">
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Custom Styles -->
-    <style>
-        :root {
-            --primary-blue: #0f2b5b;
-            --secondary-blue: #1e40af;
-            --light-blue: #dbeafe;
-            --white: #ffffff;
-            --gray-50: #f8fafc;
-            --gray-100: #f1f5f9;
-            --gray-600: #64748b;
-            --gray-800: #1e293b;
-        }
-        
-        body {
-            font-family: 'Source Sans Pro', sans-serif;
-            background: linear-gradient(135deg, var(--white) 0%, var(--gray-50) 100%);
-            min-height: 100vh;
-        }
-        
-        .font-display {
-            font-family: 'Inter', sans-serif;
-        }
-        
-        .hero-gradient {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
-        }
-        
-        .case-card {
-            background: var(--white);
-            border: 1px solid var(--gray-100);
-            border-radius: 12px;
-            padding: 24px;
-            margin-bottom: 24px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .case-card:hover {
-            border-color: var(--secondary-blue);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            transform: translateY(-2px);
-        }
-        
-        .case-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-            backdrop-filter: blur(4px);
-        }
-        
-        .case-modal.active {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .modal-content {
-            background: white;
-            border-radius: 16px;
-            max-width: 800px;
-            max-height: 90vh;
-            overflow-y: auto;
-            margin: 20px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-        }
-        
-        .nav-link {
-            position: relative;
-            transition: all 0.3s ease;
-        }
-        
-        .nav-link:hover {
-            color: var(--secondary-blue);
-        }
-        
-        .breadcrumb-item {
-            color: var(--gray-600);
-        }
-        
-        .breadcrumb-item.active {
-            color: var(--primary-blue);
-            font-weight: 600;
-        }
-        
-        .case-number {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: var(--secondary-blue);
-            color: white;
-            border-radius: 50%;
-            font-weight: bold;
-            font-size: 16px;
-        }
-        
-        .difficulty-badge {
-            display: inline-flex;
-            align-items: center;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-        }
-        
-        .difficulty-easy {
-            background: #dcfce7;
-            color: #166534;
-        }
-        
-        .difficulty-medium {
-            background: #fef3c7;
-            color: #92400e;
-        }
-        
-        .difficulty-hard {
-            background: #fee2e2;
-            color: #991b1b;
-        }
-        
-        .interactive-element {
-            transition: all 0.3s ease;
-        }
-        
-        .interactive-element:hover {
-            transform: scale(1.02);
-        }
-    </style>
+    <link rel="stylesheet" href="site.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
+    <div class="progress-indicator">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    <nav class="site-nav sticky top-0 z-50" aria-label="Principal">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <div class="flex items-center space-x-4">
-                    <div class="flex-shrink-0">
-                        <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
-                            <i class="fas fa-university text-white text-lg"></i>
-                        </div>
-                    </div>
-                    <div>
-                        <h1 class="font-display font-bold text-lg text-gray-800">INAP</h1>
-                        <p class="text-xs text-gray-600">Inducción Administración Pública</p>
-                    </div>
+                <div class="flex items-center min-w-0">
+                    <a href="index.html" class="inline-flex min-w-0 rounded-md focus-visible:outline-offset-2" aria-label="Inicio — INAP">
+                        <img src="assets/inap-logo.png" alt="Instituto Nacional de Administración Pública (INAP). Gobierno de la República Dominicana." class="brand-logo" width="320" height="80" decoding="async">
+                    </a>
                 </div>
                 
                 <div class="hidden md:block">
@@ -725,17 +586,13 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12">
+    <footer class="site-footer text-white py-14">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-3 gap-8">
                 <div>
-                    <div class="flex items-center mb-4">
-                        <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center mr-3">
-                            <i class="fas fa-university text-white text-lg"></i>
-                        </div>
-                        <div>
-                            <h3 class="font-display font-bold text-lg">INAP</h3>
-                            <p class="text-sm text-gray-400">Instituto Nacional de Administración Pública</p>
+                    <div class="mb-4">
+                        <div class="inline-flex rounded-md bg-white p-2 shadow-sm">
+                            <img src="assets/inap-logo.png" alt="Instituto Nacional de Administración Pública (INAP). Gobierno de la República Dominicana." class="brand-logo-footer" width="280" height="72" decoding="async">
                         </div>
                     </div>
                     <p class="text-gray-300 text-sm leading-relaxed">
@@ -770,7 +627,7 @@
             
             <div class="border-t border-gray-700 mt-8 pt-8 text-center">
                 <p class="text-gray-400 text-sm">
-                    © 2024 Johan Tapia, PhD - INAP. Curso de Inducción a la Administración Pública.
+                    © 2026 Johan Tapia, PhD - INAP. Curso de Inducción a la Administración Pública.
                 </p>
             </div>
         </div>

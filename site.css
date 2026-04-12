@@ -1,0 +1,661 @@
+/**
+ * INAP — Inducción a la Administración Pública
+ * Estilos compartidos (curso estático + Tailwind CDN).
+ */
+:root {
+    --primary-blue: #0f2b5b;
+    --secondary-blue: #1e40af;
+    --accent-ring: #3b82f6;
+    --light-blue: #dbeafe;
+    --white: #ffffff;
+    --gray-50: #f8fafc;
+    --gray-100: #f1f5f9;
+    --gray-200: #e2e8f0;
+    --gray-400: #94a3b8;
+    --gray-600: #64748b;
+    --gray-800: #1e293b;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Logo oficial INAP (barra y pie) */
+.brand-logo {
+    display: block;
+    height: 2.5rem;
+    width: auto;
+    max-width: min(17rem, 72vw);
+    object-fit: contain;
+    object-position: left center;
+}
+
+@media (min-width: 768px) {
+    .brand-logo {
+        height: 2.75rem;
+        max-width: 19rem;
+    }
+}
+
+.brand-logo-footer {
+    display: block;
+    height: 2.25rem;
+    width: auto;
+    max-width: min(15rem, 88vw);
+    object-fit: contain;
+    object-position: left center;
+}
+
+@media (min-width: 640px) {
+    .brand-logo-footer {
+        height: 2.625rem;
+        max-width: 17rem;
+    }
+}
+
+body {
+    font-family: "Source Sans 3", "Source Sans Pro", system-ui, sans-serif;
+    background: var(--gray-50);
+    min-height: 100vh;
+    margin: 0;
+    color: var(--gray-800);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+.font-display {
+    font-family: "Inter", system-ui, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+.hero-gradient {
+    background: linear-gradient(
+        145deg,
+        #0a1f42 0%,
+        var(--primary-blue) 42%,
+        var(--secondary-blue) 100%
+    );
+}
+
+.site-nav {
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(15, 23, 42, 0.07);
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+.site-footer {
+    background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
+    border-top: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.card-hover {
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 18px 40px -12px rgba(15, 23, 42, 0.12),
+        0 8px 16px -8px rgba(15, 23, 42, 0.08);
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.55s ease-out both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-slide-in {
+    animation: slideIn 0.7s ease-out both;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.nav-link {
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: var(--secondary-blue);
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--secondary-blue);
+    transition: width 0.25s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link.border-b-2::after {
+    display: none;
+}
+
+/* Barra superior de lectura (scroll) — id usado por site.js */
+.progress-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--gray-200);
+    z-index: 1000;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(
+        90deg,
+        var(--secondary-blue) 0%,
+        var(--primary-blue) 100%
+    );
+    transition: width 0.2s ease;
+}
+
+/* Mini barras en tarjetas de la portada (no confundir con .progress-bar) */
+.unit-progress-fill {
+    height: 100%;
+    min-height: 4px;
+    border-radius: 9999px;
+    background: linear-gradient(
+        90deg,
+        var(--secondary-blue) 0%,
+        var(--primary-blue) 100%
+    );
+    transition: width 0.35s ease;
+}
+
+.unit-card {
+    background: var(--white);
+    border: 1px solid var(--gray-100);
+    border-radius: 12px;
+    padding: 24px;
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.unit-card:hover {
+    border-color: rgba(30, 64, 175, 0.35);
+    box-shadow:
+        0 12px 32px -12px rgba(15, 43, 91, 0.15),
+        0 4px 12px -4px rgba(15, 23, 42, 0.06);
+}
+
+.floating-element {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.pulse-dot {
+    animation: pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        opacity: 0.35;
+    }
+    50% {
+        opacity: 0.85;
+    }
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--accent-ring);
+    outline-offset: 2px;
+}
+
+#mobile-menu-button:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* ——— Unidad I ——— */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+}
+
+.accordion-content.active {
+    max-height: 1000px;
+}
+
+.breadcrumb-item {
+    color: var(--gray-600);
+}
+
+.breadcrumb-item.active {
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+.concept-card {
+    background: var(--white);
+    border: 1px solid var(--gray-100);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 16px;
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.concept-card:hover {
+    border-color: var(--secondary-blue);
+    box-shadow: 0 10px 24px -8px rgba(15, 23, 42, 0.1);
+}
+
+.example-box {
+    background: var(--light-blue);
+    border-left: 4px solid var(--secondary-blue);
+    padding: 16px;
+    margin: 16px 0;
+    border-radius: 0 8px 8px 0;
+}
+
+/* ——— Unidad II ——— */
+.principle-card {
+    background: var(--white);
+    border: 1px solid var(--gray-100);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 16px;
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.principle-card:hover {
+    border-color: var(--secondary-blue);
+    box-shadow: 0 10px 24px -8px rgba(15, 23, 42, 0.1);
+}
+
+.principle-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: var(--secondary-blue);
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* ——— Unidad III ——— */
+.legal-card {
+    background: var(--white);
+    border: 1px solid var(--gray-100);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 16px;
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.legal-card:hover {
+    border-color: var(--secondary-blue);
+    box-shadow: 0 10px 24px -8px rgba(15, 23, 42, 0.1);
+}
+
+.law-hierarchy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.law-level {
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    min-width: 200px;
+}
+
+.law-level-1 {
+    background: #fee2e2;
+    color: #991b1b;
+}
+.law-level-2 {
+    background: #fef3c7;
+    color: #92400e;
+}
+.law-level-3 {
+    background: #fef9c3;
+    color: #a16207;
+}
+.law-level-4 {
+    background: #dcfce7;
+    color: #166534;
+}
+.law-level-5 {
+    background: #dbeafe;
+    color: #1e40af;
+}
+.law-level-6 {
+    background: #e9d5ff;
+    color: #7c3aed;
+}
+
+.arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #9ca3af;
+}
+
+/* ——— Ley 41-08 ——— */
+.law-card {
+    background: var(--white);
+    border: 1px solid var(--gray-100);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 16px;
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.law-card:hover {
+    border-color: var(--secondary-blue);
+    box-shadow: 0 10px 24px -8px rgba(15, 23, 42, 0.1);
+}
+
+.category-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.category-free {
+    background: #fef3c7;
+    color: #92400e;
+}
+.category-career {
+    background: #dcfce7;
+    color: #166534;
+}
+.category-simplified {
+    background: #dbeafe;
+    color: #1e40af;
+}
+.category-temporary {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.fault-level {
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.fault-level-1 {
+    background: #fef3c7;
+    border-left: 4px solid #f59e0b;
+}
+.fault-level-2 {
+    background: #fed7aa;
+    border-left: 4px solid #f97316;
+}
+.fault-level-3 {
+    background: #fee2e2;
+    border-left: 4px solid #ef4444;
+}
+
+.calculation-box {
+    background: #f0f9ff;
+    border: 1px solid #0ea5e9;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px 0;
+}
+
+/* ——— Casos ——— */
+.case-card {
+    background: var(--white);
+    border: 1px solid var(--gray-100);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.2s ease;
+    cursor: pointer;
+}
+
+.case-card:hover {
+    border-color: var(--secondary-blue);
+    box-shadow: 0 12px 28px -10px rgba(15, 23, 42, 0.12);
+    transform: translateY(-2px);
+}
+
+.case-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.45);
+    z-index: 1050;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+.case-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 16px;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    margin: 20px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.28);
+}
+
+.case-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--secondary-blue);
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.difficulty-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.difficulty-easy {
+    background: #dcfce7;
+    color: #166534;
+}
+.difficulty-medium {
+    background: #fef3c7;
+    color: #92400e;
+}
+.difficulty-hard {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.interactive-element {
+    transition: transform 0.2s ease;
+}
+
+.interactive-element:hover {
+    transform: scale(1.02);
+}
+
+/* ——— Glosario ——— */
+.glossary-card {
+    background: var(--white);
+    border: 1px solid var(--gray-100);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.glossary-card:hover {
+    border-color: var(--secondary-blue);
+    box-shadow: 0 10px 24px -8px rgba(15, 23, 42, 0.1);
+}
+
+.alphabet-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+    justify-content: center;
+}
+
+.alphabet-letter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.alphabet-letter:hover,
+.alphabet-letter.active {
+    background: var(--secondary-blue);
+    color: white;
+    border-color: var(--secondary-blue);
+}
+
+.search-box {
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 12px 48px 12px 16px;
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: inherit;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--secondary-blue);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.search-icon {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gray-400);
+    pointer-events: none;
+}
+
+.term-letter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: var(--secondary-blue);
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 14px;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+.highlight {
+    background: rgba(250, 204, 21, 0.45);
+    padding: 1px 4px;
+    border-radius: 4px;
+}

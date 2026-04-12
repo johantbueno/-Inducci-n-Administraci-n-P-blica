@@ -1,4 +1,4 @@
-// INAP Course Website - Main JavaScript
+// INAP Course Website — legado (no enlazado en HTML). Usar site.js.
 // Johan Tapia, PhD - 2024
 
 // Global variables

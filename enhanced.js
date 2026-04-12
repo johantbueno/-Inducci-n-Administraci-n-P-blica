@@ -1,5 +1,4 @@
-// Enhanced JavaScript for INAP Course Website
-// Additional functionality and improvements
+// Legado — no enlazado en HTML. La app usa site.js.
 
 // Enhanced Course Navigation
 const EnhancedNavigation = {

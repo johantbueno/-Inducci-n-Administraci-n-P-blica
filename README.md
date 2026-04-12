@@ -26,7 +26,9 @@ Sitio web interactivo para el curso de Inducción a la Administración Pública,
 ├── ley4108.html        # Régimen de Función Pública (Ley 41-08)
 ├── casos.html          # Casos Prácticos y Ejemplos
 ├── glosario.html       # Glosario de Términos
-├── main.js            # JavaScript principal
+├── site.js            # JavaScript único (navegación, progreso, glosario, modales)
+├── main.js            # Legado (no enlazado en las páginas)
+├── enhanced.js        # Legado (no enlazado en las páginas)
 ├── design.md          # Documentación de diseño
 └── README.md          # Este archivo
 ```
@@ -40,11 +42,17 @@ Sitio web interactivo para el curso de Inducción a la Administración Pública,
 - **Font Awesome** - Iconos vectoriales
 - **Google Fonts** - Tipografías (Inter y Source Sans Pro)
 
+## Despliegue
 
-4. **Acceder al sitio:**
-   - URL: `https://TU-USUARIO.github.io/inap-induccion-administracion-publica/`
+### Opción 1: GitHub Pages
 
-### Opción 2: Servidor Local
+1. Sube el repositorio a GitHub (rama `main`).
+2. En el repositorio: **Settings → Pages**.
+3. **Source:** Deploy from a branch → `main` → `/ (root)`.
+4. Tras el build, la URL será del tipo: `https://johantbueno.github.io/NOMBRE-DEL-REPO/`  
+   (el nombre exacto coincide con el nombre público del repositorio en GitHub).
+
+### Opción 2: Servidor local
 
 1. **Requisitos previos:**
    - Python 3.x o Node.js instalado

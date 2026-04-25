@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh pr create --title 'feat: Unidad IV \\(Ética\\) + contenido completo Ley 41-08 y Órganos Rectores' --body ' *)",
+      "Bash(python3)",
+      "Bash(python)"
+    ]
+  }
+}

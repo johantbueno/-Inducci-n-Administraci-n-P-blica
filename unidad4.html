@@ -15,6 +15,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="site.css?v=2">
+    <script>if(localStorage.getItem("inap-dark-mode")==="true")document.documentElement.classList.add("dark");</script>
 </head>
 <body>
     <!-- Progress Indicator -->
@@ -45,8 +46,11 @@
                     </div>
                 </div>
 
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600 focus:outline-none">
+                <div class="flex items-center gap-2">
+                    <button id="dark-mode-toggle" title="Alternar modo oscuro/claro" aria-label="Alternar modo oscuro" class="w-9 h-9 flex items-center justify-center rounded-full text-gray-700 hover:text-blue-600 hover:bg-gray-100 transition-colors focus:outline-none">
+                        <i id="dark-mode-icon" class="fas fa-moon text-lg"></i>
+                    </button>
+                    <button id="mobile-menu-button" class="md:hidden text-gray-700 hover:text-blue-600 focus:outline-none" aria-label="Abrir menú">
                         <i class="fas fa-bars text-xl"></i>
                     </button>
                 </div>
@@ -143,6 +147,9 @@
                                 </a>
                                 <a href="#digeig-actual" class="block px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-md transition-colors">
                                     <i class="fas fa-circle text-xs mr-2"></i>4.5 DIGEIG en la Actualidad
+                                </a>
+                                <a href="#autoevaluacion-u4" class="block px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-md transition-colors">
+                                    <i class="fas fa-circle text-xs mr-2"></i>Autoevaluación
                                 </a>
                             </nav>
                         </div>
@@ -684,6 +691,58 @@
                                     <p class="text-blue-700">La DIGEIG, el CIGCN y la Resolución 01/2022 forman un sistema integrado: la DIGEIG establece el marco normativo, el CIGCN lo implementa en cada institución, y la resolución provee las guías concretas de conducta. Juntos, construyen una cultura de integridad que complementa — y en muchos casos previene — la necesidad de sanciones disciplinarias.</p>
                                 </div>
                             </div>
+                        </div>
+                    </section>
+
+                    <!-- Autoevaluación Unidad IV -->
+                    <section id="autoevaluacion-u4" class="mb-12 assessment-section">
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-pencil-alt text-indigo-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium text-indigo-600 uppercase tracking-wide">Pon a prueba tu conocimiento</p>
+                                    <h2 class="font-display text-2xl font-bold text-gray-800">Autoevaluación — Unidad IV: Ética e Integridad</h2>
+                                </div>
+                            </div>
+                            <div class="quiz-question">
+                                <p>1. ¿Cuál institución es el órgano rector de la ética e integridad gubernamental en República Dominicana?</p>
+                                <button class="quiz-option" data-correct="false">MAP (Ministerio de Administración Pública)</button>
+                                <button class="quiz-option" data-correct="true">DIGEIG (Dirección General de Ética e Integridad Gubernamental)</button>
+                                <button class="quiz-option" data-correct="false">INAP (Instituto Nacional de Administración Pública)</button>
+                                <button class="quiz-option" data-correct="false">Contraloría General de la República</button>
+                            </div>
+                            <div class="quiz-question">
+                                <p>2. ¿Qué siglas corresponden al comité que implementa la ética dentro de cada institución pública?</p>
+                                <button class="quiz-option" data-correct="false">DIGCIG</button>
+                                <button class="quiz-option" data-correct="false">SIPEN</button>
+                                <button class="quiz-option" data-correct="true">CIGCN (Comité de Integridad Gubernamental y Combate a la Corrupción)</button>
+                                <button class="quiz-option" data-correct="false">CONARE</button>
+                            </div>
+                            <div class="quiz-question">
+                                <p>3. La diferencia fundamental entre ética y moral es que:</p>
+                                <button class="quiz-option" data-correct="false">Son sinónimos perfectos en el contexto del servicio público</button>
+                                <button class="quiz-option" data-correct="false">La moral es una norma escrita y la ética es una norma social</button>
+                                <button class="quiz-option" data-correct="true">La ética es la reflexión racional sobre los principios que guían la conducta; la moral son las normas y costumbres de un grupo social</button>
+                                <button class="quiz-option" data-correct="false">La ética solo aplica en el ámbito privado</button>
+                            </div>
+                            <div class="quiz-question">
+                                <p>4. Un servidor que acepta un regalo de un proveedor para agilizar un trámite viola principalmente:</p>
+                                <button class="quiz-option" data-correct="false">Solo el reglamento interno de la institución</button>
+                                <button class="quiz-option" data-correct="false">El principio de eficiencia</button>
+                                <button class="quiz-option" data-correct="true">El principio de probidad e imparcialidad, configurando un acto de corrupción</button>
+                                <button class="quiz-option" data-correct="false">Únicamente las normas de convivencia laboral</button>
+                            </div>
+                            <div class="quiz-question">
+                                <p>5. ¿En qué año fue creada la DIGEIG mediante decreto presidencial?</p>
+                                <button class="quiz-option" data-correct="false">1996</button>
+                                <button class="quiz-option" data-correct="false">2004</button>
+                                <button class="quiz-option" data-correct="true">2012</button>
+                                <button class="quiz-option" data-correct="false">2016</button>
+                            </div>
+                            <button class="quiz-submit">Ver mi resultado</button>
+                            <div class="quiz-result"></div>
                         </div>
                     </section>
 

@@ -5,7 +5,7 @@
 (function () {
   'use strict';
 
-  var PAGE_ORDER = ['index', 'unidad1', 'unidad2', 'unidad3', 'ley4108', 'casos', 'glosario'];
+  var PAGE_ORDER = ['index', 'unidad1', 'unidad2', 'unidad3', 'unidad4', 'ley4108', 'casos', 'glosario'];
   var STORAGE_KEY = 'inap-course-progress-v2';
 
   function getCurrentPage() {
@@ -17,6 +17,7 @@
     if (file.indexOf('unidad1') === 0) return 'unidad1';
     if (file.indexOf('unidad2') === 0) return 'unidad2';
     if (file.indexOf('unidad3') === 0) return 'unidad3';
+    if (file.indexOf('unidad4') === 0) return 'unidad4';
     if (file.indexOf('ley4108') === 0) return 'ley4108';
     if (file.indexOf('casos') === 0) return 'casos';
     if (file.indexOf('glosario') === 0) return 'glosario';
@@ -168,6 +169,7 @@
       unidad1: 'Unidad I',
       unidad2: 'Unidad II',
       unidad3: 'Unidad III',
+      unidad4: 'Unidad IV',
       ley4108: 'Ley 41-08',
       casos: 'Casos prácticos',
       glosario: 'Glosario'

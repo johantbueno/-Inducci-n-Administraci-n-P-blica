@@ -15,7 +15,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="site.css?v=2">
+    <link rel="stylesheet" href="site.css?v=3">
+    <script>if(localStorage.getItem("inap-dark-mode")==="true")document.documentElement.classList.add("dark");</script>
 </head>
 <body>
     <!-- Progress Indicator -->
@@ -39,14 +40,18 @@
                         <a href="unidad1.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Unidad I</a>
                         <a href="unidad2.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Unidad II</a>
                         <a href="unidad3.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Unidad III</a>
+                        <a href="unidad4.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Unidad IV</a>
                         <a href="ley4108.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Ley 41-08</a>
                         <a href="casos.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Casos</a>
                         <a href="glosario.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Glosario</a>
                     </div>
                 </div>
                 
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600 focus:outline-none">
+                <div class="flex items-center gap-2">
+                    <button id="dark-mode-toggle" title="Alternar modo oscuro/claro" aria-label="Alternar modo oscuro" class="w-9 h-9 flex items-center justify-center rounded-full text-gray-700 hover:text-blue-600 hover:bg-gray-100 transition-colors focus:outline-none">
+                        <i id="dark-mode-icon" class="fas fa-moon text-lg"></i>
+                    </button>
+                    <button id="mobile-menu-button" class="md:hidden text-gray-700 hover:text-blue-600 focus:outline-none" aria-label="Abrir menú">
                         <i class="fas fa-bars text-xl"></i>
                     </button>
                 </div>
@@ -60,6 +65,7 @@
                 <a href="unidad1.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Unidad I</a>
                 <a href="unidad2.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Unidad II</a>
                 <a href="unidad3.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Unidad III</a>
+                <a href="unidad4.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Unidad IV</a>
                 <a href="ley4108.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Ley 41-08</a>
                 <a href="casos.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Casos</a>
                 <a href="glosario.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Glosario</a>
@@ -212,6 +218,31 @@
                     </div>
                 </div>
                 
+                <!-- Unidad IV -->
+                <div class="unit-card card-hover cursor-pointer" onclick="navigateToUnit('unidad4')">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-star text-teal-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-display text-xl font-semibold text-gray-800">Unidad IV</h3>
+                            <p class="text-sm text-gray-600">Ética e Integridad Gubernamental</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Fundamentos éticos, modelos de la moral, historia y funciones de la DIGEIG y el CIGCN.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-teal-600 font-medium">5 temas</span>
+                        <div class="flex items-center">
+                            <div class="w-16 h-2 bg-gray-200 rounded-full mr-2">
+                                <div class="unit-progress-fill w-0"></div>
+                            </div>
+                            <span class="text-xs text-gray-500">0%</span>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Ley 41-08 -->
                 <div class="unit-card card-hover cursor-pointer" onclick="navigateToUnit('ley4108')">
                     <div class="flex items-center mb-4">

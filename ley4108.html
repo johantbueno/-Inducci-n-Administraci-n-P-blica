@@ -14,7 +14,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="site.css?v=2">
+    <link rel="stylesheet" href="site.css?v=3">
+    <script>if(localStorage.getItem("inap-dark-mode")==="true")document.documentElement.classList.add("dark");</script>
 </head>
 <body>
     <!-- Progress Indicator -->
@@ -38,14 +39,18 @@
                         <a href="unidad1.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Unidad I</a>
                         <a href="unidad2.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Unidad II</a>
                         <a href="unidad3.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Unidad III</a>
+                        <a href="unidad4.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Unidad IV</a>
                         <a href="ley4108.html" class="nav-link text-blue-600 px-3 py-2 text-sm font-medium border-b-2 border-blue-600">Ley 41-08</a>
                         <a href="casos.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Casos</a>
                         <a href="glosario.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Glosario</a>
                     </div>
                 </div>
                 
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600 focus:outline-none">
+                <div class="flex items-center gap-2">
+                    <button id="dark-mode-toggle" title="Alternar modo oscuro/claro" aria-label="Alternar modo oscuro" class="w-9 h-9 flex items-center justify-center rounded-full text-gray-700 hover:text-blue-600 hover:bg-gray-100 transition-colors focus:outline-none">
+                        <i id="dark-mode-icon" class="fas fa-moon text-lg"></i>
+                    </button>
+                    <button id="mobile-menu-button" class="md:hidden text-gray-700 hover:text-blue-600 focus:outline-none" aria-label="Abrir menú">
                         <i class="fas fa-bars text-xl"></i>
                     </button>
                 </div>
@@ -59,6 +64,7 @@
                 <a href="unidad1.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Unidad I</a>
                 <a href="unidad2.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Unidad II</a>
                 <a href="unidad3.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Unidad III</a>
+                <a href="unidad4.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Unidad IV</a>
                 <a href="ley4108.html" class="block px-3 py-2 text-blue-600 font-medium">Ley 41-08</a>
                 <a href="casos.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Casos</a>
                 <a href="glosario.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Glosario</a>
@@ -144,6 +150,18 @@
                                 </a>
                                 <a href="#recursos" class="block px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-md transition-colors">
                                     <i class="fas fa-circle text-xs mr-2"></i>4.6 Recursos Administrativos
+                                </a>
+                                <a href="#licencias" class="block px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-md transition-colors">
+                                    <i class="fas fa-circle text-xs mr-2"></i>4.7 Licencias y Permisos
+                                </a>
+                                <a href="#desvinculacion" class="block px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-md transition-colors">
+                                    <i class="fas fa-circle text-xs mr-2"></i>4.8 Proceso de Desvinculación
+                                </a>
+                                <a href="#carrera-administrativa" class="block px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-md transition-colors">
+                                    <i class="fas fa-circle text-xs mr-2"></i>4.9 Ingreso a Carrera Administrativa
+                                </a>
+                                <a href="#autoevaluacion-ley" class="block px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-md transition-colors">
+                                    <i class="fas fa-circle text-xs mr-2"></i>Autoevaluación
                                 </a>
                             </nav>
                         </div>
@@ -332,13 +350,948 @@
                         </div>
                     </section>
                     
+                    <!-- Section 4.2 -->
+                    <section id="derechos" class="mb-12">
+                        <div class="law-card">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-hand-holding-heart text-green-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h2 class="font-display text-2xl font-bold text-gray-800">4.2 Derechos de los Servidores Públicos</h2>
+                                    <p class="text-gray-600">Arts. 58–59 — Derechos generales y especiales de carrera</p>
+                                </div>
+                            </div>
+
+                            <div class="prose max-w-none">
+                                <p class="text-gray-700 leading-relaxed mb-6">
+                                    La Ley 41-08 reconoce dos conjuntos de derechos: los <strong>derechos generales</strong> (Art. 58) aplicables a todos los servidores, y los <strong>derechos especiales de carrera</strong> (Art. 59) exclusivos para quienes forman parte de la carrera administrativa.
+                                </p>
+
+                                <h3 class="text-xl font-semibold text-gray-800 mb-4">Derechos Generales (Art. 58)</h3>
+                                <div class="grid md:grid-cols-2 gap-4 mb-8">
+                                    <div class="space-y-2">
+                                        <div class="flex items-start bg-green-50 p-3 rounded-lg border border-green-200">
+                                            <span class="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-xs font-bold mr-3 mt-0.5 flex-shrink-0">1</span>
+                                            <p class="text-sm text-green-800">Desempeñar las funciones propias del cargo</p>
+                                        </div>
+                                        <div class="flex items-start bg-green-50 p-3 rounded-lg border border-green-200">
+                                            <span class="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-xs font-bold mr-3 mt-0.5 flex-shrink-0">2</span>
+                                            <p class="text-sm text-green-800">Recibir la remuneración correspondiente al cargo</p>
+                                        </div>
+                                        <div class="flex items-start bg-green-50 p-3 rounded-lg border border-green-200">
+                                            <span class="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-xs font-bold mr-3 mt-0.5 flex-shrink-0">3</span>
+                                            <p class="text-sm text-green-800">Capacitación y desarrollo profesional continuo</p>
+                                        </div>
+                                        <div class="flex items-start bg-green-50 p-3 rounded-lg border border-green-200">
+                                            <span class="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-xs font-bold mr-3 mt-0.5 flex-shrink-0">4</span>
+                                            <p class="text-sm text-green-800">Vacaciones remuneradas (mínimo 30 días laborables)</p>
+                                        </div>
+                                        <div class="flex items-start bg-green-50 p-3 rounded-lg border border-green-200">
+                                            <span class="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-xs font-bold mr-3 mt-0.5 flex-shrink-0">5</span>
+                                            <p class="text-sm text-green-800">Licencias remuneradas por maternidad, paternidad y enfermedad</p>
+                                        </div>
+                                        <div class="flex items-start bg-green-50 p-3 rounded-lg border border-green-200">
+                                            <span class="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-xs font-bold mr-3 mt-0.5 flex-shrink-0">6</span>
+                                            <p class="text-sm text-green-800">Seguro médico institucional</p>
+                                        </div>
+                                        <div class="flex items-start bg-green-50 p-3 rounded-lg border border-green-200">
+                                            <span class="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-xs font-bold mr-3 mt-0.5 flex-shrink-0">7</span>
+                                            <p class="text-sm text-green-800">Pensión por vejez, invalidez o muerte</p>
+                                        </div>
+                                        <div class="flex items-start bg-green-50 p-3 rounded-lg border border-green-200">
+                                            <span class="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-xs font-bold mr-3 mt-0.5 flex-shrink-0">8</span>
+                                            <p class="text-sm text-green-800">Bono de navidad y seguro de vida</p>
+                                        </div>
+                                        <div class="flex items-start bg-green-50 p-3 rounded-lg border border-green-200">
+                                            <span class="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-xs font-bold mr-3 mt-0.5 flex-shrink-0">9</span>
+                                            <p class="text-sm text-green-800">Ser evaluado objetivamente en su desempeño</p>
+                                        </div>
+                                    </div>
+                                    <div class="space-y-2">
+                                        <div class="flex items-start bg-green-50 p-3 rounded-lg border border-green-200">
+                                            <span class="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-xs font-bold mr-3 mt-0.5 flex-shrink-0">10</span>
+                                            <p class="text-sm text-green-800">Participar en concursos de ascenso por mérito</p>
+                                        </div>
+                                        <div class="flex items-start bg-green-50 p-3 rounded-lg border border-green-200">
+                                            <span class="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-xs font-bold mr-3 mt-0.5 flex-shrink-0">11</span>
+                                            <p class="text-sm text-green-800">Solicitar traslado a otro cargo o institución</p>
+                                        </div>
+                                        <div class="flex items-start bg-green-50 p-3 rounded-lg border border-green-200">
+                                            <span class="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-xs font-bold mr-3 mt-0.5 flex-shrink-0">12</span>
+                                            <p class="text-sm text-green-800">Recurrir contra sanciones disciplinarias</p>
+                                        </div>
+                                        <div class="flex items-start bg-green-50 p-3 rounded-lg border border-green-200">
+                                            <span class="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-xs font-bold mr-3 mt-0.5 flex-shrink-0">13</span>
+                                            <p class="text-sm text-green-800">Asociación sindical y derecho de huelga (con limitaciones)</p>
+                                        </div>
+                                        <div class="flex items-start bg-green-50 p-3 rounded-lg border border-green-200">
+                                            <span class="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-xs font-bold mr-3 mt-0.5 flex-shrink-0">14</span>
+                                            <p class="text-sm text-green-800">Protección contra riesgos y accidentes laborales</p>
+                                        </div>
+                                        <div class="flex items-start bg-green-50 p-3 rounded-lg border border-green-200">
+                                            <span class="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-xs font-bold mr-3 mt-0.5 flex-shrink-0">15</span>
+                                            <p class="text-sm text-green-800">Retiro voluntario con prestaciones dignas</p>
+                                        </div>
+                                        <div class="flex items-start bg-green-50 p-3 rounded-lg border border-green-200">
+                                            <span class="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-xs font-bold mr-3 mt-0.5 flex-shrink-0">16</span>
+                                            <p class="text-sm text-green-800">Reclamar reconocimiento de servicios prestados</p>
+                                        </div>
+                                        <div class="flex items-start bg-green-50 p-3 rounded-lg border border-green-200">
+                                            <span class="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-xs font-bold mr-3 mt-0.5 flex-shrink-0">17</span>
+                                            <p class="text-sm text-green-800">Acceso a programas de bienestar social institucional</p>
+                                        </div>
+                                        <div class="flex items-start bg-green-50 p-3 rounded-lg border border-green-200">
+                                            <span class="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-xs font-bold mr-3 mt-0.5 flex-shrink-0">18</span>
+                                            <p class="text-sm text-green-800">Trato justo y no discriminatorio en el trabajo</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <h3 class="text-xl font-semibold text-gray-800 mb-4">Derechos Especiales de Carrera (Art. 59)</h3>
+                                <div class="grid md:grid-cols-2 gap-4 mb-6">
+                                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-5">
+                                        <div class="flex items-center mb-3">
+                                            <i class="fas fa-shield-alt text-blue-600 mr-2 text-lg"></i>
+                                            <h4 class="font-semibold text-blue-800">Estabilidad en el Cargo</h4>
+                                        </div>
+                                        <p class="text-sm text-blue-700">No puede ser separado sin causa legalmente justificada y debido proceso. Es la garantía más importante del servidor de carrera.</p>
+                                    </div>
+                                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-5">
+                                        <div class="flex items-center mb-3">
+                                            <i class="fas fa-arrow-up text-blue-600 mr-2 text-lg"></i>
+                                            <h4 class="font-semibold text-blue-800">Ascenso por Mérito</h4>
+                                        </div>
+                                        <p class="text-sm text-blue-700">Prioridad en concursos internos de promoción. El desempeño y los méritos determinan el avance en la carrera.</p>
+                                    </div>
+                                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-5">
+                                        <div class="flex items-center mb-3">
+                                            <i class="fas fa-sync-alt text-blue-600 mr-2 text-lg"></i>
+                                            <h4 class="font-semibold text-blue-800">Reclasificación</h4>
+                                        </div>
+                                        <p class="text-sm text-blue-700">Puede solicitar revisión y ajuste del cargo cuando sus funciones reales superen las del puesto asignado.</p>
+                                    </div>
+                                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-5">
+                                        <div class="flex items-center mb-3">
+                                            <i class="fas fa-redo text-blue-600 mr-2 text-lg"></i>
+                                            <h4 class="font-semibold text-blue-800">Reingreso Preferencial</h4>
+                                        </div>
+                                        <p class="text-sm text-blue-700">En caso de separación injustificada, tiene derecho preferente al reingreso en cargo similar al que ocupaba.</p>
+                                    </div>
+                                </div>
+
+                                <div class="example-box">
+                                    <h4 class="font-semibold text-blue-800 mb-2"><i class="fas fa-lightbulb mr-2"></i>Ejemplo Práctico</h4>
+                                    <p class="text-blue-700">Una técnica del Ministerio de Salud con 8 años en carrera administrativa que recibe funciones de jefa de sección sin el cambio de cargo puede solicitar una reclasificación (Art. 59) y tiene derecho a la remuneración correspondiente a esas nuevas responsabilidades.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section 4.3 -->
+                    <section id="deberes" class="mb-12">
+                        <div class="law-card">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-tasks text-yellow-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h2 class="font-display text-2xl font-bold text-gray-800">4.3 Deberes de los Servidores Públicos</h2>
+                                    <p class="text-gray-600">Art. 79 — Las 16 obligaciones del servidor público</p>
+                                </div>
+                            </div>
+
+                            <div class="prose max-w-none">
+                                <p class="text-gray-700 leading-relaxed mb-6">
+                                    El artículo 79 de la Ley 41-08 establece dieciséis deberes que todo servidor público debe cumplir, independientemente de su categoría. Son la contraparte de los derechos y su incumplimiento puede generar sanciones disciplinarias.
+                                </p>
+
+                                <div class="grid gap-3 mb-8">
+                                    <div class="flex items-start p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                                        <span class="w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 mt-0.5 flex-shrink-0">1</span>
+                                        <div>
+                                            <h4 class="font-semibold text-yellow-900">Prestar servicios personalmente</h4>
+                                            <p class="text-sm text-yellow-800 mt-1">Desempeñar las funciones del cargo de manera personal e intransferible.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                                        <span class="w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 mt-0.5 flex-shrink-0">2</span>
+                                        <div>
+                                            <h4 class="font-semibold text-yellow-900">Puntualidad y asistencia regular</h4>
+                                            <p class="text-sm text-yellow-800 mt-1">Cumplir estrictamente el horario de trabajo y notificar ausencias con anticipación.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                                        <span class="w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 mt-0.5 flex-shrink-0">3</span>
+                                        <div>
+                                            <h4 class="font-semibold text-yellow-900">Cumplir la Constitución y las leyes</h4>
+                                            <p class="text-sm text-yellow-800 mt-1">Actuar siempre dentro del marco jurídico vigente en todas las decisiones y actuaciones.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                                        <span class="w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 mt-0.5 flex-shrink-0">4</span>
+                                        <div>
+                                            <h4 class="font-semibold text-yellow-900">Guardar reserva de la información confidencial</h4>
+                                            <p class="text-sm text-yellow-800 mt-1">Mantener discreción sobre asuntos reservados aun después de cesar en el cargo.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                                        <span class="w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 mt-0.5 flex-shrink-0">5</span>
+                                        <div>
+                                            <h4 class="font-semibold text-yellow-900">Atender al público con respeto y cortesía</h4>
+                                            <p class="text-sm text-yellow-800 mt-1">Brindar trato digno, amable y sin discriminación a toda persona que solicite servicios.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                                        <span class="w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 mt-0.5 flex-shrink-0">6</span>
+                                        <div>
+                                            <h4 class="font-semibold text-yellow-900">Abstenerse de actividades político-partidistas en horario laboral</h4>
+                                            <p class="text-sm text-yellow-800 mt-1">No usar el tiempo, los recursos ni el cargo institucional para fines de proselitismo político.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                                        <span class="w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 mt-0.5 flex-shrink-0">7</span>
+                                        <div>
+                                            <h4 class="font-semibold text-yellow-900">Conservar y cuidar los bienes del Estado</h4>
+                                            <p class="text-sm text-yellow-800 mt-1">Usar responsablemente equipos, vehículos, instalaciones y demás activos institucionales.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                                        <span class="w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 mt-0.5 flex-shrink-0">8</span>
+                                        <div>
+                                            <h4 class="font-semibold text-yellow-900">Declarar bienes patrimoniales</h4>
+                                            <p class="text-sm text-yellow-800 mt-1">Presentar declaración jurada de bienes al inicio y al egreso del cargo ante la Cámara de Cuentas.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                                        <span class="w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 mt-0.5 flex-shrink-0">9</span>
+                                        <div>
+                                            <h4 class="font-semibold text-yellow-900">Comunicar cambios en situación personal</h4>
+                                            <p class="text-sm text-yellow-800 mt-1">Informar oportunamente al superior sobre cambios relevantes como segundo empleo o conflictos de interés.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                                        <span class="w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 mt-0.5 flex-shrink-0">10</span>
+                                        <div>
+                                            <h4 class="font-semibold text-yellow-900">Superarse profesionalmente</h4>
+                                            <p class="text-sm text-yellow-800 mt-1">Mantener actualizados los conocimientos y habilidades requeridos para el cargo.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                                        <span class="w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 mt-0.5 flex-shrink-0">11</span>
+                                        <div>
+                                            <h4 class="font-semibold text-yellow-900">Mantener buenas relaciones laborales</h4>
+                                            <p class="text-sm text-yellow-800 mt-1">Fomentar el trabajo en equipo, el respeto mutuo y un clima organizacional positivo.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                                        <span class="w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 mt-0.5 flex-shrink-0">12</span>
+                                        <div>
+                                            <h4 class="font-semibold text-yellow-900">Participar en actividades de capacitación</h4>
+                                            <p class="text-sm text-yellow-800 mt-1">Asistir y aprovechar los programas formativos convocados por la institución o el INAP.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                                        <span class="w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 mt-0.5 flex-shrink-0">13</span>
+                                        <div>
+                                            <h4 class="font-semibold text-yellow-900">Usar uniforme o identificación</h4>
+                                            <p class="text-sm text-yellow-800 mt-1">Portar el uniforme o identificación institucional cuando el cargo lo requiera.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                                        <span class="w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 mt-0.5 flex-shrink-0">14</span>
+                                        <div>
+                                            <h4 class="font-semibold text-yellow-900">Velar por la imagen institucional</h4>
+                                            <p class="text-sm text-yellow-800 mt-1">Actuar pública y privadamente de manera coherente con los valores y misión de la institución.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                                        <span class="w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 mt-0.5 flex-shrink-0">15</span>
+                                        <div>
+                                            <h4 class="font-semibold text-yellow-900">Rendir informes de gestión</h4>
+                                            <p class="text-sm text-yellow-800 mt-1">Presentar cuando sea requerido los informes, reportes y memorias sobre sus funciones.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                                        <span class="w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 mt-0.5 flex-shrink-0">16</span>
+                                        <div>
+                                            <h4 class="font-semibold text-yellow-900">Cumplir las instrucciones superiores legítimas</h4>
+                                            <p class="text-sm text-yellow-800 mt-1">Acatar órdenes de sus superiores, salvo que sean manifiestamente ilegales o contrarias a la ética.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section 4.4 -->
+                    <section id="prohibiciones" class="mb-12">
+                        <div class="law-card">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-ban text-red-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h2 class="font-display text-2xl font-bold text-gray-800">4.4 Prohibiciones</h2>
+                                    <p class="text-gray-600">Art. 80 — Las 17 conductas prohibidas al servidor público</p>
+                                </div>
+                            </div>
+
+                            <div class="prose max-w-none">
+                                <p class="text-gray-700 leading-relaxed mb-6">
+                                    El artículo 80 establece las conductas expresamente prohibidas. Violar estas prohibiciones constituye una falta disciplinaria que puede llevar desde la suspensión hasta la destitución.
+                                </p>
+
+                                <div class="grid md:grid-cols-2 gap-3 mb-8">
+                                    <div class="flex items-start p-4 bg-red-50 border border-red-200 rounded-lg">
+                                        <i class="fas fa-times-circle text-red-500 mr-3 mt-1 flex-shrink-0"></i>
+                                        <div>
+                                            <h4 class="font-semibold text-red-800 text-sm">Desviar fondos públicos</h4>
+                                            <p class="text-xs text-red-700 mt-1">Destinar fondos a fines distintos a los legalmente autorizados.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start p-4 bg-red-50 border border-red-200 rounded-lg">
+                                        <i class="fas fa-times-circle text-red-500 mr-3 mt-1 flex-shrink-0"></i>
+                                        <div>
+                                            <h4 class="font-semibold text-red-800 text-sm">Aceptar dádivas o beneficios</h4>
+                                            <p class="text-xs text-red-700 mt-1">Recibir regalos, comisiones o beneficios relacionados con el ejercicio del cargo.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start p-4 bg-red-50 border border-red-200 rounded-lg">
+                                        <i class="fas fa-times-circle text-red-500 mr-3 mt-1 flex-shrink-0"></i>
+                                        <div>
+                                            <h4 class="font-semibold text-red-800 text-sm">Ejercer influencias indebidas</h4>
+                                            <p class="text-xs text-red-700 mt-1">Usar el cargo para obtener favores, empleos o contratos para sí o terceros.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start p-4 bg-red-50 border border-red-200 rounded-lg">
+                                        <i class="fas fa-times-circle text-red-500 mr-3 mt-1 flex-shrink-0"></i>
+                                        <div>
+                                            <h4 class="font-semibold text-red-800 text-sm">Abandonar el trabajo sin autorización</h4>
+                                            <p class="text-xs text-red-700 mt-1">Cesar en las funciones sin permiso previo de la autoridad competente.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start p-4 bg-red-50 border border-red-200 rounded-lg">
+                                        <i class="fas fa-times-circle text-red-500 mr-3 mt-1 flex-shrink-0"></i>
+                                        <div>
+                                            <h4 class="font-semibold text-red-800 text-sm">Trabajar para particulares en horario institucional</h4>
+                                            <p class="text-xs text-red-700 mt-1">Prestar servicios a personas o empresas privadas durante la jornada laboral.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start p-4 bg-red-50 border border-red-200 rounded-lg">
+                                        <i class="fas fa-times-circle text-red-500 mr-3 mt-1 flex-shrink-0"></i>
+                                        <div>
+                                            <h4 class="font-semibold text-red-800 text-sm">Revelar información confidencial</h4>
+                                            <p class="text-xs text-red-700 mt-1">Divulgar información reservada o clasificada sin autorización.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start p-4 bg-red-50 border border-red-200 rounded-lg">
+                                        <i class="fas fa-times-circle text-red-500 mr-3 mt-1 flex-shrink-0"></i>
+                                        <div>
+                                            <h4 class="font-semibold text-red-800 text-sm">Obstruir investigaciones</h4>
+                                            <p class="text-xs text-red-700 mt-1">Interferir o entorpecer procesos disciplinarios o judiciales en curso.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start p-4 bg-red-50 border border-red-200 rounded-lg">
+                                        <i class="fas fa-times-circle text-red-500 mr-3 mt-1 flex-shrink-0"></i>
+                                        <div>
+                                            <h4 class="font-semibold text-red-800 text-sm">Proselitismo político en horario laboral</h4>
+                                            <p class="text-xs text-red-700 mt-1">Realizar actividades político-partidistas durante la jornada de trabajo.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start p-4 bg-red-50 border border-red-200 rounded-lg">
+                                        <i class="fas fa-times-circle text-red-500 mr-3 mt-1 flex-shrink-0"></i>
+                                        <div>
+                                            <h4 class="font-semibold text-red-800 text-sm">Usar bienes del Estado para fines personales</h4>
+                                            <p class="text-xs text-red-700 mt-1">Utilizar vehículos, equipos o instalaciones institucionales para uso propio o de terceros.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start p-4 bg-red-50 border border-red-200 rounded-lg">
+                                        <i class="fas fa-times-circle text-red-500 mr-3 mt-1 flex-shrink-0"></i>
+                                        <div>
+                                            <h4 class="font-semibold text-red-800 text-sm">Nepotismo</h4>
+                                            <p class="text-xs text-red-700 mt-1">Nombrar cónyuge o parientes hasta el 4° grado de consanguinidad en la misma institución.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start p-4 bg-red-50 border border-red-200 rounded-lg">
+                                        <i class="fas fa-times-circle text-red-500 mr-3 mt-1 flex-shrink-0"></i>
+                                        <div>
+                                            <h4 class="font-semibold text-red-800 text-sm">Participar en huelgas ilegales</h4>
+                                            <p class="text-xs text-red-700 mt-1">Sumarse a huelgas en servicios esenciales o cuando esté expresamente prohibido por ley.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start p-4 bg-red-50 border border-red-200 rounded-lg">
+                                        <i class="fas fa-times-circle text-red-500 mr-3 mt-1 flex-shrink-0"></i>
+                                        <div>
+                                            <h4 class="font-semibold text-red-800 text-sm">Actos de discriminación</h4>
+                                            <p class="text-xs text-red-700 mt-1">Realizar actos discriminatorios por razón de sexo, origen, religión, discapacidad u otras causas.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start p-4 bg-red-50 border border-red-200 rounded-lg">
+                                        <i class="fas fa-times-circle text-red-500 mr-3 mt-1 flex-shrink-0"></i>
+                                        <div>
+                                            <h4 class="font-semibold text-red-800 text-sm">Acoso sexual o laboral</h4>
+                                            <p class="text-xs text-red-700 mt-1">Incurrir en conductas de hostigamiento sexual o intimidación laboral de cualquier tipo.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start p-4 bg-red-50 border border-red-200 rounded-lg">
+                                        <i class="fas fa-times-circle text-red-500 mr-3 mt-1 flex-shrink-0"></i>
+                                        <div>
+                                            <h4 class="font-semibold text-red-800 text-sm">Falsificación de documentos</h4>
+                                            <p class="text-xs text-red-700 mt-1">Adulterar, falsificar o alterar documentos públicos o expedientes institucionales.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start p-4 bg-red-50 border border-red-200 rounded-lg">
+                                        <i class="fas fa-times-circle text-red-500 mr-3 mt-1 flex-shrink-0"></i>
+                                        <div>
+                                            <h4 class="font-semibold text-red-800 text-sm">Uso indebido de información privilegiada</h4>
+                                            <p class="text-xs text-red-700 mt-1">Aprovechar información obtenida en razón del cargo para beneficio propio o de terceros.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start p-4 bg-red-50 border border-red-200 rounded-lg">
+                                        <i class="fas fa-times-circle text-red-500 mr-3 mt-1 flex-shrink-0"></i>
+                                        <div>
+                                            <h4 class="font-semibold text-red-800 text-sm">Organizar partidos políticos en funciones</h4>
+                                            <p class="text-xs text-red-700 mt-1">Crear, organizar o dirigir partidos políticos mientras se ejerce un cargo público.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start p-4 bg-red-50 border border-red-200 rounded-lg">
+                                        <i class="fas fa-times-circle text-red-500 mr-3 mt-1 flex-shrink-0"></i>
+                                        <div>
+                                            <h4 class="font-semibold text-red-800 text-sm">Conducta contraria a la ética pública</h4>
+                                            <p class="text-xs text-red-700 mt-1">Incurrir en comportamientos que deshonren el cargo o afecten la imagen del Estado.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section 4.5 -->
+                    <section id="regimen-disciplinario" class="mb-12">
+                        <div class="law-card">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-gavel text-purple-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h2 class="font-display text-2xl font-bold text-gray-800">4.5 Régimen Disciplinario</h2>
+                                    <p class="text-gray-600">Arts. 81–84 — Faltas y sanciones por grado de gravedad</p>
+                                </div>
+                            </div>
+
+                            <div class="prose max-w-none">
+                                <p class="text-gray-700 leading-relaxed mb-6">
+                                    El régimen disciplinario clasifica las faltas en tres grados según su gravedad. Las sanciones van desde la amonestación escrita hasta la destitución del cargo.
+                                </p>
+
+                                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                                    <!-- Faltas de 1er grado -->
+                                    <div class="bg-yellow-50 border border-yellow-300 rounded-xl p-6">
+                                        <div class="text-center mb-4">
+                                            <div class="w-14 h-14 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                                <i class="fas fa-exclamation text-yellow-600 text-2xl"></i>
+                                            </div>
+                                            <h3 class="font-display text-lg font-bold text-yellow-800">Faltas de 1° Grado</h3>
+                                            <span class="inline-block mt-2 px-3 py-1 bg-yellow-200 text-yellow-800 text-xs font-semibold rounded-full">Leves</span>
+                                        </div>
+                                        <div class="mb-4">
+                                            <h4 class="font-semibold text-yellow-900 mb-2 text-sm">Conductas:</h4>
+                                            <ul class="text-xs text-yellow-800 space-y-1">
+                                                <li class="flex items-start"><i class="fas fa-dot-circle text-yellow-600 mr-2 mt-0.5 flex-shrink-0"></i>Tardanzas reiteradas</li>
+                                                <li class="flex items-start"><i class="fas fa-dot-circle text-yellow-600 mr-2 mt-0.5 flex-shrink-0"></i>Ausentismo injustificado ocasional</li>
+                                                <li class="flex items-start"><i class="fas fa-dot-circle text-yellow-600 mr-2 mt-0.5 flex-shrink-0"></i>Descuido leve en funciones</li>
+                                                <li class="flex items-start"><i class="fas fa-dot-circle text-yellow-600 mr-2 mt-0.5 flex-shrink-0"></i>Falta de cortesía con ciudadanos</li>
+                                                <li class="flex items-start"><i class="fas fa-dot-circle text-yellow-600 mr-2 mt-0.5 flex-shrink-0"></i>Incumplimiento menor de deberes</li>
+                                            </ul>
+                                        </div>
+                                        <div class="bg-yellow-200 p-3 rounded-lg text-center">
+                                            <h4 class="font-bold text-yellow-900 text-sm">Sanción</h4>
+                                            <p class="text-yellow-800 text-xs mt-1">Amonestación escrita</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Faltas de 2do grado -->
+                                    <div class="bg-orange-50 border border-orange-300 rounded-xl p-6">
+                                        <div class="text-center mb-4">
+                                            <div class="w-14 h-14 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                                <i class="fas fa-exclamation-triangle text-orange-600 text-2xl"></i>
+                                            </div>
+                                            <h3 class="font-display text-lg font-bold text-orange-800">Faltas de 2° Grado</h3>
+                                            <span class="inline-block mt-2 px-3 py-1 bg-orange-200 text-orange-800 text-xs font-semibold rounded-full">Moderadas</span>
+                                        </div>
+                                        <div class="mb-4">
+                                            <h4 class="font-semibold text-orange-900 mb-2 text-sm">Conductas:</h4>
+                                            <ul class="text-xs text-orange-800 space-y-1">
+                                                <li class="flex items-start"><i class="fas fa-dot-circle text-orange-600 mr-2 mt-0.5 flex-shrink-0"></i>Reincidencia en faltas de 1° grado</li>
+                                                <li class="flex items-start"><i class="fas fa-dot-circle text-orange-600 mr-2 mt-0.5 flex-shrink-0"></i>Conducta irrespetuosa con superiores</li>
+                                                <li class="flex items-start"><i class="fas fa-dot-circle text-orange-600 mr-2 mt-0.5 flex-shrink-0"></i>Uso indebido de bienes del Estado</li>
+                                                <li class="flex items-start"><i class="fas fa-dot-circle text-orange-600 mr-2 mt-0.5 flex-shrink-0"></i>Negligencia grave con perjuicio leve</li>
+                                                <li class="flex items-start"><i class="fas fa-dot-circle text-orange-600 mr-2 mt-0.5 flex-shrink-0"></i>Ausentismo injustificado frecuente</li>
+                                            </ul>
+                                        </div>
+                                        <div class="bg-orange-200 p-3 rounded-lg text-center">
+                                            <h4 class="font-bold text-orange-900 text-sm">Sanción</h4>
+                                            <p class="text-orange-800 text-xs mt-1">Suspensión sin sueldo<br><strong>1 a 30 días</strong></p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Faltas de 3er grado -->
+                                    <div class="bg-red-50 border border-red-300 rounded-xl p-6">
+                                        <div class="text-center mb-4">
+                                            <div class="w-14 h-14 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                                <i class="fas fa-times-circle text-red-600 text-2xl"></i>
+                                            </div>
+                                            <h3 class="font-display text-lg font-bold text-red-800">Faltas de 3° Grado</h3>
+                                            <span class="inline-block mt-2 px-3 py-1 bg-red-200 text-red-800 text-xs font-semibold rounded-full">Graves</span>
+                                        </div>
+                                        <div class="mb-4">
+                                            <h4 class="font-semibold text-red-900 mb-2 text-sm">Conductas:</h4>
+                                            <ul class="text-xs text-red-800 space-y-1">
+                                                <li class="flex items-start"><i class="fas fa-dot-circle text-red-600 mr-2 mt-0.5 flex-shrink-0"></i>Abandono de cargo o funciones</li>
+                                                <li class="flex items-start"><i class="fas fa-dot-circle text-red-600 mr-2 mt-0.5 flex-shrink-0"></i>Actos de corrupción o malversación</li>
+                                                <li class="flex items-start"><i class="fas fa-dot-circle text-red-600 mr-2 mt-0.5 flex-shrink-0"></i>Nepotismo</li>
+                                                <li class="flex items-start"><i class="fas fa-dot-circle text-red-600 mr-2 mt-0.5 flex-shrink-0"></i>Acoso sexual o laboral</li>
+                                                <li class="flex items-start"><i class="fas fa-dot-circle text-red-600 mr-2 mt-0.5 flex-shrink-0"></i>Falsificación de documentos públicos</li>
+                                                <li class="flex items-start"><i class="fas fa-dot-circle text-red-600 mr-2 mt-0.5 flex-shrink-0"></i>Conducta deshonrosa grave</li>
+                                                <li class="flex items-start"><i class="fas fa-dot-circle text-red-600 mr-2 mt-0.5 flex-shrink-0"></i>Reincidencia en faltas de 2° grado</li>
+                                            </ul>
+                                        </div>
+                                        <div class="bg-red-200 p-3 rounded-lg text-center">
+                                            <h4 class="font-bold text-red-900 text-sm">Sanción</h4>
+                                            <p class="text-red-800 text-xs mt-1"><strong>Destitución del cargo</strong></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bg-gray-50 border border-gray-300 rounded-lg p-5 mb-6">
+                                    <h4 class="font-semibold text-gray-800 mb-3"><i class="fas fa-balance-scale mr-2 text-gray-600"></i>Principios del Proceso Disciplinario</h4>
+                                    <div class="grid md:grid-cols-3 gap-4">
+                                        <div class="bg-white p-3 rounded border">
+                                            <h5 class="font-medium text-gray-800 text-sm mb-1">Debido Proceso</h5>
+                                            <p class="text-xs text-gray-600">Derecho a ser escuchado y a presentar pruebas antes de cualquier sanción.</p>
+                                        </div>
+                                        <div class="bg-white p-3 rounded border">
+                                            <h5 class="font-medium text-gray-800 text-sm mb-1">Proporcionalidad</h5>
+                                            <p class="text-xs text-gray-600">La sanción debe ser proporcional a la gravedad de la falta cometida.</p>
+                                        </div>
+                                        <div class="bg-white p-3 rounded border">
+                                            <h5 class="font-medium text-gray-800 text-sm mb-1">Non Bis In Idem</h5>
+                                            <p class="text-xs text-gray-600">No se puede sancionar dos veces por la misma falta en el ámbito disciplinario.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section 4.6 -->
+                    <section id="recursos" class="mb-12">
+                        <div class="law-card">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-route text-indigo-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h2 class="font-display text-2xl font-bold text-gray-800">4.6 Recursos Administrativos</h2>
+                                    <p class="text-gray-600">Vías de impugnación ante sanciones disciplinarias</p>
+                                </div>
+                            </div>
+
+                            <div class="prose max-w-none">
+                                <p class="text-gray-700 leading-relaxed mb-6">
+                                    Todo servidor público tiene el derecho de impugnar las decisiones disciplinarias que considere injustas. La ley establece tres vías de recurso en orden progresivo, comenzando por la misma institución y llegando hasta el poder judicial.
+                                </p>
+
+                                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                                    <!-- Recurso de Reconsideración -->
+                                    <div class="bg-blue-50 border border-blue-300 rounded-xl p-6 text-center">
+                                        <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                            <span class="text-2xl font-bold text-blue-700">1°</span>
+                                        </div>
+                                        <h3 class="font-display text-lg font-bold text-blue-800 mb-2">Reconsideración</h3>
+                                        <div class="bg-white p-3 rounded-lg mb-4">
+                                            <p class="text-sm font-semibold text-blue-700">Plazo: <span class="text-blue-900">15 días hábiles</span></p>
+                                        </div>
+                                        <p class="text-sm text-blue-700 mb-3">Se presenta <strong>ante la misma autoridad</strong> que impuso la sanción, solicitando que reconsidere su decisión.</p>
+                                        <div class="bg-blue-100 p-3 rounded-lg text-left">
+                                            <h4 class="font-semibold text-blue-800 text-xs mb-1">Ejemplo:</h4>
+                                            <p class="text-xs text-blue-700">Pedro recibe una suspensión de 15 días. Tiene 15 días hábiles para presentar un escrito ante el mismo director que lo sancionó, explicando por qué es injusta.</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Recurso Jerárquico -->
+                                    <div class="bg-purple-50 border border-purple-300 rounded-xl p-6 text-center">
+                                        <div class="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                            <span class="text-2xl font-bold text-purple-700">2°</span>
+                                        </div>
+                                        <h3 class="font-display text-lg font-bold text-purple-800 mb-2">Jerárquico</h3>
+                                        <div class="bg-white p-3 rounded-lg mb-4">
+                                            <p class="text-sm font-semibold text-purple-700">Plazo: <span class="text-purple-900">15 días hábiles</span></p>
+                                        </div>
+                                        <p class="text-sm text-purple-700 mb-3">Se presenta <strong>ante el superior jerárquico</strong> de quien impuso la sanción, después de que la reconsideración sea rechazada o no haya respuesta.</p>
+                                        <div class="bg-purple-100 p-3 rounded-lg text-left">
+                                            <h4 class="font-semibold text-purple-800 text-xs mb-1">Ejemplo:</h4>
+                                            <p class="text-xs text-purple-700">Si el director rechaza la reconsideración, Pedro puede recurrir al Ministro (superior del director) dentro de los 15 días hábiles siguientes.</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Contencioso-Administrativo -->
+                                    <div class="bg-green-50 border border-green-300 rounded-xl p-6 text-center">
+                                        <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                            <span class="text-2xl font-bold text-green-700">3°</span>
+                                        </div>
+                                        <h3 class="font-display text-lg font-bold text-green-800 mb-2">Contencioso-Administrativo</h3>
+                                        <div class="bg-white p-3 rounded-lg mb-4">
+                                            <p class="text-sm font-semibold text-green-700">Plazo: <span class="text-green-900">30 días hábiles</span></p>
+                                        </div>
+                                        <p class="text-sm text-green-700 mb-3">Se presenta <strong>ante el Tribunal Superior Administrativo</strong>, agotada la vía administrativa, cuando los recursos internos no resultan favorables.</p>
+                                        <div class="bg-green-100 p-3 rounded-lg text-left">
+                                            <h4 class="font-semibold text-green-800 text-xs mb-1">Ejemplo:</h4>
+                                            <p class="text-xs text-green-700">Si el Ministerio también rechaza, Pedro tiene 30 días para acudir al Tribunal Superior Administrativo, presentando los actos administrativos impugnados.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-5 mb-6">
+                                    <h4 class="font-semibold text-indigo-800 mb-3"><i class="fas fa-exclamation-circle mr-2"></i>Regla de Agotamiento de Vías</h4>
+                                    <p class="text-indigo-700 text-sm">Los recursos administrativos (reconsideración y jerárquico) deben agotarse <strong>antes</strong> de acudir al Tribunal Superior Administrativo. Saltar directamente al tribunal sin agotar la vía administrativa puede resultar en inadmisibilidad del recurso judicial.</p>
+                                </div>
+
+                                <div class="overflow-x-auto">
+                                    <table class="w-full bg-white rounded-lg shadow border text-sm">
+                                        <thead class="bg-gray-50">
+                                            <tr>
+                                                <th class="px-5 py-3 text-left text-xs font-medium text-gray-500 uppercase">Recurso</th>
+                                                <th class="px-5 py-3 text-left text-xs font-medium text-gray-500 uppercase">Ante quién</th>
+                                                <th class="px-5 py-3 text-left text-xs font-medium text-gray-500 uppercase">Plazo</th>
+                                                <th class="px-5 py-3 text-left text-xs font-medium text-gray-500 uppercase">Tipo de vía</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-gray-200">
+                                            <tr class="hover:bg-gray-50">
+                                                <td class="px-5 py-4 font-medium text-gray-900">Reconsideración</td>
+                                                <td class="px-5 py-4 text-gray-700">Misma autoridad sancionadora</td>
+                                                <td class="px-5 py-4 text-gray-700">15 días hábiles</td>
+                                                <td class="px-5 py-4"><span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">Administrativa</span></td>
+                                            </tr>
+                                            <tr class="hover:bg-gray-50">
+                                                <td class="px-5 py-4 font-medium text-gray-900">Jerárquico</td>
+                                                <td class="px-5 py-4 text-gray-700">Superior jerárquico</td>
+                                                <td class="px-5 py-4 text-gray-700">15 días hábiles</td>
+                                                <td class="px-5 py-4"><span class="px-2 py-1 bg-purple-100 text-purple-800 rounded-full text-xs">Administrativa</span></td>
+                                            </tr>
+                                            <tr class="hover:bg-gray-50">
+                                                <td class="px-5 py-4 font-medium text-gray-900">Contencioso-Adm.</td>
+                                                <td class="px-5 py-4 text-gray-700">Tribunal Superior Administrativo</td>
+                                                <td class="px-5 py-4 text-gray-700">30 días hábiles</td>
+                                                <td class="px-5 py-4"><span class="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs">Judicial</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section 4.7: Licencias -->
+                    <section id="licencias" class="mb-12">
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-calendar-check text-teal-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium text-teal-600 uppercase tracking-wide">Arts. 60–77</p>
+                                    <h2 class="font-display text-2xl font-bold text-gray-800">4.7 Licencias y Permisos</h2>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 mb-6">La Ley 41-08 reconoce el derecho de los servidores públicos a ausentarse temporalmente del trabajo con o sin goce de sueldo según la causa. A continuación las licencias más importantes:</p>
+                            <div class="grid md:grid-cols-2 gap-4 mb-6">
+                                <div class="bg-teal-50 border border-teal-200 rounded-lg p-5">
+                                    <div class="flex items-center mb-3">
+                                        <i class="fas fa-baby text-teal-600 mr-2"></i>
+                                        <h3 class="font-semibold text-teal-800">Maternidad</h3>
+                                    </div>
+                                    <p class="text-teal-700 text-sm"><strong>14 semanas</strong> con goce de sueldo. 6 semanas antes del parto y 8 después. Aplica a todas las servidoras independientemente de su categoría (Art. 62).</p>
+                                </div>
+                                <div class="bg-blue-50 border border-blue-200 rounded-lg p-5">
+                                    <div class="flex items-center mb-3">
+                                        <i class="fas fa-male text-blue-600 mr-2"></i>
+                                        <h3 class="font-semibold text-blue-800">Paternidad</h3>
+                                    </div>
+                                    <p class="text-blue-700 text-sm"><strong>2 días hábiles</strong> con goce de sueldo al momento del nacimiento del hijo (Art. 63). Reconocido como derecho mínimo del padre servidor.</p>
+                                </div>
+                                <div class="bg-red-50 border border-red-200 rounded-lg p-5">
+                                    <div class="flex items-center mb-3">
+                                        <i class="fas fa-heartbeat text-red-600 mr-2"></i>
+                                        <h3 class="font-semibold text-red-800">Enfermedad</h3>
+                                    </div>
+                                    <p class="text-red-700 text-sm">Hasta <strong>90 días</strong> con goce de sueldo, prorrogables por 90 días adicionales con 50% del sueldo si la enfermedad es grave (Art. 64–65). Requiere certificado médico.</p>
+                                </div>
+                                <div class="bg-gray-50 border border-gray-200 rounded-lg p-5">
+                                    <div class="flex items-center mb-3">
+                                        <i class="fas fa-cross text-gray-600 mr-2"></i>
+                                        <h3 class="font-semibold text-gray-800">Duelo</h3>
+                                    </div>
+                                    <p class="text-gray-700 text-sm"><strong>3 días hábiles</strong> con goce de sueldo por fallecimiento de cónyuge, padres, hijos o hermanos (Art. 66). Un día adicional si el sepelio se realiza en otro municipio.</p>
+                                </div>
+                                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-5">
+                                    <div class="flex items-center mb-3">
+                                        <i class="fas fa-graduation-cap text-yellow-600 mr-2"></i>
+                                        <h3 class="font-semibold text-yellow-800">Estudio / Capacitación</h3>
+                                    </div>
+                                    <p class="text-yellow-700 text-sm">Licencia <strong>especial con o sin goce de sueldo</strong> para estudios de postgrado, maestría o doctorado vinculados al servicio público (Art. 69). Requiere aprobación institucional y compromiso de retorno.</p>
+                                </div>
+                                <div class="bg-purple-50 border border-purple-200 rounded-lg p-5">
+                                    <div class="flex items-center mb-3">
+                                        <i class="fas fa-pause-circle text-purple-600 mr-2"></i>
+                                        <h3 class="font-semibold text-purple-800">Personal Sin Sueldo</h3>
+                                    </div>
+                                    <p class="text-purple-700 text-sm">Hasta <strong>1 año</strong> sin goce de sueldo por razones personales debidamente justificadas (Art. 70). Se conserva la plaza y los derechos adquiridos. No se acumula para fines de antigüedad.</p>
+                                </div>
+                            </div>
+                            <div class="bg-amber-50 border-l-4 border-amber-400 rounded-r-lg p-4">
+                                <p class="text-amber-800 text-sm"><i class="fas fa-info-circle mr-2"></i><strong>Nota importante:</strong> Ninguna licencia puede ser negada arbitrariamente. El servidor tiene derecho a recibir respuesta escrita y motivada. La negativa injustificada puede ser objeto de recurso administrativo.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section 4.8: Desvinculación -->
+                    <section id="desvinculacion" class="mb-12">
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-sign-out-alt text-orange-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium text-orange-600 uppercase tracking-wide">Arts. 83–105</p>
+                                    <h2 class="font-display text-2xl font-bold text-gray-800">4.8 Proceso de Desvinculación Paso a Paso</h2>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 mb-6">La desvinculación de un servidor público debe seguir un proceso legal estricto. Aquí el flujo completo según la Ley 41-08:</p>
+
+                            <!-- Timeline steps -->
+                            <div class="relative mb-8">
+                                <div class="absolute left-6 top-0 bottom-0 w-0.5 bg-orange-200"></div>
+                                <div class="space-y-6">
+                                    <div class="flex items-start pl-16 relative">
+                                        <div class="absolute left-0 w-12 h-12 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">1</div>
+                                        <div class="bg-orange-50 border border-orange-200 rounded-lg p-4 w-full">
+                                            <h4 class="font-semibold text-orange-800 mb-1">Inicio del proceso</h4>
+                                            <p class="text-orange-700 text-sm">La autoridad nominadora o el jefe inmediato identifica la causal de desvinculación (reestructuración, falta grave, expiración de contrato, renuncia voluntaria, jubilación, etc.).</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start pl-16 relative">
+                                        <div class="absolute left-0 w-12 h-12 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">2</div>
+                                        <div class="bg-orange-50 border border-orange-200 rounded-lg p-4 w-full">
+                                            <h4 class="font-semibold text-orange-800 mb-1">Notificación escrita</h4>
+                                            <p class="text-orange-700 text-sm">Se notifica al servidor con <strong>30 días de anticipación</strong> (o pago en sustitución) con indicación expresa de la causa legal. Sin notificación, el proceso es nulo.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start pl-16 relative">
+                                        <div class="absolute left-0 w-12 h-12 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">3</div>
+                                        <div class="bg-orange-50 border border-orange-200 rounded-lg p-4 w-full">
+                                            <h4 class="font-semibold text-orange-800 mb-1">Derecho a la defensa (si aplica)</h4>
+                                            <p class="text-orange-700 text-sm">En casos de falta disciplinaria, el servidor tiene derecho a ser escuchado, presentar pruebas y contar con representación. Se convoca al Comité de Personal.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start pl-16 relative">
+                                        <div class="absolute left-0 w-12 h-12 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">4</div>
+                                        <div class="bg-orange-50 border border-orange-200 rounded-lg p-4 w-full">
+                                            <h4 class="font-semibold text-orange-800 mb-1">Resolución de desvinculación</h4>
+                                            <p class="text-orange-700 text-sm">La autoridad nominadora emite una resolución administrativa motivada. Debe citar el artículo de la Ley 41-08 que fundamenta la separación.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start pl-16 relative">
+                                        <div class="absolute left-0 w-12 h-12 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">5</div>
+                                        <div class="bg-orange-50 border border-orange-200 rounded-lg p-4 w-full">
+                                            <h4 class="font-semibold text-orange-800 mb-1">Comunicación al MAP y SISMAP</h4>
+                                            <p class="text-orange-700 text-sm">La institución reporta la desvinculación al Ministerio de Administración Pública (MAP) y actualiza el Sistema de Monitoreo de la Administración Pública (SISMAP).</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start pl-16 relative">
+                                        <div class="absolute left-0 w-12 h-12 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">6</div>
+                                        <div class="bg-orange-50 border border-orange-200 rounded-lg p-4 w-full">
+                                            <h4 class="font-semibold text-orange-800 mb-1">Cálculo de prestaciones</h4>
+                                            <p class="text-orange-700 text-sm">RRHH calcula: salarios pendientes, vacaciones no disfrutadas, bonificaciones proporcionales, y la indemnización según categoría.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start pl-16 relative">
+                                        <div class="absolute left-0 w-12 h-12 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">7</div>
+                                        <div class="bg-orange-50 border border-orange-200 rounded-lg p-4 w-full">
+                                            <h4 class="font-semibold text-orange-800 mb-1">Entrega de bienes y cierre de accesos</h4>
+                                            <p class="text-orange-700 text-sm">El servidor entrega equipos, credenciales, vehículos y bienes institucionales. Se revoca el acceso a sistemas informáticos el mismo día.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start pl-16 relative">
+                                        <div class="absolute left-0 w-12 h-12 bg-green-500 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">8</div>
+                                        <div class="bg-green-50 border border-green-200 rounded-lg p-4 w-full">
+                                            <h4 class="font-semibold text-green-800 mb-1">Liquidación final</h4>
+                                            <p class="text-green-700 text-sm">El servidor recibe la liquidación final y firma el finiquito. Dispone de <strong>15 días hábiles</strong> para interponer recurso si considera la desvinculación injustificada.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Indemnizaciones por categoría -->
+                            <h3 class="font-display text-lg font-semibold text-gray-800 mb-4">Indemnización según categoría</h3>
+                            <div class="grid md:grid-cols-3 gap-4">
+                                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 text-center">
+                                    <i class="fas fa-shield-alt text-blue-600 text-2xl mb-2"></i>
+                                    <h4 class="font-semibold text-blue-800 mb-2">Carrera Administrativa</h4>
+                                    <p class="text-blue-700 text-sm">Derecho a <strong>reinstalación</strong> o, si no es posible, indemnización equivalente a los salarios que recibiría hasta el tiempo que le falte para pensionarse.</p>
+                                </div>
+                                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 text-center">
+                                    <i class="fas fa-user-tie text-yellow-600 text-2xl mb-2"></i>
+                                    <h4 class="font-semibold text-yellow-800 mb-2">Estatuto Simplificado</h4>
+                                    <p class="text-yellow-700 text-sm"><strong>1 mes de salario por año</strong> de servicio, hasta un máximo de <strong>18 meses</strong>. Sin derecho a reinstalación.</p>
+                                </div>
+                                <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center">
+                                    <i class="fas fa-star text-gray-600 text-2xl mb-2"></i>
+                                    <h4 class="font-semibold text-gray-800 mb-2">Libre Nombramiento</h4>
+                                    <p class="text-gray-700 text-sm"><strong>Sin indemnización</strong> obligatoria, salvo lo pactado en contrato. Son cargos de confianza política directa.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section 4.9: Ingreso Carrera Administrativa -->
+                    <section id="carrera-administrativa" class="mb-12">
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-trophy text-green-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium text-green-600 uppercase tracking-wide">Arts. 18–32</p>
+                                    <h2 class="font-display text-2xl font-bold text-gray-800">4.9 Ingreso a la Carrera Administrativa</h2>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 mb-2">El ingreso a la carrera administrativa es <strong>por concurso público</strong>, garantizando igualdad de oportunidades para todos los ciudadanos dominicanos. El proceso se gestiona a través del portal:</p>
+                            <a href="https://map.gob.do/Concursa/" target="_blank" rel="noopener" class="inline-flex items-center px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors mb-6 font-medium">
+                                <i class="fas fa-external-link-alt mr-2"></i>map.gob.do/Concursa — Portal Oficial de Concursos
+                            </a>
+
+                            <!-- 10-step process -->
+                            <h3 class="font-display text-lg font-semibold text-gray-800 mb-5">Las 10 etapas del proceso de concurso</h3>
+                            <div class="grid md:grid-cols-2 gap-4 mb-6">
+                                <div class="flex items-start space-x-3 p-4 bg-green-50 border border-green-200 rounded-lg">
+                                    <div class="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0 text-sm">1</div>
+                                    <div><h4 class="font-semibold text-green-800">Convocatoria pública</h4><p class="text-green-700 text-sm">El MAP o la institución publica la vacante en el portal Concursa y medios oficiales con perfil del cargo.</p></div>
+                                </div>
+                                <div class="flex items-start space-x-3 p-4 bg-green-50 border border-green-200 rounded-lg">
+                                    <div class="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0 text-sm">2</div>
+                                    <div><h4 class="font-semibold text-green-800">Inscripción en línea</h4><p class="text-green-700 text-sm">El candidato crea su perfil en <strong>map.gob.do/Concursa</strong>, completa el formulario y adjunta documentos requeridos.</p></div>
+                                </div>
+                                <div class="flex items-start space-x-3 p-4 bg-green-50 border border-green-200 rounded-lg">
+                                    <div class="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0 text-sm">3</div>
+                                    <div><h4 class="font-semibold text-green-800">Verificación de requisitos</h4><p class="text-green-700 text-sm">El comité de selección valida que el candidato cumple los requisitos mínimos del cargo (formación, experiencia, cédula).</p></div>
+                                </div>
+                                <div class="flex items-start space-x-3 p-4 bg-green-50 border border-green-200 rounded-lg">
+                                    <div class="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0 text-sm">4</div>
+                                    <div><h4 class="font-semibold text-green-800">Pruebas escritas</h4><p class="text-green-700 text-sm">Exámenes de conocimientos técnicos específicos del cargo y conocimientos generales de la administración pública.</p></div>
+                                </div>
+                                <div class="flex items-start space-x-3 p-4 bg-green-50 border border-green-200 rounded-lg">
+                                    <div class="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0 text-sm">5</div>
+                                    <div><h4 class="font-semibold text-green-800">Evaluación de competencias</h4><p class="text-green-700 text-sm">Entrevistas por competencias, pruebas psicométricas y evaluación de habilidades comportamentales del perfil.</p></div>
+                                </div>
+                                <div class="flex items-start space-x-3 p-4 bg-green-50 border border-green-200 rounded-lg">
+                                    <div class="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0 text-sm">6</div>
+                                    <div><h4 class="font-semibold text-green-800">Lista de elegibles</h4><p class="text-green-700 text-sm">Se publica el ranking de los mejores evaluados. La autoridad nominadora selecciona de los primeros 3 candidatos.</p></div>
+                                </div>
+                                <div class="flex items-start space-x-3 p-4 bg-green-50 border border-green-200 rounded-lg">
+                                    <div class="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0 text-sm">7</div>
+                                    <div><h4 class="font-semibold text-green-800">Nombramiento en período de prueba</h4><p class="text-green-700 text-sm">El candidato seleccionado es nombrado por <strong>3 meses</strong> en período de prueba, con evaluación continua de desempeño.</p></div>
+                                </div>
+                                <div class="flex items-start space-x-3 p-4 bg-green-50 border border-green-200 rounded-lg">
+                                    <div class="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0 text-sm">8</div>
+                                    <div><h4 class="font-semibold text-green-800">Inducción en el INAP</h4><p class="text-green-700 text-sm">El nuevo servidor completa el programa de inducción del INAP sobre ética, leyes y funcionamiento de la administración pública.</p></div>
+                                </div>
+                                <div class="flex items-start space-x-3 p-4 bg-green-50 border border-green-200 rounded-lg">
+                                    <div class="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0 text-sm">9</div>
+                                    <div><h4 class="font-semibold text-green-800">Evaluación del período de prueba</h4><p class="text-green-700 text-sm">Al concluir los 3 meses, el jefe inmediato emite una evaluación formal. Una calificación positiva es requisito para continuar.</p></div>
+                                </div>
+                                <div class="flex items-start space-x-3 p-4 bg-green-50 border border-green-200 rounded-lg">
+                                    <div class="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0 text-sm">10</div>
+                                    <div><h4 class="font-semibold text-green-800">Permanencia en carrera</h4><p class="text-green-700 text-sm">Aprobado el período de prueba, el servidor adquiere <strong>estabilidad en la carrera administrativa</strong> y todos los derechos del Art. 59 de la Ley 41-08.</p></div>
+                                </div>
+                            </div>
+
+                            <!-- Requisitos mínimos -->
+                            <div class="bg-gray-50 border border-gray-200 rounded-lg p-5">
+                                <h4 class="font-semibold text-gray-800 mb-3"><i class="fas fa-clipboard-list text-gray-600 mr-2"></i>Requisitos mínimos generales</h4>
+                                <div class="grid md:grid-cols-2 gap-2">
+                                    <div class="flex items-center text-sm text-gray-700"><i class="fas fa-check text-green-500 mr-2"></i>Ser ciudadano/a dominicano/a</div>
+                                    <div class="flex items-center text-sm text-gray-700"><i class="fas fa-check text-green-500 mr-2"></i>Cédula de Identidad vigente</div>
+                                    <div class="flex items-center text-sm text-gray-700"><i class="fas fa-check text-green-500 mr-2"></i>Título académico requerido para el cargo</div>
+                                    <div class="flex items-center text-sm text-gray-700"><i class="fas fa-check text-green-500 mr-2"></i>No tener condena penal irrevocable</div>
+                                    <div class="flex items-center text-sm text-gray-700"><i class="fas fa-check text-green-500 mr-2"></i>Declaración jurada de bienes</div>
+                                    <div class="flex items-center text-sm text-gray-700"><i class="fas fa-check text-green-500 mr-2"></i>Experiencia según el perfil del cargo</div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Autoevaluación Ley 41-08 -->
+                    <section id="autoevaluacion-ley" class="mb-12 assessment-section">
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-pencil-alt text-indigo-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium text-indigo-600 uppercase tracking-wide">Pon a prueba tu conocimiento</p>
+                                    <h2 class="font-display text-2xl font-bold text-gray-800">Autoevaluación — Ley 41-08</h2>
+                                </div>
+                            </div>
+                            <div class="quiz-question">
+                                <p>1. ¿Cuántas semanas de licencia de maternidad establece la Ley 41-08?</p>
+                                <button class="quiz-option" data-correct="false">10 semanas</button>
+                                <button class="quiz-option" data-correct="true">14 semanas</button>
+                                <button class="quiz-option" data-correct="false">12 semanas</button>
+                                <button class="quiz-option" data-correct="false">8 semanas</button>
+                            </div>
+                            <div class="quiz-question">
+                                <p>2. ¿En cuántas etapas se realiza el proceso de ingreso a la carrera administrativa?</p>
+                                <button class="quiz-option" data-correct="false">5 etapas</button>
+                                <button class="quiz-option" data-correct="false">7 etapas</button>
+                                <button class="quiz-option" data-correct="true">10 etapas</button>
+                                <button class="quiz-option" data-correct="false">12 etapas</button>
+                            </div>
+                            <div class="quiz-question">
+                                <p>3. Un servidor de carrera es desvinculado injustamente. ¿Cuántos días hábiles tiene para interponer recurso?</p>
+                                <button class="quiz-option" data-correct="false">5 días hábiles</button>
+                                <button class="quiz-option" data-correct="false">10 días hábiles</button>
+                                <button class="quiz-option" data-correct="true">15 días hábiles</button>
+                                <button class="quiz-option" data-correct="false">30 días hábiles</button>
+                            </div>
+                            <div class="quiz-question">
+                                <p>4. ¿Cuál es la indemnización para un servidor de estatuto simplificado con 6 años de servicio?</p>
+                                <button class="quiz-option" data-correct="false">3 meses de salario</button>
+                                <button class="quiz-option" data-correct="true">6 meses de salario</button>
+                                <button class="quiz-option" data-correct="false">12 meses de salario</button>
+                                <button class="quiz-option" data-correct="false">18 meses de salario</button>
+                            </div>
+                            <div class="quiz-question">
+                                <p>5. ¿Qué categoría de servidor NO tiene derecho a indemnización obligatoria al ser desvinculado?</p>
+                                <button class="quiz-option" data-correct="false">Carrera administrativa</button>
+                                <button class="quiz-option" data-correct="false">Estatuto simplificado</button>
+                                <button class="quiz-option" data-correct="true">Libre nombramiento y remoción</button>
+                                <button class="quiz-option" data-correct="false">Personal temporal</button>
+                            </div>
+                            <button class="quiz-submit">Ver mi resultado</button>
+                            <div class="quiz-result"></div>
+                        </div>
+                    </section>
+
                     <!-- Navigation Buttons -->
                     <div class="flex justify-between items-center mt-12 pt-8 border-t border-gray-200">
-                        <a href="unidad3.html" class="flex items-center px-6 py-3 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
+                        <a href="unidad4.html" class="flex items-center px-6 py-3 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
                             <i class="fas fa-arrow-left mr-2"></i>
-                            Anterior: Unidad III
+                            Anterior: Unidad IV
                         </a>
-                        
+
                         <a href="casos.html" class="flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
                             Siguiente: Casos Prácticos
                             <i class="fas fa-arrow-right ml-2"></i>

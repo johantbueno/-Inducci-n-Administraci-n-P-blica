@@ -5,7 +5,7 @@
 (function () {
   'use strict';
 
-  var PAGE_ORDER = ['index', 'unidad1', 'unidad2', 'unidad3', 'ley4108', 'casos', 'glosario'];
+  var PAGE_ORDER = ['index', 'unidad1', 'unidad2', 'unidad3', 'unidad4', 'ley4108', 'casos', 'glosario'];
   var STORAGE_KEY = 'inap-course-progress-v2';
 
   function getCurrentPage() {
@@ -17,6 +17,7 @@
     if (file.indexOf('unidad1') === 0) return 'unidad1';
     if (file.indexOf('unidad2') === 0) return 'unidad2';
     if (file.indexOf('unidad3') === 0) return 'unidad3';
+    if (file.indexOf('unidad4') === 0) return 'unidad4';
     if (file.indexOf('ley4108') === 0) return 'ley4108';
     if (file.indexOf('casos') === 0) return 'casos';
     if (file.indexOf('glosario') === 0) return 'glosario';
@@ -168,6 +169,7 @@
       unidad1: 'Unidad I',
       unidad2: 'Unidad II',
       unidad3: 'Unidad III',
+      unidad4: 'Unidad IV',
       ley4108: 'Ley 41-08',
       casos: 'Casos prácticos',
       glosario: 'Glosario'
@@ -236,6 +238,145 @@
     });
   }
 
+  /* ── Scroll Spy: resalta el enlace del sidebar según sección visible ── */
+  function initScrollSpy() {
+    var sections = document.querySelectorAll('main section[id]');
+    var sidebarLinks = document.querySelectorAll('.sticky a[href^="#"]');
+    if (!sections.length || !sidebarLinks.length) return;
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        sidebarLinks.forEach(function (l) { l.classList.remove('scroll-spy-active'); });
+        var active = document.querySelector('.sticky a[href="#' + entry.target.id + '"]');
+        if (active) active.classList.add('scroll-spy-active');
+      });
+    }, { rootMargin: '-15% 0px -70% 0px', threshold: 0 });
+    sections.forEach(function (s) { observer.observe(s); });
+  }
+
+  /* ── Progreso por sección: marca ✓ en sidebar al leer ── */
+  function initSectionProgress() {
+    var sections = document.querySelectorAll('main section[id]');
+    if (!sections.length) return;
+    var page = getCurrentPage();
+    var SKEY = 'inap-read-sections-v1';
+    function getRead() {
+      try { var r = localStorage.getItem(SKEY); return r ? JSON.parse(r) : {}; } catch(e) { return {}; }
+    }
+    function markBadge(id) {
+      var link = document.querySelector('.sticky a[href="#' + id + '"]');
+      if (link && !link.querySelector('.section-read-badge')) {
+        var b = document.createElement('span');
+        b.className = 'section-read-badge';
+        b.title = 'Sección leída';
+        b.textContent = '✓';
+        link.appendChild(b);
+      }
+    }
+    function saveRead(id) {
+      var data = getRead();
+      if (!data[page]) data[page] = [];
+      if (data[page].indexOf(id) === -1) {
+        data[page].push(id);
+        try { localStorage.setItem(SKEY, JSON.stringify(data)); } catch(e) {}
+      }
+      markBadge(id);
+    }
+    var already = getRead();
+    if (already[page]) already[page].forEach(markBadge);
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting && e.intersectionRatio >= 0.5) saveRead(e.target.id);
+      });
+    }, { threshold: 0.5 });
+    sections.forEach(function (s) { obs.observe(s); });
+  }
+
+  /* ── Quiz / Autoevaluación ── */
+  function initQuiz() {
+    /* Selección de opciones por pregunta */
+    document.querySelectorAll('.quiz-question').forEach(function (q) {
+      q.querySelectorAll('.quiz-option').forEach(function (opt) {
+        opt.addEventListener('click', function () {
+          if (q.dataset.answered) return;
+          q.querySelectorAll('.quiz-option').forEach(function (o) { o.classList.remove('quiz-selected'); });
+          opt.classList.add('quiz-selected');
+        });
+      });
+    });
+
+    /* Botón "Ver mi resultado" */
+    document.querySelectorAll('.assessment-section').forEach(function (section) {
+      var btn = section.querySelector('.quiz-submit');
+      var resultDiv = section.querySelector('.quiz-result');
+      if (!btn) return;
+      btn.addEventListener('click', function () {
+        var questions = section.querySelectorAll('.quiz-question');
+        var score = 0;
+        var allAnswered = true;
+        questions.forEach(function (q) {
+          var sel = q.querySelector('.quiz-option.quiz-selected');
+          if (!sel) { allAnswered = false; return; }
+          q.dataset.answered = '1';
+          q.querySelectorAll('.quiz-option').forEach(function (o) {
+            o.style.pointerEvents = 'none';
+            if (o.dataset.correct === 'true') o.classList.add('quiz-correct');
+          });
+          if (sel.dataset.correct === 'true') { score++; }
+          else { sel.classList.add('quiz-incorrect'); }
+        });
+        if (!allAnswered && resultDiv) {
+          resultDiv.style.display = 'block';
+          resultDiv.className = 'quiz-result quiz-result-warning';
+          resultDiv.textContent = '⚠ Responde todas las preguntas antes de ver el resultado.';
+          return;
+        }
+        if (!allAnswered) return;
+        btn.style.display = 'none';
+        if (resultDiv) {
+          var total = questions.length;
+          var pct = Math.round((score / total) * 100);
+          var cls = pct >= 80 ? 'quiz-result-excellent' : pct >= 60 ? 'quiz-result-good' : 'quiz-result-review';
+          resultDiv.className = 'quiz-result ' + cls;
+          var emoji = pct >= 80 ? '🏆' : pct >= 60 ? '✅' : '📚';
+          var msg = pct >= 80
+            ? ' Excelente: ' + score + '/' + total + ' correctas (' + pct + '%). ¡Dominas el contenido!'
+            : pct >= 60
+              ? ' Aprobado: ' + score + '/' + total + ' correctas (' + pct + '%). Repasa las incorrectas.'
+              : ' Para reforzar: ' + score + '/' + total + ' correctas (' + pct + '%). Te recomendamos releer la unidad.';
+          resultDiv.textContent = emoji + msg;
+          resultDiv.style.display = 'block';
+        }
+      });
+    });
+  }
+
+  function initDarkMode() {
+    var DARK_KEY = 'inap-dark-mode';
+    var toggle = document.getElementById('dark-mode-toggle');
+    var icon = document.getElementById('dark-mode-icon');
+
+    function applyDark(isDark) {
+      if (isDark) {
+        document.documentElement.classList.add('dark');
+        if (icon) { icon.classList.remove('fa-moon'); icon.classList.add('fa-sun'); }
+      } else {
+        document.documentElement.classList.remove('dark');
+        if (icon) { icon.classList.remove('fa-sun'); icon.classList.add('fa-moon'); }
+      }
+    }
+
+    /* Sync icon with current state (class already applied by inline script) */
+    applyDark(document.documentElement.classList.contains('dark'));
+
+    if (!toggle) return;
+    toggle.addEventListener('click', function () {
+      var isDark = document.documentElement.classList.contains('dark');
+      applyDark(!isDark);
+      try { localStorage.setItem(DARK_KEY, (!isDark).toString()); } catch (e) {}
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     trackVisit();
     initMobileMenu();
@@ -243,5 +384,9 @@
     initSmoothAnchors();
     initCaseModals();
     initGlosario();
+    initScrollSpy();
+    initSectionProgress();
+    initQuiz();
+    initDarkMode();
   });
 })();

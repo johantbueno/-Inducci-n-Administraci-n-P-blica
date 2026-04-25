@@ -659,3 +659,216 @@ button:focus-visible {
     padding: 1px 4px;
     border-radius: 4px;
 }
+
+/* ── Scroll Spy ── */
+.scroll-spy-active {
+    background-color: #eff6ff;
+    color: #1e40af !important;
+    font-weight: 600;
+    border-left: 3px solid #1e40af;
+    padding-left: 9px;
+}
+
+/* ── Section Read Badge ── */
+.section-read-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    background: #16a34a;
+    color: white;
+    border-radius: 50%;
+    font-size: 10px;
+    font-weight: bold;
+    margin-left: 8px;
+    flex-shrink: 0;
+}
+
+/* ── Quiz ── */
+.quiz-option {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    background: #f8fafc;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+    font-size: 0.95rem;
+}
+.quiz-option:hover:not([style*="pointer-events: none"]) {
+    border-color: #3b82f6;
+    background: #eff6ff;
+}
+.quiz-option.quiz-selected {
+    border-color: #3b82f6;
+    background: #dbeafe;
+}
+.quiz-option.quiz-correct {
+    border-color: #16a34a;
+    background: #dcfce7;
+    color: #15803d;
+    font-weight: 600;
+}
+.quiz-option.quiz-incorrect {
+    border-color: #dc2626;
+    background: #fee2e2;
+    color: #b91c1c;
+}
+.quiz-question {
+    margin-bottom: 1.5rem;
+    padding: 1.25rem;
+    background: white;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+}
+.quiz-question p {
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 0.75rem;
+}
+.quiz-submit {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background: #1e40af;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+    margin-top: 0.5rem;
+}
+.quiz-submit:hover { background: #1d4ed8; }
+.quiz-result {
+    display: none;
+    margin-top: 1rem;
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.quiz-result-excellent { background: #dcfce7; color: #15803d; border-left: 4px solid #16a34a; }
+.quiz-result-good      { background: #fef9c3; color: #854d0e; border-left: 4px solid #ca8a04; }
+.quiz-result-review    { background: #fee2e2; color: #b91c1c; border-left: 4px solid #dc2626; }
+.quiz-result-warning   { background: #fff7ed; color: #c2410c; border-left: 4px solid #ea580c; }
+
+/* ── Print CSS ── */
+@media print {
+    header, footer, nav, .sticky, #mobile-menu,
+    #mobile-menu-button, .quiz-submit, .quiz-option,
+    a[href^="http"]::after { display: none !important; }
+    main { width: 100% !important; margin: 0 !important; padding: 0 !important; }
+    body { font-size: 12pt; color: #000; background: #fff; }
+    h1, h2, h3 { color: #000 !important; }
+    section { break-inside: avoid; margin-bottom: 1.5rem; }
+}
+
+/* ── Dark Mode ── */
+html.dark body {
+    background-color: #0f172a;
+    color: #e2e8f0;
+}
+html.dark .site-nav {
+    background-color: #0f172a;
+    border-bottom: 1px solid #1e293b;
+}
+html.dark .site-nav .nav-link {
+    color: #cbd5e1 !important;
+}
+html.dark .site-nav .nav-link:hover,
+html.dark .site-nav .nav-link.text-blue-600 {
+    color: #60a5fa !important;
+}
+html.dark #dark-mode-toggle {
+    color: #cbd5e1;
+}
+html.dark #dark-mode-toggle:hover {
+    background-color: #1e293b;
+    color: #60a5fa;
+}
+html.dark #mobile-menu-button {
+    color: #cbd5e1;
+}
+html.dark #mobile-menu {
+    background-color: #0f172a;
+    border-color: #1e293b;
+}
+html.dark #mobile-menu a {
+    color: #cbd5e1 !important;
+}
+/* Breadcrumb */
+html.dark .bg-gray-50 {
+    background-color: #1e293b !important;
+}
+html.dark .breadcrumb-item {
+    color: #94a3b8 !important;
+}
+html.dark .breadcrumb-item.active {
+    color: #e2e8f0 !important;
+}
+/* Cards and surfaces */
+html.dark .bg-white {
+    background-color: #1e293b !important;
+}
+html.dark .bg-gray-100 {
+    background-color: #334155 !important;
+}
+html.dark .shadow-sm,
+html.dark .shadow-lg {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.5) !important;
+}
+/* Text overrides */
+html.dark .text-gray-800,
+html.dark .text-gray-900 { color: #f1f5f9 !important; }
+html.dark .text-gray-700 { color: #cbd5e1 !important; }
+html.dark .text-gray-600 { color: #94a3b8 !important; }
+/* Borders */
+html.dark .border-gray-100,
+html.dark .border-gray-200 { border-color: #334155 !important; }
+/* Sidebar and sticky panels */
+html.dark .sticky .bg-white,
+html.dark .rounded-lg.shadow-lg {
+    background-color: #1e293b !important;
+    border-color: #334155 !important;
+}
+html.dark .sticky .text-gray-700 { color: #cbd5e1 !important; }
+html.dark .sticky a { color: #94a3b8 !important; }
+html.dark .sticky a:hover,
+html.dark .scroll-spy-active { color: #60a5fa !important; background-color: #0f2b5b !important; }
+/* Tables */
+html.dark table thead tr { background-color: #1e3a5f !important; }
+html.dark table tbody tr { border-color: #334155 !important; }
+html.dark table tbody tr:hover { background-color: #334155 !important; }
+html.dark td, html.dark th { color: #cbd5e1 !important; }
+/* Quiz */
+html.dark .quiz-option {
+    background: #334155 !important;
+    border-color: #475569 !important;
+    color: #e2e8f0 !important;
+}
+html.dark .quiz-option:hover:not([style*="pointer-events: none"]) {
+    border-color: #60a5fa !important;
+    background: #1e3a5f !important;
+}
+html.dark .quiz-option.quiz-selected { border-color: #60a5fa !important; background: #1e3a5f !important; }
+html.dark .quiz-question { background: #1e293b !important; border-color: #334155 !important; }
+html.dark .quiz-question p { color: #f1f5f9 !important; }
+/* Footer already dark — no overrides needed */
+/* Hero gradient stays as-is */
+/* Color-specific light backgrounds for info boxes */
+html.dark .bg-blue-50 { background-color: #1e3a5f !important; }
+html.dark .bg-green-50 { background-color: #14532d !important; }
+html.dark .bg-yellow-50 { background-color: #713f12 !important; }
+html.dark .bg-red-50 { background-color: #7f1d1d !important; }
+html.dark .bg-purple-50 { background-color: #4a1d96 !important; }
+html.dark .bg-teal-50 { background-color: #134e4a !important; }
+html.dark .bg-orange-50 { background-color: #7c2d12 !important; }
+html.dark .bg-indigo-50 { background-color: #312e81 !important; }
+html.dark .bg-rose-50 { background-color: #881337 !important; }
+html.dark .bg-emerald-50 { background-color: #064e3b !important; }
+html.dark .bg-amber-50 { background-color: #78350f !important; }

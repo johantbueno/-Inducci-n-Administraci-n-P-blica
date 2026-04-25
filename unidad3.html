@@ -14,7 +14,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="site.css?v=2">
+    <link rel="stylesheet" href="site.css?v=3">
+    <script>if(localStorage.getItem("inap-dark-mode")==="true")document.documentElement.classList.add("dark");</script>
 </head>
 <body>
     <!-- Progress Indicator -->
@@ -38,14 +39,18 @@
                         <a href="unidad1.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Unidad I</a>
                         <a href="unidad2.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Unidad II</a>
                         <a href="unidad3.html" class="nav-link text-blue-600 px-3 py-2 text-sm font-medium border-b-2 border-blue-600">Unidad III</a>
+                        <a href="unidad4.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Unidad IV</a>
                         <a href="ley4108.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Ley 41-08</a>
                         <a href="casos.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Casos</a>
                         <a href="glosario.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Glosario</a>
                     </div>
                 </div>
                 
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600 focus:outline-none">
+                <div class="flex items-center gap-2">
+                    <button id="dark-mode-toggle" title="Alternar modo oscuro/claro" aria-label="Alternar modo oscuro" class="w-9 h-9 flex items-center justify-center rounded-full text-gray-700 hover:text-blue-600 hover:bg-gray-100 transition-colors focus:outline-none">
+                        <i id="dark-mode-icon" class="fas fa-moon text-lg"></i>
+                    </button>
+                    <button id="mobile-menu-button" class="md:hidden text-gray-700 hover:text-blue-600 focus:outline-none" aria-label="Abrir menú">
                         <i class="fas fa-bars text-xl"></i>
                     </button>
                 </div>
@@ -59,6 +64,7 @@
                 <a href="unidad1.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Unidad I</a>
                 <a href="unidad2.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Unidad II</a>
                 <a href="unidad3.html" class="block px-3 py-2 text-blue-600 font-medium">Unidad III</a>
+                <a href="unidad4.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Unidad IV</a>
                 <a href="ley4108.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Ley 41-08</a>
                 <a href="casos.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Casos</a>
                 <a href="glosario.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Glosario</a>
@@ -135,6 +141,18 @@
                                 </a>
                                 <a href="#modelo-caf" class="block px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-md transition-colors">
                                     <i class="fas fa-circle text-xs mr-2"></i>3.3 Modelo CAF
+                                </a>
+                                <a href="#ley4108-resumen" class="block px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-md transition-colors">
+                                    <i class="fas fa-circle text-xs mr-2"></i>3.4 Ley 41-08 — Artículos clave
+                                </a>
+                                <a href="#ley24712" class="block px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-md transition-colors">
+                                    <i class="fas fa-circle text-xs mr-2"></i>3.5 Ley 247-12 — Organización AP
+                                </a>
+                                <a href="#ley10713" class="block px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-md transition-colors">
+                                    <i class="fas fa-circle text-xs mr-2"></i>3.6 Ley 107-13 — Derechos ciudadanos
+                                </a>
+                                <a href="#autoevaluacion-u3" class="block px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-md transition-colors">
+                                    <i class="fas fa-circle text-xs mr-2"></i>Autoevaluación
                                 </a>
                             </nav>
                         </div>
@@ -451,6 +469,272 @@
                         </div>
                     </section>
                     
+                    <!-- Section 3.4: Ley 41-08 artículos clave -->
+                    <section id="ley4108-resumen" class="mb-12">
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-balance-scale text-blue-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium text-blue-600 uppercase tracking-wide">Ley de Función Pública</p>
+                                    <h2 class="font-display text-2xl font-bold text-gray-800">3.4 Ley 41-08 — Artículos más importantes</h2>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 mb-6">La Ley 41-08 de Función Pública es la norma fundamental que regula las relaciones entre el Estado dominicano y sus servidores. Estos son sus artículos de mayor impacto práctico:</p>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="law-card border-l-4 border-blue-500 bg-blue-50 rounded-lg p-4">
+                                    <div class="flex items-center mb-2"><span class="bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded mr-2">Art. 3</span><h4 class="font-semibold text-blue-800">Principios de la Función Pública</h4></div>
+                                    <p class="text-blue-700 text-sm">Establece los principios rectores: mérito, igualdad, moralidad, eficiencia, transparencia y responsabilidad. Son el fundamento de toda actuación del servidor.</p>
+                                </div>
+                                <div class="law-card border-l-4 border-indigo-500 bg-indigo-50 rounded-lg p-4">
+                                    <div class="flex items-center mb-2"><span class="bg-indigo-600 text-white text-xs font-bold px-2 py-1 rounded mr-2">Arts. 19–22</span><h4 class="font-semibold text-indigo-800">Categorías de Servidores</h4></div>
+                                    <p class="text-indigo-700 text-sm">Define las tres categorías: <strong>carrera administrativa</strong> (estabilidad), <strong>libre nombramiento</strong> (confianza política) y <strong>estatuto simplificado</strong> (régimen intermedio).</p>
+                                </div>
+                                <div class="law-card border-l-4 border-green-500 bg-green-50 rounded-lg p-4">
+                                    <div class="flex items-center mb-2"><span class="bg-green-600 text-white text-xs font-bold px-2 py-1 rounded mr-2">Arts. 26–32</span><h4 class="font-semibold text-green-800">Ingreso por Concurso</h4></div>
+                                    <p class="text-green-700 text-sm">Toda incorporación a la carrera administrativa debe realizarse mediante concurso público de oposición gestionado por el MAP. Garantiza el mérito sobre el padrinazgo.</p>
+                                </div>
+                                <div class="law-card border-l-4 border-teal-500 bg-teal-50 rounded-lg p-4">
+                                    <div class="flex items-center mb-2"><span class="bg-teal-600 text-white text-xs font-bold px-2 py-1 rounded mr-2">Art. 58–59</span><h4 class="font-semibold text-teal-800">Derechos del Servidor</h4></div>
+                                    <p class="text-teal-700 text-sm">Art. 58: derechos generales (todos los servidores). Art. 59: derechos especiales de carrera: estabilidad, ascenso por mérito, capacitación, reclasificación y jubilación.</p>
+                                </div>
+                                <div class="law-card border-l-4 border-yellow-500 bg-yellow-50 rounded-lg p-4">
+                                    <div class="flex items-center mb-2"><span class="bg-yellow-600 text-white text-xs font-bold px-2 py-1 rounded mr-2">Art. 79</span><h4 class="font-semibold text-yellow-800">Deberes del Servidor</h4></div>
+                                    <p class="text-yellow-700 text-sm">Lista 16 deberes: cumplir la Constitución, respetar la jerarquía, guardar discreción, usar bienes del Estado para fines oficiales, y actuar con probidad e imparcialidad.</p>
+                                </div>
+                                <div class="law-card border-l-4 border-red-500 bg-red-50 rounded-lg p-4">
+                                    <div class="flex items-center mb-2"><span class="bg-red-600 text-white text-xs font-bold px-2 py-1 rounded mr-2">Arts. 83–86</span><h4 class="font-semibold text-red-800">Régimen Disciplinario</h4></div>
+                                    <p class="text-red-700 text-sm">Clasifica faltas en leves, graves y muy graves con sanciones graduales. Ninguna sanción puede aplicarse sin el debido proceso y derecho a la defensa.</p>
+                                </div>
+                                <div class="law-card border-l-4 border-orange-500 bg-orange-50 rounded-lg p-4">
+                                    <div class="flex items-center mb-2"><span class="bg-orange-600 text-white text-xs font-bold px-2 py-1 rounded mr-2">Arts. 60–70</span><h4 class="font-semibold text-orange-800">Licencias y Permisos</h4></div>
+                                    <p class="text-orange-700 text-sm">Regula maternidad (14 sem.), paternidad (2 días), enfermedad (90 días), duelo (3 días), estudios y licencia sin sueldo (hasta 1 año). Derecho irrenunciable.</p>
+                                </div>
+                                <div class="law-card border-l-4 border-purple-500 bg-purple-50 rounded-lg p-4">
+                                    <div class="flex items-center mb-2"><span class="bg-purple-600 text-white text-xs font-bold px-2 py-1 rounded mr-2">Arts. 117–120</span><h4 class="font-semibold text-purple-800">INAP y Capacitación</h4></div>
+                                    <p class="text-purple-700 text-sm">Crea el INAP como órgano rector de la formación y capacitación del servicio civil. Todo servidor tiene derecho y deber de capacitarse durante su carrera.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section 3.5: Ley 247-12 -->
+                    <section id="ley24712" class="mb-12">
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-landmark text-emerald-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium text-emerald-600 uppercase tracking-wide">Ley Orgánica de la Administración Pública</p>
+                                    <h2 class="font-display text-2xl font-bold text-gray-800">3.5 Ley 247-12 — Organización de la AP</h2>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 mb-6">La Ley 247-12 organiza la estructura del Poder Ejecutivo y establece los tipos de entidades que conforman la administración pública dominicana. Es el "mapa institucional" del Estado.</p>
+                            <div class="grid md:grid-cols-2 gap-5 mb-6">
+                                <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-5">
+                                    <h3 class="font-semibold text-emerald-800 mb-3"><i class="fas fa-building mr-2"></i>Organismos Centrales</h3>
+                                    <p class="text-emerald-700 text-sm mb-2">Son los ministerios y sus dependencias directas. Forman parte de la persona jurídica del Estado. El Presidente ejerce sobre ellos control jerárquico pleno.</p>
+                                    <p class="text-xs text-emerald-600 font-medium">Ejemplos: MAP, MEPYD, MINERD, MSP, MH</p>
+                                </div>
+                                <div class="bg-blue-50 border border-blue-200 rounded-lg p-5">
+                                    <h3 class="font-semibold text-blue-800 mb-3"><i class="fas fa-puzzle-piece mr-2"></i>Organismos Descentralizados</h3>
+                                    <p class="text-blue-700 text-sm mb-2">Tienen personalidad jurídica y patrimonio propio. Gozan de autonomía técnica, administrativa y financiera. El Ejecutivo ejerce tutela, no jerarquía.</p>
+                                    <p class="text-xs text-blue-600 font-medium">Ejemplos: BCRD, IDSS, INVI, CONANI, ITLA</p>
+                                </div>
+                                <div class="bg-purple-50 border border-purple-200 rounded-lg p-5">
+                                    <h3 class="font-semibold text-purple-800 mb-3"><i class="fas fa-shield-alt mr-2"></i>Organismos Autónomos</h3>
+                                    <p class="text-purple-700 text-sm mb-2">Alta independencia funcional garantizada por ley o la Constitución. Cuentan con directivos propios y normas de actuación específicas para proteger su neutralidad.</p>
+                                    <p class="text-xs text-purple-600 font-medium">Ejemplos: JCE, TSE, Defensor del Pueblo, CAASD, UASD</p>
+                                </div>
+                                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-5">
+                                    <h3 class="font-semibold text-yellow-800 mb-3"><i class="fas fa-map-marker-alt mr-2"></i>Órganos Desconcentrados</h3>
+                                    <p class="text-yellow-700 text-sm mb-2">Unidades regionales o provinciales de un ministerio. No tienen personalidad jurídica propia pero actúan con cierta autonomía operativa en su territorio.</p>
+                                    <p class="text-xs text-yellow-600 font-medium">Ejemplos: Direcciones Regionales, Distritos Educativos, Redes de Salud</p>
+                                </div>
+                            </div>
+                            <!-- Visual hierarchy diagram -->
+                            <div class="bg-gray-50 border border-gray-200 rounded-lg p-5">
+                                <h4 class="font-semibold text-gray-800 mb-4 text-center"><i class="fas fa-sitemap mr-2"></i>Jerarquía del Poder Ejecutivo (Ley 247-12)</h4>
+                                <div class="flex flex-col items-center space-y-2 text-sm">
+                                    <div class="bg-gray-800 text-white px-6 py-2 rounded-full font-bold">Presidente de la República</div>
+                                    <div class="w-0.5 h-5 bg-gray-400"></div>
+                                    <div class="bg-blue-600 text-white px-6 py-2 rounded-full font-semibold">Vicepresidente / Consejo de Gobierno</div>
+                                    <div class="w-0.5 h-5 bg-gray-400"></div>
+                                    <div class="flex gap-4 flex-wrap justify-center">
+                                        <div class="bg-blue-100 text-blue-800 px-4 py-2 rounded-lg border border-blue-300 font-medium">Ministerios (Centralizados)</div>
+                                        <div class="bg-green-100 text-green-800 px-4 py-2 rounded-lg border border-green-300 font-medium">Entes Descentralizados</div>
+                                        <div class="bg-purple-100 text-purple-800 px-4 py-2 rounded-lg border border-purple-300 font-medium">Autónomos</div>
+                                    </div>
+                                    <div class="w-0.5 h-5 bg-gray-400"></div>
+                                    <div class="bg-yellow-100 text-yellow-800 px-4 py-2 rounded-lg border border-yellow-300 font-medium">Órganos Desconcentrados (regionales/provinciales)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section 3.6: Ley 107-13 -->
+                    <section id="ley10713" class="mb-12">
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-users text-rose-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium text-rose-600 uppercase tracking-wide">Ley de Derechos de las Personas en sus Relaciones con la Administración</p>
+                                    <h2 class="font-display text-2xl font-bold text-gray-800">3.6 Ley 107-13 — 22 Derechos del Ciudadano</h2>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 mb-6">La Ley 107-13 reconoce 22 derechos fundamentales que toda persona tiene cuando interactúa con cualquier institución pública dominicana. Es la ley que convierte al ciudadano en el centro de la administración.</p>
+                            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 mb-6">
+                                <div class="flex items-start space-x-2 p-3 bg-rose-50 rounded-lg border border-rose-100">
+                                    <span class="bg-rose-500 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0">1</span>
+                                    <p class="text-rose-800 text-sm font-medium">Ser tratado con respeto y deferencia</p>
+                                </div>
+                                <div class="flex items-start space-x-2 p-3 bg-rose-50 rounded-lg border border-rose-100">
+                                    <span class="bg-rose-500 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0">2</span>
+                                    <p class="text-rose-800 text-sm font-medium">Conocer el estado de sus expedientes</p>
+                                </div>
+                                <div class="flex items-start space-x-2 p-3 bg-rose-50 rounded-lg border border-rose-100">
+                                    <span class="bg-rose-500 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0">3</span>
+                                    <p class="text-rose-800 text-sm font-medium">Identificar a los funcionarios que lo atienden</p>
+                                </div>
+                                <div class="flex items-start space-x-2 p-3 bg-rose-50 rounded-lg border border-rose-100">
+                                    <span class="bg-rose-500 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0">4</span>
+                                    <p class="text-rose-800 text-sm font-medium">No aportar documentos en poder del Estado</p>
+                                </div>
+                                <div class="flex items-start space-x-2 p-3 bg-rose-50 rounded-lg border border-rose-100">
+                                    <span class="bg-rose-500 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0">5</span>
+                                    <p class="text-rose-800 text-sm font-medium">Recibir información veraz y completa</p>
+                                </div>
+                                <div class="flex items-start space-x-2 p-3 bg-rose-50 rounded-lg border border-rose-100">
+                                    <span class="bg-rose-500 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0">6</span>
+                                    <p class="text-rose-800 text-sm font-medium">Ser orientado sobre los requisitos exigidos</p>
+                                </div>
+                                <div class="flex items-start space-x-2 p-3 bg-rose-50 rounded-lg border border-rose-100">
+                                    <span class="bg-rose-500 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0">7</span>
+                                    <p class="text-rose-800 text-sm font-medium">Audiencia y alegatos antes de decisiones adversas</p>
+                                </div>
+                                <div class="flex items-start space-x-2 p-3 bg-rose-50 rounded-lg border border-rose-100">
+                                    <span class="bg-rose-500 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0">8</span>
+                                    <p class="text-rose-800 text-sm font-medium">Acceder a archivos y registros públicos</p>
+                                </div>
+                                <div class="flex items-start space-x-2 p-3 bg-rose-50 rounded-lg border border-rose-100">
+                                    <span class="bg-rose-500 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0">9</span>
+                                    <p class="text-rose-800 text-sm font-medium">Ser notificado de las resoluciones</p>
+                                </div>
+                                <div class="flex items-start space-x-2 p-3 bg-rose-50 rounded-lg border border-rose-100">
+                                    <span class="bg-rose-500 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0">10</span>
+                                    <p class="text-rose-800 text-sm font-medium">Interponer recursos administrativos</p>
+                                </div>
+                                <div class="flex items-start space-x-2 p-3 bg-rose-50 rounded-lg border border-rose-100">
+                                    <span class="bg-rose-500 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0">11</span>
+                                    <p class="text-rose-800 text-sm font-medium">Reclamación ante el Defensor del Pueblo</p>
+                                </div>
+                                <div class="flex items-start space-x-2 p-3 bg-rose-50 rounded-lg border border-rose-100">
+                                    <span class="bg-rose-500 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0">12</span>
+                                    <p class="text-rose-800 text-sm font-medium">Actuar por representación o apoderado</p>
+                                </div>
+                                <div class="flex items-start space-x-2 p-3 bg-rose-50 rounded-lg border border-rose-100">
+                                    <span class="bg-rose-500 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0">13</span>
+                                    <p class="text-rose-800 text-sm font-medium">No pagar tasas no establecidas legalmente</p>
+                                </div>
+                                <div class="flex items-start space-x-2 p-3 bg-rose-50 rounded-lg border border-rose-100">
+                                    <span class="bg-rose-500 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0">14</span>
+                                    <p class="text-rose-800 text-sm font-medium">Respuestas en plazos razonables</p>
+                                </div>
+                                <div class="flex items-start space-x-2 p-3 bg-rose-50 rounded-lg border border-rose-100">
+                                    <span class="bg-rose-500 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0">15</span>
+                                    <p class="text-rose-800 text-sm font-medium">Protección de datos personales</p>
+                                </div>
+                                <div class="flex items-start space-x-2 p-3 bg-rose-50 rounded-lg border border-rose-100">
+                                    <span class="bg-rose-500 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0">16</span>
+                                    <p class="text-rose-800 text-sm font-medium">Procedimientos sencillos y accesibles</p>
+                                </div>
+                                <div class="flex items-start space-x-2 p-3 bg-rose-50 rounded-lg border border-rose-100">
+                                    <span class="bg-rose-500 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0">17</span>
+                                    <p class="text-rose-800 text-sm font-medium">Igualdad de trato sin discriminación</p>
+                                </div>
+                                <div class="flex items-start space-x-2 p-3 bg-rose-50 rounded-lg border border-rose-100">
+                                    <span class="bg-rose-500 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0">18</span>
+                                    <p class="text-rose-800 text-sm font-medium">Exigir responsabilidad por daños del Estado</p>
+                                </div>
+                                <div class="flex items-start space-x-2 p-3 bg-rose-50 rounded-lg border border-rose-100">
+                                    <span class="bg-rose-500 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0">19</span>
+                                    <p class="text-rose-800 text-sm font-medium">Servicios de calidad y eficiencia</p>
+                                </div>
+                                <div class="flex items-start space-x-2 p-3 bg-rose-50 rounded-lg border border-rose-100">
+                                    <span class="bg-rose-500 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0">20</span>
+                                    <p class="text-rose-800 text-sm font-medium">Uso de medios electrónicos para trámites</p>
+                                </div>
+                                <div class="flex items-start space-x-2 p-3 bg-rose-50 rounded-lg border border-rose-100">
+                                    <span class="bg-rose-500 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0">21</span>
+                                    <p class="text-rose-800 text-sm font-medium">Transparencia y rendición de cuentas</p>
+                                </div>
+                                <div class="flex items-start space-x-2 p-3 bg-rose-50 rounded-lg border border-rose-100">
+                                    <span class="bg-rose-500 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0">22</span>
+                                    <p class="text-rose-800 text-sm font-medium">Participación ciudadana en decisiones públicas</p>
+                                </div>
+                            </div>
+                            <div class="bg-rose-50 border-l-4 border-rose-400 rounded-r-lg p-4">
+                                <p class="text-rose-800 text-sm"><i class="fas fa-gavel mr-2"></i><strong>Obligación del servidor:</strong> Cada uno de estos 22 derechos genera una obligación correlativa para el funcionario. Violarlos puede derivar en sanciones disciplinarias, nulidad del acto administrativo y responsabilidad del Estado.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Autoevaluación Unidad III -->
+                    <section id="autoevaluacion-u3" class="mb-12 assessment-section">
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-pencil-alt text-indigo-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium text-indigo-600 uppercase tracking-wide">Pon a prueba tu conocimiento</p>
+                                    <h2 class="font-display text-2xl font-bold text-gray-800">Autoevaluación — Unidad III</h2>
+                                </div>
+                            </div>
+                            <div class="quiz-question">
+                                <p>1. ¿Cuántos derechos ciudadanos reconoce la Ley 107-13?</p>
+                                <button class="quiz-option" data-correct="false">16 derechos</button>
+                                <button class="quiz-option" data-correct="false">18 derechos</button>
+                                <button class="quiz-option" data-correct="true">22 derechos</button>
+                                <button class="quiz-option" data-correct="false">25 derechos</button>
+                            </div>
+                            <div class="quiz-question">
+                                <p>2. ¿Qué ley organiza los tipos de entidades del Poder Ejecutivo (ministerios, entes descentralizados, autónomos)?</p>
+                                <button class="quiz-option" data-correct="false">Ley 41-08</button>
+                                <button class="quiz-option" data-correct="true">Ley 247-12</button>
+                                <button class="quiz-option" data-correct="false">Ley 107-13</button>
+                                <button class="quiz-option" data-correct="false">Ley 200-04</button>
+                            </div>
+                            <div class="quiz-question">
+                                <p>3. El artículo 3 de la Ley 41-08 establece los principios de la función pública. ¿Cuál de los siguientes NO es uno de ellos?</p>
+                                <button class="quiz-option" data-correct="false">Mérito</button>
+                                <button class="quiz-option" data-correct="false">Transparencia</button>
+                                <button class="quiz-option" data-correct="true">Antigüedad</button>
+                                <button class="quiz-option" data-correct="false">Eficiencia</button>
+                            </div>
+                            <div class="quiz-question">
+                                <p>4. ¿Qué derecho de la Ley 107-13 protege al ciudadano de presentar documentos que el Estado ya posee?</p>
+                                <button class="quiz-option" data-correct="false">Derecho a audiencia previa</button>
+                                <button class="quiz-option" data-correct="true">No aportar documentos en poder del Estado</button>
+                                <button class="quiz-option" data-correct="false">Derecho a información veraz</button>
+                                <button class="quiz-option" data-correct="false">Derecho a procedimientos sencillos</button>
+                            </div>
+                            <div class="quiz-question">
+                                <p>5. ¿Qué tipo de organismo tiene personalidad jurídica propia y está bajo tutela (no jerarquía) del Poder Ejecutivo?</p>
+                                <button class="quiz-option" data-correct="false">Organismo centralizado</button>
+                                <button class="quiz-option" data-correct="false">Órgano desconcentrado</button>
+                                <button class="quiz-option" data-correct="true">Organismo descentralizado</button>
+                                <button class="quiz-option" data-correct="false">Ministerio sectorial</button>
+                            </div>
+                            <button class="quiz-submit">Ver mi resultado</button>
+                            <div class="quiz-result"></div>
+                        </div>
+                    </section>
+
                     <!-- Navigation Buttons -->
                     <div class="flex justify-between items-center mt-12 pt-8 border-t border-gray-200">
                         <a href="unidad2.html" class="flex items-center px-6 py-3 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
@@ -458,8 +742,8 @@
                             Anterior: Unidad II
                         </a>
                         
-                        <a href="ley4108.html" class="flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-                            Siguiente: Ley 41-08
+                        <a href="unidad4.html" class="flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                            Siguiente: Unidad IV
                             <i class="fas fa-arrow-right ml-2"></i>
                         </a>
                     </div>

@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad IV: Ética e Integridad Gubernamental - INAP</title>
+    <meta name="description" content="Unidad IV del curso de Inducción a la Administración Pública - Ética e Integridad Gubernamental">
+    <meta name="theme-color" content="#0f2b5b">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="site.css?v=3">
+    <script>if(localStorage.getItem("inap-dark-mode")==="true")document.documentElement.classList.add("dark");</script>
+</head>
+<body>
+    <!-- Progress Indicator -->
+    <div class="progress-indicator">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="site-nav sticky top-0 z-50" aria-label="Principal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center min-w-0">
+                    <a href="index.html" class="inline-flex min-w-0 rounded-md focus-visible:outline-offset-2" aria-label="Inicio — INAP">
+                        <img src="assets/inap-logo.png" alt="Instituto Nacional de Administración Pública (INAP). Gobierno de la República Dominicana." class="brand-logo" width="320" height="80" decoding="async">
+                    </a>
+                </div>
+
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Inicio</a>
+                        <a href="unidad1.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Unidad I</a>
+                        <a href="unidad2.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Unidad II</a>
+                        <a href="unidad3.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Unidad III</a>
+                        <a href="unidad4.html" class="nav-link text-blue-600 px-3 py-2 text-sm font-medium border-b-2 border-blue-600">Unidad IV</a>
+                        <a href="ley4108.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Ley 41-08</a>
+                        <a href="casos.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Casos</a>
+                        <a href="glosario.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Glosario</a>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-2">
+                    <button id="dark-mode-toggle" title="Alternar modo oscuro/claro" aria-label="Alternar modo oscuro" class="w-9 h-9 flex items-center justify-center rounded-full text-gray-700 hover:text-blue-600 hover:bg-gray-100 transition-colors focus:outline-none">
+                        <i id="dark-mode-icon" class="fas fa-moon text-lg"></i>
+                    </button>
+                    <button id="mobile-menu-button" class="md:hidden text-gray-700 hover:text-blue-600 focus:outline-none" aria-label="Abrir menú">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Inicio</a>
+                <a href="unidad1.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Unidad I</a>
+                <a href="unidad2.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Unidad II</a>
+                <a href="unidad3.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Unidad III</a>
+                <a href="unidad4.html" class="block px-3 py-2 text-blue-600 font-medium">Unidad IV</a>
+                <a href="ley4108.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Ley 41-08</a>
+                <a href="casos.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Casos</a>
+                <a href="glosario.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Glosario</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="bg-gray-50 py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav class="flex" aria-label="Breadcrumb">
+                <ol class="flex items-center space-x-2">
+                    <li>
+                        <a href="index.html" class="breadcrumb-item hover:text-blue-600">
+                            <i class="fas fa-home"></i>
+                            <span class="sr-only">Inicio</span>
+                        </a>
+                    </li>
+                    <li>
+                        <i class="fas fa-chevron-right breadcrumb-item text-xs"></i>
+                    </li>
+                    <li class="breadcrumb-item active">
+                        Unidad IV: Ética e Integridad Gubernamental
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="font-display text-4xl lg:text-5xl font-bold mb-6">
+                    Unidad IV
+                </h1>
+                <h2 class="text-2xl lg:text-3xl font-light mb-4">
+                    Ética e Integridad Gubernamental
+                </h2>
+                <p class="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+                    Fundamentos filosóficos de la ética, modelos morales, y el rol de la DIGEIG en la promoción de la integridad en el Estado dominicano.
+                </p>
+                <div class="mt-8 flex justify-center">
+                    <div class="bg-white bg-opacity-20 backdrop-blur-lg rounded-lg px-6 py-3">
+                        <div class="flex items-center space-x-4 text-sm">
+                            <span><i class="fas fa-clock mr-2"></i>Duración: 2 horas</span>
+                            <span><i class="fas fa-book mr-2"></i>5 temas</span>
+                            <span><i class="fas fa-users mr-2"></i>Para todos los niveles</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-4 gap-8">
+                <!-- Sidebar -->
+                <div class="lg:col-span-1">
+                    <div class="sticky top-24">
+                        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+                            <h3 class="font-display text-lg font-semibold text-gray-800 mb-4">
+                                <i class="fas fa-list mr-2 text-blue-600"></i>
+                                Contenido de la Unidad
+                            </h3>
+                            <nav class="space-y-2">
+                                <a href="#etica" class="block px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-md transition-colors">
+                                    <i class="fas fa-circle text-xs mr-2"></i>4.1 Concepto de Ética
+                                </a>
+                                <a href="#modelos" class="block px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-md transition-colors">
+                                    <i class="fas fa-circle text-xs mr-2"></i>4.2 Modelos Éticos
+                                </a>
+                                <a href="#moral" class="block px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-md transition-colors">
+                                    <i class="fas fa-circle text-xs mr-2"></i>4.3 La Moral y sus Sanciones
+                                </a>
+                                <a href="#historia-digeig" class="block px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-md transition-colors">
+                                    <i class="fas fa-circle text-xs mr-2"></i>4.4 Historia de la DIGEIG
+                                </a>
+                                <a href="#digeig-actual" class="block px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-md transition-colors">
+                                    <i class="fas fa-circle text-xs mr-2"></i>4.5 DIGEIG en la Actualidad
+                                </a>
+                                <a href="#autoevaluacion-u4" class="block px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-md transition-colors">
+                                    <i class="fas fa-circle text-xs mr-2"></i>Autoevaluación
+                                </a>
+                            </nav>
+                        </div>
+
+                        <div class="bg-teal-50 rounded-lg p-6">
+                            <h4 class="font-display font-semibold text-teal-800 mb-3">
+                                <i class="fas fa-lightbulb mr-2"></i>
+                                Consejo del Facilitador
+                            </h4>
+                            <p class="text-sm text-teal-700 leading-relaxed">
+                                "La ética no es una restricción al servidor público — es su brújula. Quien actúa con integridad no necesita recordar qué dijo, porque siempre dijo la verdad."
+                            </p>
+                            <div class="mt-4 text-xs text-teal-600">
+                                — Johan Tapia, PhD
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Content -->
+                <div class="lg:col-span-3">
+
+                    <!-- Section 4.1 -->
+                    <section id="etica" class="mb-12">
+                        <div class="principle-card">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-star text-teal-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h2 class="font-display text-2xl font-bold text-gray-800">4.1 Concepto de Ética</h2>
+                                    <p class="text-gray-600">Del griego "ethos": carácter, costumbre, modo de ser</p>
+                                </div>
+                            </div>
+
+                            <div class="prose max-w-none">
+                                <p class="text-gray-700 leading-relaxed mb-6">
+                                    La ética es la rama de la filosofía que estudia el comportamiento moral del ser humano en sociedad. Su nombre proviene del griego <em>ἦθος (ethos)</em>, que significa carácter, costumbre o modo habitual de ser.
+                                </p>
+
+                                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                                    <div class="bg-teal-50 border border-teal-200 rounded-lg p-6 text-center">
+                                        <div class="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                            <i class="fas fa-language text-teal-600 text-2xl"></i>
+                                        </div>
+                                        <h3 class="font-bold text-teal-800 mb-2">Etimología</h3>
+                                        <p class="text-sm text-teal-700">Del griego <strong>ἦθος (ethos)</strong>: carácter, costumbre, modo de ser.</p>
+                                        <div class="mt-3 bg-white p-2 rounded border border-teal-200">
+                                            <p class="text-xs text-teal-600">También del latín <em>ethicus</em>, relacionado con los hábitos y el carácter moral.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 text-center">
+                                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                            <i class="fas fa-book-open text-blue-600 text-2xl"></i>
+                                        </div>
+                                        <h3 class="font-bold text-blue-800 mb-2">Definición</h3>
+                                        <p class="text-sm text-blue-700">Ciencia que estudia y reflexiona sobre el <strong>comportamiento moral</strong> del ser humano y los principios que deben guiar su conducta.</p>
+                                    </div>
+
+                                    <div class="bg-purple-50 border border-purple-200 rounded-lg p-6 text-center">
+                                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                            <i class="fas fa-compass text-purple-600 text-2xl"></i>
+                                        </div>
+                                        <h3 class="font-bold text-purple-800 mb-2">Función</h3>
+                                        <p class="text-sm text-purple-700">Actúa como <strong>brújula</strong> para distinguir lo correcto de lo incorrecto, orientando las decisiones hacia el bien común.</p>
+                                    </div>
+                                </div>
+
+                                <div class="overflow-x-auto mb-6">
+                                    <table class="w-full bg-white rounded-lg shadow border text-sm">
+                                        <thead class="bg-gray-50">
+                                            <tr>
+                                                <th class="px-5 py-3 text-left text-xs font-medium text-gray-500 uppercase">Dimensión</th>
+                                                <th class="px-5 py-3 text-left text-xs font-medium text-gray-500 uppercase">Ética</th>
+                                                <th class="px-5 py-3 text-left text-xs font-medium text-gray-500 uppercase">Moral</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-gray-200">
+                                            <tr class="hover:bg-gray-50">
+                                                <td class="px-5 py-3 font-medium text-gray-800">Origen del término</td>
+                                                <td class="px-5 py-3 text-gray-700">Griego: <em>ethos</em> (carácter)</td>
+                                                <td class="px-5 py-3 text-gray-700">Latín: <em>mos/mores</em> (costumbre)</td>
+                                            </tr>
+                                            <tr class="hover:bg-gray-50">
+                                                <td class="px-5 py-3 font-medium text-gray-800">Naturaleza</td>
+                                                <td class="px-5 py-3 text-gray-700">Reflexión filosófica, teórica</td>
+                                                <td class="px-5 py-3 text-gray-700">Normas prácticas de conducta</td>
+                                            </tr>
+                                            <tr class="hover:bg-gray-50">
+                                                <td class="px-5 py-3 font-medium text-gray-800">Pregunta central</td>
+                                                <td class="px-5 py-3 text-gray-700">¿Qué es el bien? ¿Por qué debo actuar así?</td>
+                                                <td class="px-5 py-3 text-gray-700">¿Cómo debo actuar?</td>
+                                            </tr>
+                                            <tr class="hover:bg-gray-50">
+                                                <td class="px-5 py-3 font-medium text-gray-800">Alcance</td>
+                                                <td class="px-5 py-3 text-gray-700">Universal, trasciende culturas</td>
+                                                <td class="px-5 py-3 text-gray-700">Puede variar según cultura o época</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="example-box">
+                                    <h4 class="font-semibold text-blue-800 mb-2"><i class="fas fa-lightbulb mr-2"></i>En la Administración Pública</h4>
+                                    <p class="text-blue-700">La ética pública es la aplicación de los principios éticos al ejercicio de las funciones gubernamentales. Un servidor público ético no solo cumple la ley: actúa correctamente incluso cuando nadie lo observa, porque ha interiorizado los valores del servicio público.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section 4.2 -->
+                    <section id="modelos" class="mb-12">
+                        <div class="principle-card">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-sitemap text-blue-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h2 class="font-display text-2xl font-bold text-gray-800">4.2 Modelos Éticos</h2>
+                                    <p class="text-gray-600">Las tres grandes ramas del pensamiento ético</p>
+                                </div>
+                            </div>
+
+                            <div class="prose max-w-none">
+                                <p class="text-gray-700 leading-relaxed mb-6">
+                                    El estudio de la ética se organiza en tres grandes áreas o modelos, cada uno con un enfoque distinto sobre qué es la moralidad y cómo debe estudiarse.
+                                </p>
+
+                                <div class="space-y-6 mb-8">
+                                    <!-- Metaética -->
+                                    <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-teal-300 transition-colors">
+                                        <div class="flex items-start">
+                                            <div class="w-14 h-14 bg-gray-100 rounded-xl flex items-center justify-center mr-5 flex-shrink-0">
+                                                <i class="fas fa-question-circle text-gray-600 text-2xl"></i>
+                                            </div>
+                                            <div class="flex-1">
+                                                <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Metaética</h3>
+                                                <p class="text-gray-600 text-sm mb-3">Estudia los <strong>fundamentos y el lenguaje</strong> de la moral. No dice qué es bueno o malo, sino que pregunta qué significa "bueno" o "malo".</p>
+                                                <div class="grid md:grid-cols-2 gap-3">
+                                                    <div class="bg-gray-50 p-3 rounded-lg">
+                                                        <h4 class="font-semibold text-gray-800 text-sm mb-1">Preguntas que responde:</h4>
+                                                        <ul class="text-xs text-gray-700 space-y-1">
+                                                            <li>• ¿Qué significa que algo sea "bueno"?</li>
+                                                            <li>• ¿Son objetivos los valores morales?</li>
+                                                            <li>• ¿Puede haber verdades éticas universales?</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="bg-gray-50 p-3 rounded-lg">
+                                                        <h4 class="font-semibold text-gray-800 text-sm mb-1">Relevancia para el servidor público:</h4>
+                                                        <p class="text-xs text-gray-700">Ayuda a comprender por qué ciertos valores (honestidad, transparencia) son universalmente exigibles en el servicio público.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Ética Normativa -->
+                                    <div class="bg-white border-2 border-blue-200 rounded-xl p-6 hover:border-blue-400 transition-colors">
+                                        <div class="flex items-start">
+                                            <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mr-5 flex-shrink-0">
+                                                <i class="fas fa-balance-scale text-blue-600 text-2xl"></i>
+                                            </div>
+                                            <div class="flex-1">
+                                                <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Ética Normativa</h3>
+                                                <p class="text-gray-600 text-sm mb-4">Establece <strong>principios y normas de conducta</strong>. Responde a "¿cómo debo actuar?". Se divide en tres corrientes principales:</p>
+                                                <div class="grid md:grid-cols-3 gap-3">
+                                                    <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                                                        <h4 class="font-bold text-blue-800 text-sm mb-2">
+                                                            <i class="fas fa-scroll mr-1"></i>Deontológica
+                                                        </h4>
+                                                        <p class="text-xs text-blue-700 mb-2">El deber moral por encima de todo resultado. Asociada con <strong>Immanuel Kant</strong>.</p>
+                                                        <p class="text-xs text-blue-600 italic">"Actúa solo según aquella máxima que puedas querer que sea ley universal."</p>
+                                                        <div class="mt-2 bg-white p-2 rounded text-xs text-blue-700">
+                                                            <strong>En el Estado:</strong> El servidor cumple la ley porque es su deber, no por conveniencia.
+                                                        </div>
+                                                    </div>
+                                                    <div class="bg-green-50 p-4 rounded-lg border border-green-200">
+                                                        <h4 class="font-bold text-green-800 text-sm mb-2">
+                                                            <i class="fas fa-chart-line mr-1"></i>Consecuencialista
+                                                        </h4>
+                                                        <p class="text-xs text-green-700 mb-2">Lo bueno es lo que produce el mayor bien para el mayor número. Base del <strong>utilitarismo</strong> (Bentham, Mill).</p>
+                                                        <p class="text-xs text-green-600 italic">"El mayor bien para el mayor número de personas."</p>
+                                                        <div class="mt-2 bg-white p-2 rounded text-xs text-green-700">
+                                                            <strong>En el Estado:</strong> Las políticas públicas se evalúan por su impacto en el bienestar colectivo.
+                                                        </div>
+                                                    </div>
+                                                    <div class="bg-purple-50 p-4 rounded-lg border border-purple-200">
+                                                        <h4 class="font-bold text-purple-800 text-sm mb-2">
+                                                            <i class="fas fa-user-graduate mr-1"></i>Ética de Virtudes
+                                                        </h4>
+                                                        <p class="text-xs text-purple-700 mb-2">El foco está en el <strong>carácter</strong> del individuo. Asociada con <strong>Aristóteles</strong>.</p>
+                                                        <p class="text-xs text-purple-600 italic">"La virtud es el hábito de actuar correctamente."</p>
+                                                        <div class="mt-2 bg-white p-2 rounded text-xs text-purple-700">
+                                                            <strong>En el Estado:</strong> Se busca que el servidor sea una persona virtuosa, no solo que siga reglas.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Ética Aplicada -->
+                                    <div class="bg-white border-2 border-teal-200 rounded-xl p-6 hover:border-teal-400 transition-colors">
+                                        <div class="flex items-start">
+                                            <div class="w-14 h-14 bg-teal-100 rounded-xl flex items-center justify-center mr-5 flex-shrink-0">
+                                                <i class="fas fa-cogs text-teal-600 text-2xl"></i>
+                                            </div>
+                                            <div class="flex-1">
+                                                <h3 class="font-display text-xl font-bold text-gray-800 mb-2">Ética Aplicada</h3>
+                                                <p class="text-gray-600 text-sm mb-4">Lleva los principios éticos a <strong>campos concretos</strong> de la actividad humana. La ética pública es una de sus expresiones más importantes.</p>
+                                                <div class="grid md:grid-cols-2 gap-3">
+                                                    <div>
+                                                        <h4 class="font-semibold text-teal-800 text-sm mb-2">Áreas de aplicación:</h4>
+                                                        <ul class="text-sm text-teal-700 space-y-2">
+                                                            <li class="flex items-center"><i class="fas fa-hospital text-teal-500 mr-2 w-4"></i>Bioética (medicina y salud)</li>
+                                                            <li class="flex items-center"><i class="fas fa-building text-teal-500 mr-2 w-4"></i>Ética empresarial (negocios)</li>
+                                                            <li class="flex items-center"><i class="fas fa-landmark text-teal-500 mr-2 w-4"></i><strong>Ética pública (gobierno)</strong></li>
+                                                            <li class="flex items-center"><i class="fas fa-globe text-teal-500 mr-2 w-4"></i>Ética ambiental</li>
+                                                            <li class="flex items-center"><i class="fas fa-robot text-teal-500 mr-2 w-4"></i>Ética tecnológica (IA y datos)</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="bg-teal-50 p-4 rounded-lg">
+                                                        <h4 class="font-semibold text-teal-800 text-sm mb-2">Ética Pública en RD:</h4>
+                                                        <p class="text-xs text-teal-700">La ética pública dominicana está regulada por la Ley 41-08, el Reglamento de Ética del Servidor Público y las normas de la DIGEIG, que establecen los valores y conductas esperadas de todo funcionario.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section 4.3 -->
+                    <section id="moral" class="mb-12">
+                        <div class="principle-card">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-heart text-green-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h2 class="font-display text-2xl font-bold text-gray-800">4.3 La Moral y sus Sanciones</h2>
+                                    <p class="text-gray-600">Del latín "mos/mores": costumbre, buena costumbre</p>
+                                </div>
+                            </div>
+
+                            <div class="prose max-w-none">
+                                <p class="text-gray-700 leading-relaxed mb-6">
+                                    La moral es el conjunto de normas, valores y principios que una sociedad considera correctos y que guían el comportamiento de sus miembros. Su nombre proviene del latín <em>mos</em> (singular) y <em>mores</em> (plural), que significa costumbre o, en su sentido más elevado, "buena costumbre".
+                                </p>
+
+                                <div class="grid md:grid-cols-2 gap-6 mb-8">
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-gray-800 mb-4">Características de la Moral</h3>
+                                        <div class="space-y-3">
+                                            <div class="flex items-start bg-green-50 p-3 rounded-lg">
+                                                <i class="fas fa-check-circle text-green-600 mr-3 mt-1 flex-shrink-0"></i>
+                                                <div>
+                                                    <h4 class="font-semibold text-green-800 text-sm">Social</h4>
+                                                    <p class="text-xs text-green-700">Se construye y valida en el contexto de una comunidad o sociedad.</p>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-start bg-green-50 p-3 rounded-lg">
+                                                <i class="fas fa-check-circle text-green-600 mr-3 mt-1 flex-shrink-0"></i>
+                                                <div>
+                                                    <h4 class="font-semibold text-green-800 text-sm">Histórica</h4>
+                                                    <p class="text-xs text-green-700">Evoluciona con el tiempo; lo que era aceptable ayer puede no serlo hoy.</p>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-start bg-green-50 p-3 rounded-lg">
+                                                <i class="fas fa-check-circle text-green-600 mr-3 mt-1 flex-shrink-0"></i>
+                                                <div>
+                                                    <h4 class="font-semibold text-green-800 text-sm">Interna</h4>
+                                                    <p class="text-xs text-green-700">Su cumplimiento depende de la conciencia individual, no de la coerción externa.</p>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-start bg-green-50 p-3 rounded-lg">
+                                                <i class="fas fa-check-circle text-green-600 mr-3 mt-1 flex-shrink-0"></i>
+                                                <div>
+                                                    <h4 class="font-semibold text-green-800 text-sm">Normativa</h4>
+                                                    <p class="text-xs text-green-700">Establece qué es correcto e incorrecto, lo que se debe y no se debe hacer.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-gray-800 mb-4">Sanciones Morales vs. Jurídicas</h3>
+                                        <div class="space-y-3">
+                                            <div class="bg-orange-50 border border-orange-200 rounded-lg p-4">
+                                                <h4 class="font-bold text-orange-800 mb-3"><i class="fas fa-user mr-2"></i>Sanciones Morales</h4>
+                                                <ul class="text-sm text-orange-700 space-y-2">
+                                                    <li class="flex items-start">
+                                                        <i class="fas fa-arrow-right text-orange-500 mr-2 mt-0.5 flex-shrink-0 text-xs"></i>
+                                                        <span><strong>Remordimiento de conciencia:</strong> sentimiento interno de culpa.</span>
+                                                    </li>
+                                                    <li class="flex items-start">
+                                                        <i class="fas fa-arrow-right text-orange-500 mr-2 mt-0.5 flex-shrink-0 text-xs"></i>
+                                                        <span><strong>Reprobación social:</strong> crítica y rechazo del entorno.</span>
+                                                    </li>
+                                                    <li class="flex items-start">
+                                                        <i class="fas fa-arrow-right text-orange-500 mr-2 mt-0.5 flex-shrink-0 text-xs"></i>
+                                                        <span><strong>Exclusión social:</strong> marginalización de la comunidad.</span>
+                                                    </li>
+                                                    <li class="flex items-start">
+                                                        <i class="fas fa-arrow-right text-orange-500 mr-2 mt-0.5 flex-shrink-0 text-xs"></i>
+                                                        <span><strong>Pérdida de reputación:</strong> daño al honor y la imagen pública.</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="bg-red-50 border border-red-200 rounded-lg p-4">
+                                                <h4 class="font-bold text-red-800 mb-3"><i class="fas fa-gavel mr-2"></i>Sanciones Jurídicas</h4>
+                                                <ul class="text-sm text-red-700 space-y-1">
+                                                    <li>• Multas económicas</li>
+                                                    <li>• Suspensión o destitución del cargo</li>
+                                                    <li>• Privación de libertad (penal)</li>
+                                                    <li>• Inhabilitación para cargos públicos</li>
+                                                </ul>
+                                                <p class="text-xs text-red-600 mt-2 italic">Son coercitivas: el Estado las impone con fuerza.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="example-box">
+                                    <h4 class="font-semibold text-blue-800 mb-2"><i class="fas fa-balance-scale mr-2"></i>Ejemplo Integrador</h4>
+                                    <p class="text-blue-700">Un director que aprueba una licitación favoreciendo a un familiar puede recibir: <strong>sanción moral</strong> (pérdida de reputación, rechazo de compañeros, remordimiento) y <strong>sanción jurídica</strong> (destitución por nepotismo según el Art. 80 de la Ley 41-08, más responsabilidad penal por corrupción). Ambas sanciones se complementan.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section 4.4 -->
+                    <section id="historia-digeig" class="mb-12">
+                        <div class="legal-card">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-history text-purple-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h2 class="font-display text-2xl font-bold text-gray-800">4.4 Historia de la DIGEIG</h2>
+                                    <p class="text-gray-600">Evolución institucional de la ética gubernamental en RD</p>
+                                </div>
+                            </div>
+
+                            <div class="prose max-w-none">
+                                <p class="text-gray-700 leading-relaxed mb-8">
+                                    La institucionalización de la ética pública en la República Dominicana tuvo un proceso evolutivo de más de 25 años, pasando por cuatro etapas fundamentales hasta consolidarse en la actual Dirección General de Ética e Integridad Gubernamental (DIGEIG).
+                                </p>
+
+                                <!-- Timeline -->
+                                <div class="relative mb-8">
+                                    <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-purple-200"></div>
+
+                                    <!-- Hito 1 -->
+                                    <div class="relative flex items-start mb-8 pl-20">
+                                        <div class="absolute left-4 w-8 h-8 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-sm z-10">1</div>
+                                        <div class="bg-purple-50 border border-purple-200 rounded-xl p-5 flex-1">
+                                            <div class="flex items-center mb-2">
+                                                <span class="bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full mr-3">1997</span>
+                                                <h3 class="font-bold text-purple-900">Decreto 322-97</h3>
+                                            </div>
+                                            <h4 class="font-semibold text-purple-800 mb-2">Comisión Nacional de Ética Gubernamental (CNEG)</h4>
+                                            <p class="text-sm text-purple-700">Primera institución dedicada a promover la ética en el sector público dominicano. Estableció los primeros lineamientos para el comportamiento ético de los servidores del Estado, aunque con capacidad operativa limitada.</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Hito 2 -->
+                                    <div class="relative flex items-start mb-8 pl-20">
+                                        <div class="absolute left-4 w-8 h-8 bg-purple-700 text-white rounded-full flex items-center justify-center font-bold text-sm z-10">2</div>
+                                        <div class="bg-purple-50 border border-purple-200 rounded-xl p-5 flex-1">
+                                            <div class="flex items-center mb-2">
+                                                <span class="bg-purple-700 text-white text-xs font-bold px-3 py-1 rounded-full mr-3">2001</span>
+                                                <h3 class="font-bold text-purple-900">Decreto 783-01</h3>
+                                            </div>
+                                            <h4 class="font-semibold text-purple-800 mb-2">Reorganización de la CNEG</h4>
+                                            <p class="text-sm text-purple-700">Se reorganiza y fortalece la estructura de la Comisión, ampliando su mandato y capacidad para investigar casos de corrupción e inconducta en el sector público.</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Hito 3 -->
+                                    <div class="relative flex items-start mb-8 pl-20">
+                                        <div class="absolute left-4 w-8 h-8 bg-purple-800 text-white rounded-full flex items-center justify-center font-bold text-sm z-10">3</div>
+                                        <div class="bg-purple-50 border border-purple-200 rounded-xl p-5 flex-1">
+                                            <div class="flex items-center mb-2">
+                                                <span class="bg-purple-800 text-white text-xs font-bold px-3 py-1 rounded-full mr-3">2005</span>
+                                                <h3 class="font-bold text-purple-900">Decreto 101-05</h3>
+                                            </div>
+                                            <h4 class="font-semibold text-purple-800 mb-2">Comisión Nacional de Ética y Combate a la Corrupción (CNECC)</h4>
+                                            <p class="text-sm text-purple-700">Se crea la CNECC con un mandato más amplio que incorpora explícitamente la lucha anticorrupción. Esta comisión coordinó con organismos internacionales como la OEA y la ONU en programas de transparencia.</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Hito 4 -->
+                                    <div class="relative flex items-start pl-20">
+                                        <div class="absolute left-4 w-8 h-8 bg-teal-600 text-white rounded-full flex items-center justify-center font-bold text-sm z-10">4</div>
+                                        <div class="bg-teal-50 border-2 border-teal-400 rounded-xl p-5 flex-1">
+                                            <div class="flex items-center mb-2">
+                                                <span class="bg-teal-600 text-white text-xs font-bold px-3 py-1 rounded-full mr-3">2012</span>
+                                                <h3 class="font-bold text-teal-900">Decreto 486-12</h3>
+                                            </div>
+                                            <h4 class="font-semibold text-teal-800 mb-2">Creación de la DIGEIG</h4>
+                                            <p class="text-sm text-teal-700 mb-3">Se crea la <strong>Dirección General de Ética e Integridad Gubernamental (DIGEIG)</strong>, elevando la institución a una dirección general con mayor jerarquía, presupuesto y atribuciones. Marca el inicio de la era moderna de la ética pública en RD.</p>
+                                            <div class="bg-white p-3 rounded-lg border border-teal-200">
+                                                <p class="text-xs text-teal-700"><strong>Cambio clave:</strong> De comisión consultiva a dirección general con poder normativo y capacidad de supervisión directa sobre todas las instituciones del Estado.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section 4.5 -->
+                    <section id="digeig-actual" class="mb-12">
+                        <div class="legal-card">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-building text-teal-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h2 class="font-display text-2xl font-bold text-gray-800">4.5 DIGEIG en la Actualidad</h2>
+                                    <p class="text-gray-600">Estructura, atribuciones y organismos vinculados</p>
+                                </div>
+                            </div>
+
+                            <div class="prose max-w-none">
+                                <p class="text-gray-700 leading-relaxed mb-6">
+                                    La Dirección General de Ética e Integridad Gubernamental (DIGEIG) es hoy el ente rector de la ética y la transparencia en la administración pública dominicana, adscrita al Ministerio de la Presidencia.
+                                </p>
+
+                                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                                    <div class="bg-teal-50 border border-teal-200 rounded-xl p-5 text-center">
+                                        <div class="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                            <span class="text-3xl font-bold text-teal-700">42</span>
+                                        </div>
+                                        <h3 class="font-bold text-teal-800 mb-1">Atribuciones</h3>
+                                        <p class="text-xs text-teal-700">La DIGEIG cuenta con 42 atribuciones legales que abarcan desde la capacitación hasta la supervisión disciplinaria.</p>
+                                    </div>
+                                    <div class="bg-blue-50 border border-blue-200 rounded-xl p-5 text-center">
+                                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                            <i class="fas fa-landmark text-blue-600 text-3xl"></i>
+                                        </div>
+                                        <h3 class="font-bold text-blue-800 mb-1">Adscripción</h3>
+                                        <p class="text-xs text-blue-700">Adscrita al <strong>Ministerio de la Presidencia</strong>, lo que le otorga la jerarquía necesaria para supervisar a todas las instituciones del Poder Ejecutivo.</p>
+                                    </div>
+                                    <div class="bg-purple-50 border border-purple-200 rounded-xl p-5 text-center">
+                                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                            <i class="fas fa-shield-alt text-purple-600 text-3xl"></i>
+                                        </div>
+                                        <h3 class="font-bold text-purple-800 mb-1">Mandato</h3>
+                                        <p class="text-xs text-purple-700">Promover, fortalecer y supervisar la ética, la transparencia y la integridad en el sector público dominicano.</p>
+                                    </div>
+                                </div>
+
+                                <h3 class="text-xl font-semibold text-gray-800 mb-4">Funciones Principales de la DIGEIG</h3>
+                                <div class="grid md:grid-cols-2 gap-4 mb-8">
+                                    <div class="flex items-start p-4 bg-gray-50 rounded-lg border">
+                                        <div class="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
+                                            <i class="fas fa-chalkboard-teacher text-teal-600"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-gray-800 text-sm">Capacitación y sensibilización</h4>
+                                            <p class="text-xs text-gray-600 mt-1">Diseña e implementa programas de formación ética para servidores públicos de todas las instituciones del Estado.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start p-4 bg-gray-50 rounded-lg border">
+                                        <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
+                                            <i class="fas fa-file-contract text-blue-600"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-gray-800 text-sm">Regulación normativa</h4>
+                                            <p class="text-xs text-gray-600 mt-1">Emite resoluciones y lineamientos que regulan la conducta ética de los servidores públicos.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start p-4 bg-gray-50 rounded-lg border">
+                                        <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
+                                            <i class="fas fa-eye text-purple-600"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-gray-800 text-sm">Supervisión y monitoreo</h4>
+                                            <p class="text-xs text-gray-600 mt-1">Supervisa el cumplimiento de las normas éticas y de transparencia en las instituciones públicas.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start p-4 bg-gray-50 rounded-lg border">
+                                        <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
+                                            <i class="fas fa-users text-green-600"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-gray-800 text-sm">Coordinación interinstitucional</h4>
+                                            <p class="text-xs text-gray-600 mt-1">Coordina con MAP, Contraloría, Cámara de Cuentas y organismos internacionales en materia de transparencia.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- CIGCN -->
+                                <div class="bg-indigo-50 border border-indigo-200 rounded-xl p-6 mb-6">
+                                    <div class="flex items-center mb-4">
+                                        <div class="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center mr-3">
+                                            <i class="fas fa-users-cog text-indigo-600"></i>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-bold text-indigo-800">CIGCN — Decreto 791-21</h3>
+                                            <p class="text-sm text-indigo-600">Comité Institucional de Gestión y Control de la Ética</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-sm text-indigo-700 mb-4">El Decreto 791-21 creó el <strong>Comité Institucional de Gestión y Control de la Ética (CIGCN)</strong>, un órgano plural integrado por servidores públicos de cada institución encargado de promover la ética desde adentro.</p>
+                                    <div class="grid md:grid-cols-3 gap-3">
+                                        <div class="bg-white p-3 rounded-lg border border-indigo-200">
+                                            <h4 class="font-semibold text-indigo-800 text-xs mb-1">Composición</h4>
+                                            <p class="text-xs text-indigo-700">Integrado por servidores públicos designados de cada institución.</p>
+                                        </div>
+                                        <div class="bg-white p-3 rounded-lg border border-indigo-200">
+                                            <h4 class="font-semibold text-indigo-800 text-xs mb-1">Función</h4>
+                                            <p class="text-xs text-indigo-700">Gestionar y controlar el cumplimiento de los estándares éticos internamente.</p>
+                                        </div>
+                                        <div class="bg-white p-3 rounded-lg border border-indigo-200">
+                                            <h4 class="font-semibold text-indigo-800 text-xs mb-1">Reporte</h4>
+                                            <p class="text-xs text-indigo-700">Rinde informes periódicos a la DIGEIG sobre el clima ético institucional.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Resolución DIGEIG-01/2022 -->
+                                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-5 mb-6">
+                                    <h4 class="font-semibold text-yellow-800 mb-2">
+                                        <i class="fas fa-file-alt mr-2"></i>Resolución DIGEIG-01/2022
+                                    </h4>
+                                    <p class="text-yellow-700 text-sm">Esta resolución establece las <strong>normas éticas de conducta</strong> que deben observar todos los servidores públicos en sus actuaciones cotidianas, precisando los criterios para evaluar comportamientos éticos y los mecanismos de reporte de inconductas.</p>
+                                    <div class="mt-3 bg-white bg-opacity-60 p-3 rounded">
+                                        <p class="text-xs text-yellow-800"><strong>Importancia:</strong> Constituye el principal instrumento normativo de referencia para los Comités CIGCN y para la evaluación ética de servidores públicos en todo el Poder Ejecutivo.</p>
+                                    </div>
+                                </div>
+
+                                <div class="example-box">
+                                    <h4 class="font-semibold text-blue-800 mb-2"><i class="fas fa-star mr-2"></i>La Ética como Pilar del Servicio Público</h4>
+                                    <p class="text-blue-700">La DIGEIG, el CIGCN y la Resolución 01/2022 forman un sistema integrado: la DIGEIG establece el marco normativo, el CIGCN lo implementa en cada institución, y la resolución provee las guías concretas de conducta. Juntos, construyen una cultura de integridad que complementa — y en muchos casos previene — la necesidad de sanciones disciplinarias.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Autoevaluación Unidad IV -->
+                    <section id="autoevaluacion-u4" class="mb-12 assessment-section">
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-pencil-alt text-indigo-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium text-indigo-600 uppercase tracking-wide">Pon a prueba tu conocimiento</p>
+                                    <h2 class="font-display text-2xl font-bold text-gray-800">Autoevaluación — Unidad IV: Ética e Integridad</h2>
+                                </div>
+                            </div>
+                            <div class="quiz-question">
+                                <p>1. ¿Cuál institución es el órgano rector de la ética e integridad gubernamental en República Dominicana?</p>
+                                <button class="quiz-option" data-correct="false">MAP (Ministerio de Administración Pública)</button>
+                                <button class="quiz-option" data-correct="true">DIGEIG (Dirección General de Ética e Integridad Gubernamental)</button>
+                                <button class="quiz-option" data-correct="false">INAP (Instituto Nacional de Administración Pública)</button>
+                                <button class="quiz-option" data-correct="false">Contraloría General de la República</button>
+                            </div>
+                            <div class="quiz-question">
+                                <p>2. ¿Qué siglas corresponden al comité que implementa la ética dentro de cada institución pública?</p>
+                                <button class="quiz-option" data-correct="false">DIGCIG</button>
+                                <button class="quiz-option" data-correct="false">SIPEN</button>
+                                <button class="quiz-option" data-correct="true">CIGCN (Comité de Integridad Gubernamental y Combate a la Corrupción)</button>
+                                <button class="quiz-option" data-correct="false">CONARE</button>
+                            </div>
+                            <div class="quiz-question">
+                                <p>3. La diferencia fundamental entre ética y moral es que:</p>
+                                <button class="quiz-option" data-correct="false">Son sinónimos perfectos en el contexto del servicio público</button>
+                                <button class="quiz-option" data-correct="false">La moral es una norma escrita y la ética es una norma social</button>
+                                <button class="quiz-option" data-correct="true">La ética es la reflexión racional sobre los principios que guían la conducta; la moral son las normas y costumbres de un grupo social</button>
+                                <button class="quiz-option" data-correct="false">La ética solo aplica en el ámbito privado</button>
+                            </div>
+                            <div class="quiz-question">
+                                <p>4. Un servidor que acepta un regalo de un proveedor para agilizar un trámite viola principalmente:</p>
+                                <button class="quiz-option" data-correct="false">Solo el reglamento interno de la institución</button>
+                                <button class="quiz-option" data-correct="false">El principio de eficiencia</button>
+                                <button class="quiz-option" data-correct="true">El principio de probidad e imparcialidad, configurando un acto de corrupción</button>
+                                <button class="quiz-option" data-correct="false">Únicamente las normas de convivencia laboral</button>
+                            </div>
+                            <div class="quiz-question">
+                                <p>5. ¿En qué año fue creada la DIGEIG mediante decreto presidencial?</p>
+                                <button class="quiz-option" data-correct="false">1996</button>
+                                <button class="quiz-option" data-correct="false">2004</button>
+                                <button class="quiz-option" data-correct="true">2012</button>
+                                <button class="quiz-option" data-correct="false">2016</button>
+                            </div>
+                            <button class="quiz-submit">Ver mi resultado</button>
+                            <div class="quiz-result"></div>
+                        </div>
+                    </section>
+
+                    <!-- Navigation Buttons -->
+                    <div class="flex justify-between items-center mt-12 pt-8 border-t border-gray-200">
+                        <a href="unidad3.html" class="flex items-center px-6 py-3 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
+                            <i class="fas fa-arrow-left mr-2"></i>
+                            Anterior: Unidad III
+                        </a>
+
+                        <a href="ley4108.html" class="flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                            Siguiente: Ley 41-08
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer text-white py-14">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <div class="mb-4">
+                        <div class="inline-flex rounded-md bg-white p-2 shadow-sm">
+                            <img src="assets/inap-logo.png" alt="Instituto Nacional de Administración Pública (INAP). Gobierno de la República Dominicana." class="brand-logo-footer" width="280" height="72" decoding="async">
+                        </div>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Formando servidores públicos competentes y comprometidos con el desarrollo institucional de la República Dominicana.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-display font-semibold text-lg mb-4">Contacto</h4>
+                    <div class="space-y-2 text-sm text-gray-300">
+                        <p><i class="fas fa-envelope mr-2 text-blue-400"></i>jtapia@inap.gob.do</p>
+                        <p><i class="fas fa-phone mr-2 text-blue-400"></i>809-868-4994</p>
+                        <p><i class="fas fa-map-marker-alt mr-2 text-blue-400"></i>República Dominicana</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-display font-semibold text-lg mb-4">Recursos</h4>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.inap.gob.do" class="text-gray-300 hover:text-blue-400 block transition-colors">
+                            <i class="fas fa-external-link-alt mr-2"></i>Portal INAP
+                        </a>
+                        <a href="https://www.map.gob.do" class="text-gray-300 hover:text-blue-400 block transition-colors">
+                            <i class="fas fa-external-link-alt mr-2"></i>Portal MAP
+                        </a>
+                        <a href="https://transparencia.gob.do" class="text-gray-300 hover:text-blue-400 block transition-colors">
+                            <i class="fas fa-external-link-alt mr-2"></i>Portal Transparencia
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400 text-sm">
+                    © 2026 Johan Tapia, PhD - INAP. Curso de Inducción a la Administración Pública.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="site.js" defer></script>
+</body>
+</html>

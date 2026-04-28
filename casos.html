@@ -6,31 +6,25 @@
     <title>Casos Prácticos - Inducción a la Administración Pública - INAP</title>
     <meta name="description" content="Casos prácticos y ejemplos reales de aplicación de la legislación dominicana">
     <meta name="theme-color" content="#0f2b5b">
-    
     <script src="https://cdn.tailwindcss.com"></script>
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="site.css?v=3">
     <script>if(localStorage.getItem("inap-dark-mode")==="true")document.documentElement.classList.add("dark");</script>
 </head>
 <body>
-    <div class="progress-indicator">
-        <div class="progress-bar" id="progress-bar"></div>
-    </div>
+    <div class="progress-indicator"><div class="progress-bar" id="progress-bar"></div></div>
 
     <nav class="site-nav sticky top-0 z-50" aria-label="Principal">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center min-w-0">
                     <a href="index.html" class="inline-flex min-w-0 rounded-md focus-visible:outline-offset-2" aria-label="Inicio — INAP">
-                        <img src="assets/inap-logo.png" alt="Instituto Nacional de Administración Pública (INAP). Gobierno de la República Dominicana." class="brand-logo" width="320" height="80" decoding="async">
+                        <img src="assets/inap-logo.png" alt="Instituto Nacional de Administración Pública (INAP)." class="brand-logo" width="320" height="80" decoding="async">
                     </a>
                 </div>
-                
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
                         <a href="index.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Inicio</a>
@@ -43,7 +37,6 @@
                         <a href="glosario.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Glosario</a>
                     </div>
                 </div>
-                
                 <div class="flex items-center gap-2">
                     <button id="dark-mode-toggle" title="Alternar modo oscuro/claro" aria-label="Alternar modo oscuro" class="w-9 h-9 flex items-center justify-center rounded-full text-gray-700 hover:text-blue-600 hover:bg-gray-100 transition-colors focus:outline-none">
                         <i id="dark-mode-icon" class="fas fa-moon text-lg"></i>
@@ -54,8 +47,6 @@
                 </div>
             </div>
         </div>
-        
-        <!-- Mobile menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
             <div class="px-2 pt-2 pb-3 space-y-1">
                 <a href="index.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Inicio</a>
@@ -75,43 +66,28 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <nav class="flex" aria-label="Breadcrumb">
                 <ol class="flex items-center space-x-2">
-                    <li>
-                        <a href="index.html" class="breadcrumb-item hover:text-blue-600">
-                            <i class="fas fa-home"></i>
-                            <span class="sr-only">Inicio</span>
-                        </a>
-                    </li>
-                    <li>
-                        <i class="fas fa-chevron-right breadcrumb-item text-xs"></i>
-                    </li>
-                    <li class="breadcrumb-item active">
-                        Casos Prácticos y Ejemplos
-                    </li>
+                    <li><a href="index.html" class="breadcrumb-item hover:text-blue-600"><i class="fas fa-home"></i><span class="sr-only">Inicio</span></a></li>
+                    <li><i class="fas fa-chevron-right breadcrumb-item text-xs"></i></li>
+                    <li class="breadcrumb-item active">Casos Prácticos y Ejemplos</li>
                 </ol>
             </nav>
         </div>
     </div>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="hero-gradient text-white py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <h1 class="font-display text-4xl lg:text-5xl font-bold mb-6">
-                    Casos Prácticos
-                </h1>
-                <h2 class="text-2xl lg:text-3xl font-light mb-4">
-                    Ejemplos y Ejercicios
-                </h2>
-                <p class="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
-                    Casos reales de aplicación de la legislación dominicana y principios de la función pública para un aprendizaje práctico y efectivo.
-                </p>
-                <div class="mt-8 flex justify-center">
-                    <div class="bg-white bg-opacity-20 backdrop-blur-lg rounded-lg px-6 py-3">
-                        <div class="flex items-center space-x-4 text-sm">
-                            <span><i class="fas fa-book mr-2"></i>8 casos</span>
-                            <span><i class="fas fa-clock mr-2"></i>Duración variable</span>
-                            <span><i class="fas fa-users mr-2"></i>Interactivos</span>
-                        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="font-display text-4xl lg:text-5xl font-bold mb-6">Casos Prácticos</h1>
+            <h2 class="text-2xl lg:text-3xl font-light mb-4">Ejemplos y Ejercicios</h2>
+            <p class="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+                Casos de aplicación de la legislación dominicana y principios de la función pública. Incluye la clasificación de servidores públicos y derechos de indemnización.
+            </p>
+            <div class="mt-8 flex justify-center">
+                <div class="bg-white bg-opacity-20 backdrop-blur-lg rounded-lg px-6 py-3">
+                    <div class="flex items-center space-x-4 text-sm">
+                        <span><i class="fas fa-book mr-2"></i>11 casos</span>
+                        <span><i class="fas fa-clock mr-2"></i>Duración variable</span>
+                        <span><i class="fas fa-users mr-2"></i>Interactivos</span>
                     </div>
                 </div>
             </div>
@@ -121,14 +97,117 @@
     <!-- Main Content -->
     <main class="py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
+
+            <!-- ===== TABLA DE CLASIFICACIÓN DE SERVIDORES PÚBLICOS ===== -->
+            <div class="mb-12 rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+                <div class="bg-gradient-to-r from-blue-900 to-indigo-900 px-8 py-5 flex items-center gap-3">
+                    <i class="fas fa-id-card text-yellow-400 text-2xl"></i>
+                    <div>
+                        <h2 class="text-white font-bold text-xl">Clasificación de Servidores Públicos — Ley 41-08</h2>
+                        <p class="text-blue-200 text-sm">Referencia clave para concursos y evaluaciones · Art. 18, Ley 41-08</p>
+                    </div>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead>
+                            <tr class="bg-gray-100 text-gray-700 text-xs uppercase">
+                                <th class="px-4 py-3 text-left">Tipo</th>
+                                <th class="px-4 py-3 text-left">Grupo</th>
+                                <th class="px-4 py-3 text-left">Nombre del Grupo</th>
+                                <th class="px-4 py-3 text-left">Ejemplos de Cargos</th>
+                                <th class="px-4 py-3 text-left">Ingreso</th>
+                                <th class="px-4 py-3 text-center">¿Indemnización?</th>
+                                <th class="px-4 py-3 text-left">Protección</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            <!-- Libre nombramiento -->
+                            <tr class="bg-red-50">
+                                <td class="px-4 py-3 font-semibold text-red-800" rowspan="1">Libre Nombramiento y Remoción</td>
+                                <td class="px-4 py-3 text-gray-500">—</td>
+                                <td class="px-4 py-3 text-red-700 font-medium">Cargos de Confianza y Alta Dirección</td>
+                                <td class="px-4 py-3 text-gray-700">Ministros, Viceministros, Directores Generales, Subdirectores, Gobernadores, Embajadores, Asesores</td>
+                                <td class="px-4 py-3 text-gray-600">Designación directa</td>
+                                <td class="px-4 py-3 text-center"><span class="bg-red-100 text-red-700 font-bold px-2 py-1 rounded text-xs">NO</span></td>
+                                <td class="px-4 py-3 text-red-700 text-xs">Removibles en cualquier momento. Sin estabilidad de carrera.</td>
+                            </tr>
+                            <!-- Estatuto Simplificado Grupo I -->
+                            <tr class="bg-amber-50">
+                                <td class="px-4 py-3 font-semibold text-amber-800" rowspan="2">Estatuto Simplificado</td>
+                                <td class="px-4 py-3"><span class="bg-amber-200 text-amber-900 font-bold px-2 py-0.5 rounded">I</span></td>
+                                <td class="px-4 py-3 text-amber-800 font-medium">Servicios Generales</td>
+                                <td class="px-4 py-3 text-gray-700">Conserje, mensajero, jardinero, vigilante, portero, auxiliar de limpieza</td>
+                                <td class="px-4 py-3 text-gray-600">Sin concurso formal</td>
+                                <td class="px-4 py-3 text-center"><span class="bg-green-100 text-green-700 font-bold px-2 py-1 rounded text-xs">SÍ</span></td>
+                                <td class="px-4 py-3 text-amber-800 text-xs font-semibold">1 mes de salario por año de servicio (o fracción ≥ 6 meses). Máximo 18 meses. + vacaciones no disfrutadas.</td>
+                            </tr>
+                            <!-- Estatuto Simplificado Grupo II -->
+                            <tr class="bg-amber-50">
+                                <td class="px-4 py-3"><span class="bg-amber-200 text-amber-900 font-bold px-2 py-0.5 rounded">II</span></td>
+                                <td class="px-4 py-3 text-amber-800 font-medium">Apoyo Administrativo</td>
+                                <td class="px-4 py-3 text-gray-700">Secretaria ejecutiva, chofer oficial, auxiliar administrativo, digitador, recepcionista</td>
+                                <td class="px-4 py-3 text-gray-600">Sin concurso formal</td>
+                                <td class="px-4 py-3 text-center"><span class="bg-green-100 text-green-700 font-bold px-2 py-1 rounded text-xs">SÍ</span></td>
+                                <td class="px-4 py-3 text-amber-800 text-xs font-semibold">1 mes de salario por año de servicio (o fracción ≥ 6 meses). Máximo 18 meses. + vacaciones no disfrutadas.</td>
+                            </tr>
+                            <!-- Carrera Grupo III -->
+                            <tr class="bg-blue-50">
+                                <td class="px-4 py-3 font-semibold text-blue-800" rowspan="3">Carrera Administrativa General</td>
+                                <td class="px-4 py-3"><span class="bg-blue-200 text-blue-900 font-bold px-2 py-0.5 rounded">III</span></td>
+                                <td class="px-4 py-3 text-blue-800 font-medium">Técnicos</td>
+                                <td class="px-4 py-3 text-gray-700">Técnico Especialista, Asistente Técnico, Técnico Superior, Técnico en TIC</td>
+                                <td class="px-4 py-3 text-gray-600">Concurso de oposición</td>
+                                <td class="px-4 py-3 text-center"><span class="bg-orange-100 text-orange-700 font-bold px-2 py-1 rounded text-xs">NO*</span></td>
+                                <td class="px-4 py-3 text-blue-800 text-xs font-semibold">Reposición al cargo + pago de todos los sueldos dejados de percibir desde la destitución ilegal.</td>
+                            </tr>
+                            <!-- Carrera Grupo IV -->
+                            <tr class="bg-blue-50">
+                                <td class="px-4 py-3"><span class="bg-blue-200 text-blue-900 font-bold px-2 py-0.5 rounded">IV</span></td>
+                                <td class="px-4 py-3 text-blue-800 font-medium">Profesionales</td>
+                                <td class="px-4 py-3 text-gray-700">Analista I, II, III, IV; Especialista; Asesor Técnico; Coordinador de Proyectos</td>
+                                <td class="px-4 py-3 text-gray-600">Concurso de oposición</td>
+                                <td class="px-4 py-3 text-center"><span class="bg-orange-100 text-orange-700 font-bold px-2 py-1 rounded text-xs">NO*</span></td>
+                                <td class="px-4 py-3 text-blue-800 text-xs font-semibold">Reposición al cargo + pago de todos los sueldos dejados de percibir desde la destitución ilegal.</td>
+                            </tr>
+                            <!-- Carrera Grupo V -->
+                            <tr class="bg-blue-50">
+                                <td class="px-4 py-3"><span class="bg-blue-200 text-blue-900 font-bold px-2 py-0.5 rounded">V</span></td>
+                                <td class="px-4 py-3 text-blue-800 font-medium">Dirección y Supervisión</td>
+                                <td class="px-4 py-3 text-gray-700">Encargado de Departamento (carrera), Encargado de División (carrera), Coordinador de Área</td>
+                                <td class="px-4 py-3 text-gray-600">Concurso de oposición</td>
+                                <td class="px-4 py-3 text-center"><span class="bg-orange-100 text-orange-700 font-bold px-2 py-1 rounded text-xs">NO*</span></td>
+                                <td class="px-4 py-3 text-blue-800 text-xs font-semibold">Reposición al cargo + pago de todos los sueldos dejados de percibir desde la destitución ilegal.</td>
+                            </tr>
+                            <!-- Personal Contratado -->
+                            <tr class="bg-gray-50">
+                                <td class="px-4 py-3 font-semibold text-gray-700">Personal Contratado</td>
+                                <td class="px-4 py-3 text-gray-500">—</td>
+                                <td class="px-4 py-3 text-gray-600 font-medium">Contratos por Servicios / Proyectos</td>
+                                <td class="px-4 py-3 text-gray-700">Consultores, técnicos de proyectos, personal eventual</td>
+                                <td class="px-4 py-3 text-gray-600">Contrato</td>
+                                <td class="px-4 py-3 text-center"><span class="bg-gray-200 text-gray-700 font-bold px-2 py-1 rounded text-xs">Código de Trabajo</span></td>
+                                <td class="px-4 py-3 text-gray-600 text-xs">Sujeto al Código de Trabajo. Indemnización según tipo y duración del contrato.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="bg-yellow-50 border-t border-yellow-200 px-6 py-3 flex items-start gap-2">
+                    <i class="fas fa-exclamation-circle text-yellow-600 mt-0.5 flex-shrink-0"></i>
+                    <p class="text-xs text-yellow-800"><strong>*Nota importante para concursos:</strong> Los servidores de Carrera (Grupos III, IV, V) NO reciben indemnización económica si son despedidos ilegalmente — tienen derecho a <strong>reposición en su cargo</strong> y al cobro de los salarios no percibidos. Solo los de Estatuto Simplificado (Grupos I y II) reciben compensación económica. Excepción: servidores de carrera vinculados <em>antes</em> de la entrada en vigor de la Ley 41-08 (enero 2008) pueden reclamar indemnización por derechos adquiridos.</p>
+                </div>
+            </div>
+
+            <!-- ===== INTRO ===== -->
+            <div class="text-center mb-10">
                 <h2 class="font-display text-3xl font-bold text-gray-800 mb-4">Casos de Aplicación Práctica</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
                     Analiza situaciones reales que enfrentan los servidores públicos y aprende cómo aplicar correctamente la legislación vigente.
                 </p>
             </div>
-            
+
+            <!-- ===== CASE CARDS ===== -->
             <div class="grid gap-6">
+
                 <!-- Caso 1 -->
                 <div class="case-card interactive-element" onclick="openCase('case1')">
                     <div class="flex items-start justify-between">
@@ -139,21 +218,14 @@
                                     <h3 class="font-display text-xl font-bold text-gray-800 mr-3">Ingreso a la Carrera Administrativa</h3>
                                     <span class="difficulty-badge difficulty-easy">Fácil</span>
                                 </div>
-                                <p class="text-gray-600 mb-3">
-                                    María es licenciada en Contabilidad y quiere trabajar en el Ministerio de Hacienda. ¿Cuál es el proceso correcto?
-                                </p>
-                                <div class="flex items-center text-sm text-gray-500">
-                                    <i class="fas fa-tag mr-2"></i>
-                                    <span>Ley 41-08, Carrera Administrativa, Concursos</span>
-                                </div>
+                                <p class="text-gray-600 mb-3">María es licenciada en Contabilidad y quiere trabajar en el Ministerio de Hacienda como Analista Contable. ¿Cuál es el proceso correcto?</p>
+                                <div class="flex items-center text-sm text-gray-500"><i class="fas fa-tag mr-2"></i><span>Ley 41-08 · Concurso de Oposición · Carrera Administrativa</span></div>
                             </div>
                         </div>
-                        <div class="text-blue-600">
-                            <i class="fas fa-chevron-right text-xl"></i>
-                        </div>
+                        <div class="text-blue-600"><i class="fas fa-chevron-right text-xl"></i></div>
                     </div>
                 </div>
-                
+
                 <!-- Caso 2 -->
                 <div class="case-card interactive-element" onclick="openCase('case2')">
                     <div class="flex items-start justify-between">
@@ -164,21 +236,14 @@
                                     <h3 class="font-display text-xl font-bold text-gray-800 mr-3">Conflicto de Intereses</h3>
                                     <span class="difficulty-badge difficulty-medium">Medio</span>
                                 </div>
-                                <p class="text-gray-600 mb-3">
-                                    Juan es encargado de compras y su hermano tiene una empresa que participa en licitaciones. ¿Qué debe hacer?
-                                </p>
-                                <div class="flex items-center text-sm text-gray-500">
-                                    <i class="fas fa-tag mr-2"></i>
-                                    <span>Ética Pública, Conflicto de Intereses, Ley 41-08</span>
-                                </div>
+                                <p class="text-gray-600 mb-3">Juan es encargado de compras y un familiar suyo tiene una empresa que participa en licitaciones institucionales. ¿Qué debe hacer?</p>
+                                <div class="flex items-center text-sm text-gray-500"><i class="fas fa-tag mr-2"></i><span>Ley 41-08 · Ética Pública · Conflicto de Intereses · Ley 340-06</span></div>
                             </div>
                         </div>
-                        <div class="text-blue-600">
-                            <i class="fas fa-chevron-right text-xl"></i>
-                        </div>
+                        <div class="text-blue-600"><i class="fas fa-chevron-right text-xl"></i></div>
                     </div>
                 </div>
-                
+
                 <!-- Caso 3 -->
                 <div class="case-card interactive-element" onclick="openCase('case3')">
                     <div class="flex items-start justify-between">
@@ -189,21 +254,14 @@
                                     <h3 class="font-display text-xl font-bold text-gray-800 mr-3">Solicitud de Información Pública</h3>
                                     <span class="difficulty-badge difficulty-easy">Fácil</span>
                                 </div>
-                                <p class="text-gray-600 mb-3">
-                                    Pedro, periodista, quiere saber cuánto gana un director de institución pública. ¿Tiene derecho a esa información?
-                                </p>
-                                <div class="flex items-center text-sm text-gray-500">
-                                    <i class="fas fa-tag mr-2"></i>
-                                    <span>Ley 200-04, Acceso a Información, Transparencia</span>
-                                </div>
+                                <p class="text-gray-600 mb-3">Pedro, periodista, quiere conocer el salario del director de una institución pública y el gasto mensual en combustible. ¿Tiene derecho a esa información?</p>
+                                <div class="flex items-center text-sm text-gray-500"><i class="fas fa-tag mr-2"></i><span>Ley 200-04 · Ley 107-13 · Transparencia · OAI</span></div>
                             </div>
                         </div>
-                        <div class="text-blue-600">
-                            <i class="fas fa-chevron-right text-xl"></i>
-                        </div>
+                        <div class="text-blue-600"><i class="fas fa-chevron-right text-xl"></i></div>
                     </div>
                 </div>
-                
+
                 <!-- Caso 4 -->
                 <div class="case-card interactive-element" onclick="openCase('case4')">
                     <div class="flex items-start justify-between">
@@ -214,21 +272,14 @@
                                     <h3 class="font-display text-xl font-bold text-gray-800 mr-3">Evaluación de Desempeño Insatisfactorio</h3>
                                     <span class="difficulty-badge difficulty-hard">Difícil</span>
                                 </div>
-                                <p class="text-gray-600 mb-3">
-                                    Carmen, analista de carrera, obtuvo calificación "Insatisfactorio". ¿Cuál es el proceso a seguir?
-                                </p>
-                                <div class="flex items-center text-sm text-gray-500">
-                                    <i class="fas fa-tag mr-2"></i>
-                                    <span>Evaluación de Desempeño, Carrera Administrativa, Procesos Disciplinarios</span>
-                                </div>
+                                <p class="text-gray-600 mb-3">Carmen, Analista II de carrera (Grupo IV), obtuvo calificación "Insatisfactorio" por segunda vez consecutiva. ¿Cuál es el proceso a seguir y qué derechos la asisten?</p>
+                                <div class="flex items-center text-sm text-gray-500"><i class="fas fa-tag mr-2"></i><span>Ley 41-08 · Evaluación del Desempeño · Debido Proceso · Ley 107-13</span></div>
                             </div>
                         </div>
-                        <div class="text-blue-600">
-                            <i class="fas fa-chevron-right text-xl"></i>
-                        </div>
+                        <div class="text-blue-600"><i class="fas fa-chevron-right text-xl"></i></div>
                     </div>
                 </div>
-                
+
                 <!-- Caso 5 -->
                 <div class="case-card interactive-element" onclick="openCase('case5')">
                     <div class="flex items-start justify-between">
@@ -236,24 +287,17 @@
                             <div class="case-number mr-4">5</div>
                             <div class="flex-1">
                                 <div class="flex items-center mb-2">
-                                    <h3 class="font-display text-xl font-bold text-gray-800 mr-3">Acoso Sexual</h3>
+                                    <h3 class="font-display text-xl font-bold text-gray-800 mr-3">Acoso Sexual en el Trabajo</h3>
                                     <span class="difficulty-badge difficulty-hard">Difícil</span>
                                 </div>
-                                <p class="text-gray-600 mb-3">
-                                    Laura reporta que su supervisor hace comentarios inapropiados y tocamientos. ¿Cómo proceder?
-                                </p>
-                                <div class="flex items-center text-sm text-gray-500">
-                                    <i class="fas fa-tag mr-2"></i>
-                                    <span>Acoso Sexual, Protocolo de Denuncia, Protección de la Víctima</span>
-                                </div>
+                                <p class="text-gray-600 mb-3">Laura, profesional de carrera, reporta que su supervisor realiza conductas sexuales no deseadas y amenaza con afectar su evaluación si no accede. ¿Cómo proceder?</p>
+                                <div class="flex items-center text-sm text-gray-500"><i class="fas fa-tag mr-2"></i><span>Ley 41-08 · Protocolo MAP · Ley 24-97 · Constitución Art. 42</span></div>
                             </div>
                         </div>
-                        <div class="text-blue-600">
-                            <i class="fas fa-chevron-right text-xl"></i>
-                        </div>
+                        <div class="text-blue-600"><i class="fas fa-chevron-right text-xl"></i></div>
                     </div>
                 </div>
-                
+
                 <!-- Caso 6 -->
                 <div class="case-card interactive-element" onclick="openCase('case6')">
                     <div class="flex items-start justify-between">
@@ -264,21 +308,14 @@
                                     <h3 class="font-display text-xl font-bold text-gray-800 mr-3">Uso Indebido de Recursos Públicos</h3>
                                     <span class="difficulty-badge difficulty-medium">Medio</span>
                                 </div>
-                                <p class="text-gray-600 mb-3">
-                                    Roberto, chofer oficial, usa el vehículo institucional para asuntos personales. ¿Qué sanción corresponde?
-                                </p>
-                                <div class="flex items-center text-sm text-gray-500">
-                                    <i class="fas fa-tag mr-2"></i>
-                                    <span>Recursos Públicos, Uso Indebido, Régimen Disciplinario</span>
-                                </div>
+                                <p class="text-gray-600 mb-3">Roberto, chofer oficial (Grupo I – Servicios Generales), usa repetidamente el vehículo institucional para fines personales. ¿Qué sanción corresponde y cuáles son sus derechos?</p>
+                                <div class="flex items-center text-sm text-gray-500"><i class="fas fa-tag mr-2"></i><span>Ley 41-08 · Régimen Disciplinario · Faltas Graves · Estatuto Simplificado</span></div>
                             </div>
                         </div>
-                        <div class="text-blue-600">
-                            <i class="fas fa-chevron-right text-xl"></i>
-                        </div>
+                        <div class="text-blue-600"><i class="fas fa-chevron-right text-xl"></i></div>
                     </div>
                 </div>
-                
+
                 <!-- Caso 7 -->
                 <div class="case-card interactive-element" onclick="openCase('case7')">
                     <div class="flex items-start justify-between">
@@ -289,21 +326,14 @@
                                     <h3 class="font-display text-xl font-bold text-gray-800 mr-3">Nepotismo</h3>
                                     <span class="difficulty-badge difficulty-medium">Medio</span>
                                 </div>
-                                <p class="text-gray-600 mb-3">
-                                    Un director nombra a su esposa como su asistente directa. ¿Es esto permitido?
-                                </p>
-                                <div class="flex items-center text-sm text-gray-500">
-                                    <i class="fas fa-tag mr-2"></i>
-                                    <span>Nepotismo, Relaciones de Parentesco, Incompatibilidad</span>
-                                </div>
+                                <p class="text-gray-600 mb-3">Un director nombra a su cónyuge como asistente directa en la misma unidad que él supervisa. ¿Es esto permitido por la ley dominicana?</p>
+                                <div class="flex items-center text-sm text-gray-500"><i class="fas fa-tag mr-2"></i><span>Ley 41-08 · Nepotismo · Ley 311-14 · Constitución Art. 138</span></div>
                             </div>
                         </div>
-                        <div class="text-blue-600">
-                            <i class="fas fa-chevron-right text-xl"></i>
-                        </div>
+                        <div class="text-blue-600"><i class="fas fa-chevron-right text-xl"></i></div>
                     </div>
                 </div>
-                
+
                 <!-- Caso 8 -->
                 <div class="case-card interactive-element" onclick="openCase('case8')">
                     <div class="flex items-start justify-between">
@@ -311,29 +341,80 @@
                             <div class="case-number mr-4">8</div>
                             <div class="flex-1">
                                 <div class="flex items-center mb-2">
-                                    <h3 class="font-display text-xl font-bold text-gray-800 mr-3">Gestión de Vacaciones</h3>
+                                    <h3 class="font-display text-xl font-bold text-gray-800 mr-3">Gestión de Vacaciones Acumuladas</h3>
                                     <span class="difficulty-badge difficulty-easy">Fácil</span>
                                 </div>
-                                <p class="text-gray-600 mb-3">
-                                    Patricia tiene 8 años en la institución y nunca ha tomado vacaciones completas. ¿Cómo gestionar su caso?
-                                </p>
-                                <div class="flex items-center text-sm text-gray-500">
-                                    <i class="fas fa-tag mr-2"></i>
-                                    <span>Vacaciones, Derechos Laborales, Acumulación</span>
-                                </div>
+                                <p class="text-gray-600 mb-3">Patricia lleva 8 años en la institución y nunca ha tomado vacaciones completas. La institución alega que "ya vencieron". ¿Cuáles son sus derechos?</p>
+                                <div class="flex items-center text-sm text-gray-500"><i class="fas fa-tag mr-2"></i><span>Ley 41-08 · Decreto 523-09 · Vacaciones · Derechos Laborales</span></div>
                             </div>
                         </div>
-                        <div class="text-blue-600">
-                            <i class="fas fa-chevron-right text-xl"></i>
-                        </div>
+                        <div class="text-blue-600"><i class="fas fa-chevron-right text-xl"></i></div>
                     </div>
                 </div>
-            </div>
+
+                <!-- Caso 9 -->
+                <div class="case-card interactive-element" onclick="openCase('case9')">
+                    <div class="flex items-start justify-between">
+                        <div class="flex items-start">
+                            <div class="case-number mr-4">9</div>
+                            <div class="flex-1">
+                                <div class="flex items-center mb-2">
+                                    <h3 class="font-display text-xl font-bold text-gray-800 mr-3">Categorías e Indemnización tras Destitución Ilegal</h3>
+                                    <span class="difficulty-badge difficulty-hard">Difícil</span>
+                                </div>
+                                <p class="text-gray-600 mb-3">Dos empleados son destituidos sin proceso disciplinario: Ana (Analista II, Grupo IV – Carrera) y Miguel (Mensajero, Grupo I – Simplificado). ¿Qué derechos tiene cada uno?</p>
+                                <div class="flex items-center text-sm text-gray-500"><i class="fas fa-tag mr-2"></i><span>Ley 41-08 Art. 18 · Grupos I-V · Indemnización · Reposición · TCSS</span></div>
+                            </div>
+                        </div>
+                        <div class="text-blue-600"><i class="fas fa-chevron-right text-xl"></i></div>
+                    </div>
+                </div>
+
+                <!-- Caso 10 -->
+                <div class="case-card interactive-element" onclick="openCase('case10')">
+                    <div class="flex items-start justify-between">
+                        <div class="flex items-start">
+                            <div class="case-number mr-4">10</div>
+                            <div class="flex-1">
+                                <div class="flex items-center mb-2">
+                                    <h3 class="font-display text-xl font-bold text-gray-800 mr-3">Concurso por Ascenso Interno</h3>
+                                    <span class="difficulty-badge difficulty-medium">Medio</span>
+                                </div>
+                                <p class="text-gray-600 mb-3">Carlos, Técnico II (Grupo III) con 6 años de carrera y últimas evaluaciones "Sobresaliente", quiere aplicar a una plaza de Analista I (Grupo IV). ¿Cómo funciona el proceso?</p>
+                                <div class="flex items-center text-sm text-gray-500"><i class="fas fa-tag mr-2"></i><span>Ley 41-08 · Concurso de Méritos · Ascenso · Movilidad de Carrera</span></div>
+                            </div>
+                        </div>
+                        <div class="text-blue-600"><i class="fas fa-chevron-right text-xl"></i></div>
+                    </div>
+                </div>
+
+                <!-- Caso 11 -->
+                <div class="case-card interactive-element" onclick="openCase('case11')">
+                    <div class="flex items-start justify-between">
+                        <div class="flex items-start">
+                            <div class="case-number mr-4">11</div>
+                            <div class="flex-1">
+                                <div class="flex items-center mb-2">
+                                    <h3 class="font-display text-xl font-bold text-gray-800 mr-3">Proceso Disciplinario — Falta Muy Grave</h3>
+                                    <span class="difficulty-badge difficulty-hard">Difícil</span>
+                                </div>
+                                <p class="text-gray-600 mb-3">Ramón, Encargado de División (Grupo V – Carrera), ordena a su equipo alterar datos en informes oficiales para ocultar el incumplimiento de metas. ¿Qué falta es y cuál es el proceso?</p>
+                                <div class="flex items-center text-sm text-gray-500"><i class="fas fa-tag mr-2"></i><span>Ley 41-08 · Faltas Muy Graves · Destitución · Ley 107-13 · Código Penal</span></div>
+                            </div>
+                        </div>
+                        <div class="text-blue-600"><i class="fas fa-chevron-right text-xl"></i></div>
+                    </div>
+                </div>
+
+            </div><!-- end grid -->
         </div>
     </main>
 
-    <!-- Case Modals -->
-    <!-- Caso 1 Modal -->
+    <!-- ================================================================ -->
+    <!-- MODALES -->
+    <!-- ================================================================ -->
+
+    <!-- MODAL 1 -->
     <div id="case1-modal" class="case-modal">
         <div class="modal-content">
             <div class="p-8">
@@ -342,90 +423,67 @@
                         <h2 class="font-display text-2xl font-bold text-gray-800 mb-2">Caso 1: Ingreso a la Carrera Administrativa</h2>
                         <span class="difficulty-badge difficulty-easy">Fácil</span>
                     </div>
-                    <button onclick="closeCase('case1')" class="text-gray-400 hover:text-gray-600">
-                        <i class="fas fa-times text-2xl"></i>
-                    </button>
+                    <button onclick="closeCase('case1')" class="text-gray-400 hover:text-gray-600"><i class="fas fa-times text-2xl"></i></button>
                 </div>
-                
                 <div class="prose max-w-none">
                     <div class="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
                         <h3 class="font-semibold text-blue-800 mb-2">Situación:</h3>
-                        <p class="text-blue-700">
-                            María es licenciada en Contabilidad y quiere trabajar en el Ministerio de Hacienda como Analista Contable I.
-                        </p>
+                        <p class="text-blue-700">María es licenciada en Contabilidad y quiere ingresar al Ministerio de Hacienda como Analista Contable I (Grupo IV – Profesional).</p>
                     </div>
-                    
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Proceso Correcto:</h3>
-                    
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Proceso Correcto según la Ley 41-08:</h3>
                     <div class="grid md:grid-cols-2 gap-6 mb-6">
                         <div class="bg-gray-50 p-4 rounded-lg">
-                            <h4 class="font-semibold text-gray-800 mb-3">
-                                <i class="fas fa-search mr-2 text-blue-600"></i>
-                                1. Consulta de Vacantes
-                            </h4>
+                            <h4 class="font-semibold text-gray-800 mb-3"><i class="fas fa-search mr-2 text-blue-600"></i>1. Consulta de Vacantes</h4>
                             <ul class="space-y-2 text-sm text-gray-700">
-                                <li>• Portal MAP: www.map.gob.do</li>
-                                <li>• Portal empleate.gob.do</li>
-                                <li>• Revisar requisitos del cargo</li>
-                                <li>• Verificar salario y ubicación</li>
+                                <li>• Portal MAP: <strong>www.map.gob.do</strong></li>
+                                <li>• Portal <strong>empleate.gob.do</strong></li>
+                                <li>• Verificar requisitos del cargo (perfil, título, experiencia)</li>
+                                <li>• Revisar salario y ubicación geográfica</li>
                             </ul>
                         </div>
-                        
                         <div class="bg-gray-50 p-4 rounded-lg">
-                            <h4 class="font-semibold text-gray-800 mb-3">
-                                <i class="fas fa-file-alt mr-2 text-green-600"></i>
-                                2. Aplicación al Concurso
-                            </h4>
+                            <h4 class="font-semibold text-gray-800 mb-3"><i class="fas fa-file-alt mr-2 text-green-600"></i>2. Aplicación al Concurso</h4>
                             <ul class="space-y-2 text-sm text-gray-700">
-                                <li>• Llenar formulario en línea</li>
-                                <li>• Adjuntar documentos requeridos</li>
-                                <li>• Certificado de nacimiento</li>
-                                <li>• Título y certificaciones</li>
+                                <li>• Completar formulario en línea</li>
+                                <li>• Adjuntar: acta de nacimiento, cédula, título universitario</li>
+                                <li>• Certificado de no antecedentes penales</li>
+                                <li>• Certificaciones de experiencia laboral</li>
                             </ul>
                         </div>
-                        
                         <div class="bg-gray-50 p-4 rounded-lg">
-                            <h4 class="font-semibold text-gray-800 mb-3">
-                                <i class="fas fa-clipboard-check mr-2 text-purple-600"></i>
-                                3. Evaluación
-                            </h4>
+                            <h4 class="font-semibold text-gray-800 mb-3"><i class="fas fa-clipboard-check mr-2 text-purple-600"></i>3. Evaluación (ponderación)</h4>
                             <div class="text-sm text-gray-700 space-y-1">
-                                <div>• Prueba técnica: 40%</div>
-                                <div>• Prueba psicométrica: 20%</div>
-                                <div>• Evaluación curricular: 20%</div>
-                                <div>• Entrevista: 20%</div>
+                                <div class="flex justify-between"><span>• Prueba técnica</span><strong>40%</strong></div>
+                                <div class="flex justify-between"><span>• Prueba psicométrica</span><strong>20%</strong></div>
+                                <div class="flex justify-between"><span>• Evaluación curricular</span><strong>20%</strong></div>
+                                <div class="flex justify-between"><span>• Entrevista</span><strong>20%</strong></div>
+                                <div class="border-t mt-2 pt-2 flex justify-between font-semibold"><span>Mínimo aprobatorio</span><strong class="text-green-700">70 puntos</strong></div>
                             </div>
                         </div>
-                        
                         <div class="bg-gray-50 p-4 rounded-lg">
-                            <h4 class="font-semibold text-gray-800 mb-3">
-                                <i class="fas fa-graduation-cap mr-2 text-red-600"></i>
-                                4. Inducción y Prueba
-                            </h4>
+                            <h4 class="font-semibold text-gray-800 mb-3"><i class="fas fa-graduation-cap mr-2 text-red-600"></i>4. Nombramiento y Período de Prueba</h4>
                             <ul class="space-y-2 text-sm text-gray-700">
-                                <li>• 2 semanas en INAP</li>
-                                <li>• Período de prueba: 12 meses</li>
-                                <li>• Evaluaciones trimestrales</li>
-                                <li>• Acompañamiento de supervisor</li>
+                                <li>• Inducción en INAP (≥ 2 semanas)</li>
+                                <li>• Período de prueba: <strong>12 meses</strong></li>
+                                <li>• Evaluaciones periódicas con supervisor</li>
+                                <li>• Al superar la prueba: Certificado de Carrera Administrativa</li>
                             </ul>
                         </div>
                     </div>
-                    
-                    <div class="bg-green-50 border-l-4 border-green-400 p-4">
-                        <h4 class="font-semibold text-green-800 mb-2">
-                            <i class="fas fa-lightbulb mr-2"></i>
-                            Resultado Exitoso:
-                        </h4>
-                        <p class="text-green-700">
-                            María obtiene 85 puntos (mínimo 70), ocupa 2do lugar de 50 aplicantes, es nombrada y después de 12 meses de prueba exitosa, obtiene su certificado de carrera y estabilidad laboral.
-                        </p>
+                    <div class="bg-green-50 border-l-4 border-green-400 p-4 mb-4">
+                        <h4 class="font-semibold text-green-800 mb-2"><i class="fas fa-lightbulb mr-2"></i>Resultado:</h4>
+                        <p class="text-green-700">María obtiene 85 puntos, ocupa el 2.° lugar entre 50 aplicantes, es nombrada y tras 12 meses exitosos obtiene su certificado de carrera y <strong>estabilidad laboral plena</strong> (no puede ser removida sin proceso disciplinario).</p>
+                    </div>
+                    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                        <h4 class="font-semibold text-yellow-800 mb-1"><i class="fas fa-gavel mr-2"></i>Fundamento Legal:</h4>
+                        <p class="text-sm text-yellow-700">Ley 41-08, Arts. 15-32 (Carrera Administrativa) · Constitución 2024, Art. 142 · Reglamento de Reclutamiento y Selección, MAP.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Caso 2 Modal -->
+    <!-- MODAL 2 -->
     <div id="case2-modal" class="case-modal">
         <div class="modal-content">
             <div class="p-8">
@@ -434,68 +492,49 @@
                         <h2 class="font-display text-2xl font-bold text-gray-800 mb-2">Caso 2: Conflicto de Intereses</h2>
                         <span class="difficulty-badge difficulty-medium">Medio</span>
                     </div>
-                    <button onclick="closeCase('case2')" class="text-gray-400 hover:text-gray-600">
-                        <i class="fas fa-times text-2xl"></i>
-                    </button>
+                    <button onclick="closeCase('case2')" class="text-gray-400 hover:text-gray-600"><i class="fas fa-times text-2xl"></i></button>
                 </div>
-                
                 <div class="prose max-w-none">
                     <div class="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
                         <h3 class="font-semibold text-blue-800 mb-2">Situación:</h3>
-                        <p class="text-blue-700">
-                            Juan es encargado de compras en el Ministerio de Obras Públicas. Su hermano tiene una ferretería y participa en licitación para vender materiales.
-                        </p>
+                        <p class="text-blue-700">Juan es encargado de compras en el Ministerio de Obras Públicas. Un familiar cercano tiene una empresa que participa en un proceso de licitación que Juan debe evaluar.</p>
                     </div>
-                    
                     <div class="grid md:grid-cols-2 gap-6 mb-6">
                         <div class="bg-red-50 border border-red-200 rounded-lg p-4">
-                            <h4 class="font-semibold text-red-800 mb-3">
-                                <i class="fas fa-times-circle mr-2"></i>
-                                ¿Qué NO debe hacer Juan?
-                            </h4>
+                            <h4 class="font-semibold text-red-800 mb-3"><i class="fas fa-times-circle mr-2"></i>Lo que NO debe hacer Juan:</h4>
                             <ul class="space-y-2 text-sm text-red-700">
-                                <li>• Pensar "nadie se dará cuenta"</li>
-                                <li>• Creer que puede ser objetivo</li>
-                                <li>• Favorecer a otro oferente para "compensar"</li>
-                                <li>• Participar del proceso sin declarar</li>
+                                <li>• Suponer que puede ser imparcial</li>
+                                <li>• Pensar que "nadie se dará cuenta"</li>
+                                <li>• Favorecer a otro oferente "para compensar"</li>
+                                <li>• Participar de cualquier fase del proceso sin declarar</li>
                             </ul>
                         </div>
-                        
                         <div class="bg-green-50 border border-green-200 rounded-lg p-4">
-                            <h4 class="font-semibold text-green-800 mb-3">
-                                <i class="fas fa-check-circle mr-2"></i>
-                                ¿Qué SÍ debe hacer Juan?
-                            </h4>
+                            <h4 class="font-semibold text-green-800 mb-3"><i class="fas fa-check-circle mr-2"></i>Lo que SÍ debe hacer Juan:</h4>
                             <ul class="space-y-2 text-sm text-green-700">
-                                <li>• Declararse impedido por escrito</li>
-                                <li>• Explicar que su hermano es oferente</li>
-                                <li>• Solicitar que otro funcionario evalúe</li>
-                                <li>• No participar en ninguna fase del proceso</li>
+                                <li>• Declararse <strong>impedido por escrito</strong> ante su superior</li>
+                                <li>• Explicar el vínculo familiar con el oferente</li>
+                                <li>• Solicitar que otro funcionario asuma la evaluación</li>
+                                <li>• No participar en ninguna fase: evaluación, adjudicación ni firma</li>
                             </ul>
                         </div>
                     </div>
-                    
                     <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
-                        <h4 class="font-semibold text-yellow-800 mb-2">
-                            <i class="fas fa-gavel mr-2"></i>
-                            Fundamento Legal:
-                        </h4>
+                        <h4 class="font-semibold text-yellow-800 mb-2"><i class="fas fa-gavel mr-2"></i>Fundamento Legal:</h4>
                         <ul class="text-sm text-yellow-700 space-y-1">
-                            <li>• Ley 41-08, Art. 80, numeral 16 (conflicto de intereses)</li>
-                            <li>• Ley 340-06 de Compras (impedimentos)</li>
+                            <li>• <strong>Ley 41-08</strong>: prohibición de conflicto de intereses en procesos de adquisición</li>
+                            <li>• <strong>Ley 340-06</strong> de Compras y Contrataciones Públicas: impedimentos de los evaluadores</li>
+                            <li>• <strong>Ley 311-14</strong>: Código de Conducta de los Servidores Públicos</li>
+                            <li>• <strong>Constitución 2024, Art. 146</strong>: prohibición de usar el cargo para beneficio personal o de terceros</li>
                         </ul>
                     </div>
-                    
                     <div class="bg-red-50 border-l-4 border-red-400 p-4">
-                        <h4 class="font-semibold text-red-800 mb-2">
-                            <i class="fas fa-exclamation-triangle mr-2"></i>
-                            Consecuencias de no declararse impedido:
-                        </h4>
+                        <h4 class="font-semibold text-red-800 mb-2"><i class="fas fa-exclamation-triangle mr-2"></i>Consecuencias de no declararse impedido:</h4>
                         <ul class="text-sm text-red-700 space-y-1">
-                            <li>• Falta de tercer grado</li>
-                            <li>• Destitución</li>
-                            <li>• Inhabilitación 5 años</li>
-                            <li>• Posible proceso penal</li>
+                            <li>• <strong>Falta muy grave</strong> → Destitución inmediata</li>
+                            <li>• Inhabilitación para cargos públicos hasta 5 años</li>
+                            <li>• Nulidad del proceso de licitación</li>
+                            <li>• Posible proceso penal por corrupción</li>
                         </ul>
                     </div>
                 </div>
@@ -503,7 +542,7 @@
         </div>
     </div>
 
-    <!-- Caso 3 Modal -->
+    <!-- MODAL 3 -->
     <div id="case3-modal" class="case-modal">
         <div class="modal-content">
             <div class="p-8">
@@ -512,79 +551,616 @@
                         <h2 class="font-display text-2xl font-bold text-gray-800 mb-2">Caso 3: Solicitud de Información Pública</h2>
                         <span class="difficulty-badge difficulty-easy">Fácil</span>
                     </div>
-                    <button onclick="closeCase('case3')" class="text-gray-400 hover:text-gray-600">
-                        <i class="fas fa-times text-2xl"></i>
-                    </button>
+                    <button onclick="closeCase('case3')" class="text-gray-400 hover:text-gray-600"><i class="fas fa-times text-2xl"></i></button>
                 </div>
-                
                 <div class="prose max-w-none">
                     <div class="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
                         <h3 class="font-semibold text-blue-800 mb-2">Situación:</h3>
-                        <p class="text-blue-700">
-                            Pedro, periodista, quiere saber cuánto gana el director de una institución y cuánto gasta en combustible mensualmente.
-                        </p>
+                        <p class="text-blue-700">Pedro, periodista, desea conocer el salario del director de una institución pública y el gasto mensual en combustible de los últimos 12 meses.</p>
                     </div>
-                    
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Procedimiento de Solicitud:</h3>
-                    
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Procedimiento de Solicitud (Ley 200-04):</h3>
                     <div class="bg-gray-50 p-4 rounded-lg mb-6">
-                        <h4 class="font-semibold text-gray-800 mb-3">Modelo de Solicitud:</h4>
-                        <div class="bg-white p-4 border rounded text-sm">
-                            <p class="font-semibold mb-2">A: Responsable de Acceso a Información</p>
-                            <p class="font-semibold mb-4">Institución X</p>
-                            
-                            <p class="font-semibold mb-2">SOLICITO:</p>
-                            <ol class="list-decimal list-inside space-y-1 mb-4">
-                                <li>Salario del Director General (año 2024)</li>
-                                <li>Gasto mensual en combustible (enero-octubre 2024)</li>
+                        <h4 class="font-semibold text-gray-800 mb-3">Modelo de Solicitud a la OAI:</h4>
+                        <div class="bg-white p-4 border rounded text-sm font-mono">
+                            <p class="font-semibold mb-1">A: Responsable de Acceso a la Información Pública (OAI)</p>
+                            <p class="font-semibold mb-3">Institución: ___________________________</p>
+                            <p class="mb-2"><strong>Solicito:</strong></p>
+                            <ol class="list-decimal list-inside space-y-1 mb-3">
+                                <li>Salario mensual del Director General (año en curso)</li>
+                                <li>Gasto en combustible mensual (últimos 12 meses)</li>
                             </ol>
-                            
-                            <p class="mb-2"><strong>Para:</strong> Investigación periodística</p>
-                            <p class="mb-4"><strong>Respuesta preferida:</strong> Correo electrónico</p>
-                            
-                            <p><strong>Firma:</strong> ________________</p>
+                            <p class="mb-1"><strong>Propósito:</strong> Investigación periodística de interés público</p>
+                            <p><strong>Formato preferido de respuesta:</strong> Correo electrónico / Documento digital</p>
                         </div>
                     </div>
-                    
                     <div class="grid md:grid-cols-2 gap-6 mb-6">
                         <div class="bg-green-50 border border-green-200 rounded-lg p-4">
-                            <h4 class="font-semibold text-green-800 mb-3">
-                                <i class="fas fa-check-circle mr-2"></i>
-                                ¿Pueden negar la información?
-                            </h4>
-                            <p class="text-sm text-green-700 mb-3">
-                                <strong>NO</strong>, porque:
-                            </p>
+                            <h4 class="font-semibold text-green-800 mb-3"><i class="fas fa-check-circle mr-2"></i>¿Pueden negar la información?</h4>
+                            <p class="text-sm text-green-700 mb-2"><strong>NO</strong>, porque:</p>
                             <ul class="text-sm text-green-700 space-y-1">
-                                <li>• Son datos publicables por ley</li>
-                                <li>• No afectan seguridad ni privacidad</li>
-                                <li>• Están en presupuesto público</li>
+                                <li>• Los salarios de servidores públicos son datos de libre acceso</li>
+                                <li>• El gasto en combustible es ejecución presupuestaria pública</li>
+                                <li>• No afectan seguridad nacional ni privacidad individual</li>
                             </ul>
                         </div>
-                        
                         <div class="bg-red-50 border border-red-200 rounded-lg p-4">
-                            <h4 class="font-semibold text-red-800 mb-3">
-                                <i class="fas fa-times-circle mr-2"></i>
-                                ¿Cuándo SÍ podrían negar?
-                            </h4>
+                            <h4 class="font-semibold text-red-800 mb-3"><i class="fas fa-lock mr-2"></i>¿Cuándo SÍ podrían negar?</h4>
                             <ul class="text-sm text-red-700 space-y-1">
-                                <li>• Expediente médico del director</li>
-                                <li>• Detalles de investigación en curso</li>
-                                <li>• Estrategia de licitación en proceso</li>
+                                <li>• Expediente médico o información personal del director</li>
+                                <li>• Detalles de investigación penal en curso</li>
+                                <li>• Información que comprometa seguridad del Estado</li>
+                                <li>• Estrategia de licitaciones en proceso activo</li>
                             </ul>
                         </div>
                     </div>
-                    
-                    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
-                        <h4 class="font-semibold text-yellow-800 mb-2">
-                            <i class="fas fa-clock mr-2"></i>
-                            Tiempos de Respuesta:
-                        </h4>
+                    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-4">
+                        <h4 class="font-semibold text-yellow-800 mb-2"><i class="fas fa-clock mr-2"></i>Plazos y Recursos:</h4>
                         <ul class="text-sm text-yellow-700 space-y-1">
-                            <li>• OAI tiene 15 días laborables para responder</li>
-                            <li>• Si niegan sin justificación: recurso ante Comisión de Acceso</li>
-                            <li>• Funcionario puede ser sancionado por negativa injustificada</li>
+                            <li>• La OAI tiene <strong>15 días hábiles</strong> para responder (prorrogables 10 días más)</li>
+                            <li>• Si niegan sin justificación legal: recurso ante la <strong>Comisión de Acceso a la Información</strong></li>
+                            <li>• El funcionario que niegue sin causa puede ser sancionado disciplinariamente</li>
                         </ul>
+                    </div>
+                    <div class="bg-blue-50 border-l-4 border-blue-400 p-4">
+                        <h4 class="font-semibold text-blue-800 mb-1"><i class="fas fa-gavel mr-2"></i>Fundamento Legal:</h4>
+                        <p class="text-sm text-blue-700">Ley 200-04 (Libre Acceso a la Información Pública) · Ley 107-13, Art. 4 (derechos ciudadanos ante la Administración) · Constitución 2024, Art. 22.4 (derecho de petición).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 4 -->
+    <div id="case4-modal" class="case-modal">
+        <div class="modal-content">
+            <div class="p-8">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <h2 class="font-display text-2xl font-bold text-gray-800 mb-2">Caso 4: Evaluación de Desempeño Insatisfactorio</h2>
+                        <span class="difficulty-badge difficulty-hard">Difícil</span>
+                    </div>
+                    <button onclick="closeCase('case4')" class="text-gray-400 hover:text-gray-600"><i class="fas fa-times text-2xl"></i></button>
+                </div>
+                <div class="prose max-w-none">
+                    <div class="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
+                        <h3 class="font-semibold text-blue-800 mb-2">Situación:</h3>
+                        <p class="text-blue-700">Carmen es Analista II (Grupo IV – Profesional de Carrera Administrativa General). Obtuvo calificación <strong>"Insatisfactorio"</strong> en su segunda evaluación anual consecutiva. Su jefe quiere destituirla de inmediato.</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div class="bg-orange-50 border border-orange-200 rounded-lg p-4">
+                            <h4 class="font-semibold text-orange-800 mb-3"><i class="fas fa-clipboard-list mr-2"></i>Primer "Insatisfactorio" — Proceso obligatorio:</h4>
+                            <ol class="space-y-2 text-sm text-orange-700 list-decimal list-inside">
+                                <li>Notificación formal y por escrito de la calificación</li>
+                                <li>Carmen tiene derecho a conocer los criterios específicos fallidos</li>
+                                <li>La ARH elabora un <strong>Plan de Mejora</strong> (mínimo 3 meses)</li>
+                                <li>Seguimiento mensual con supervisor y ARH</li>
+                                <li>Se buscan causas: falta de capacitación, recursos, problemas personales</li>
+                            </ol>
+                        </div>
+                        <div class="bg-red-50 border border-red-200 rounded-lg p-4">
+                            <h4 class="font-semibold text-red-800 mb-3"><i class="fas fa-exclamation-triangle mr-2"></i>Segundo "Insatisfactorio" consecutivo:</h4>
+                            <ol class="space-y-2 text-sm text-red-700 list-decimal list-inside">
+                                <li>Se inicia proceso de <strong>desvinculación por rendimiento</strong></li>
+                                <li>Carmen debe ser notificada con cargos específicos</li>
+                                <li>Tiene derecho a presentar descargos y pruebas</li>
+                                <li>Decisión fundamentada y por escrito</li>
+                                <li>Si se confirma separación: puede apelar ante el MAP y luego el TCSS</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
+                        <h4 class="font-semibold text-green-800 mb-3"><i class="fas fa-shield-alt mr-2"></i>Derechos de Carmen como servidora de Carrera (Grupo IV):</h4>
+                        <div class="grid md:grid-cols-2 gap-3 text-sm text-green-700">
+                            <div>✔ Conocer criterios específicos de evaluación</div>
+                            <div>✔ Plan de mejora antes de cualquier sanción</div>
+                            <div>✔ Ser escuchada antes de cualquier decisión</div>
+                            <div>✔ Presentar pruebas y testigos</div>
+                            <div>✔ Apelar la evaluación ante instancia superior</div>
+                            <div>✔ Recurrir al TCSS si estima la destitución ilegal</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-red-50 border-l-4 border-red-400 p-4 mb-4">
+                        <h4 class="font-semibold text-red-800 mb-2"><i class="fas fa-ban mr-2"></i>Lo que el jefe NO puede hacer:</h4>
+                        <p class="text-sm text-red-700">Destituir a Carmen de inmediato sin seguir el proceso. Como servidora de <strong>Carrera Administrativa General (Grupo IV)</strong>, no puede ser removida sin proceso disciplinario ni de evaluación completo. Una destitución sin proceso la da derecho a <strong>reposición en su cargo + pago de todos los sueldos no percibidos</strong>.</p>
+                    </div>
+
+                    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                        <h4 class="font-semibold text-yellow-800 mb-1"><i class="fas fa-gavel mr-2"></i>Fundamento Legal:</h4>
+                        <p class="text-sm text-yellow-700">Ley 41-08 (Carrera Administrativa, régimen de evaluación) · Reglamento de Evaluación del Desempeño Laboral (MAP) · Ley 107-13, Art. 8 (debido proceso administrativo) · Constitución 2024, Art. 69 (debido proceso).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 5 -->
+    <div id="case5-modal" class="case-modal">
+        <div class="modal-content">
+            <div class="p-8">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <h2 class="font-display text-2xl font-bold text-gray-800 mb-2">Caso 5: Acoso Sexual en el Trabajo</h2>
+                        <span class="difficulty-badge difficulty-hard">Difícil</span>
+                    </div>
+                    <button onclick="closeCase('case5')" class="text-gray-400 hover:text-gray-600"><i class="fas fa-times text-2xl"></i></button>
+                </div>
+                <div class="prose max-w-none">
+                    <div class="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
+                        <h3 class="font-semibold text-blue-800 mb-2">Situación:</h3>
+                        <p class="text-blue-700">Laura, profesional de carrera (Grupo IV), reporta que su supervisor realiza comentarios de connotación sexual, envía mensajes inapropiados y ha amenazado con afectar su evaluación si no accede a sus insinuaciones.</p>
+                    </div>
+
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3">Protocolo de Actuación (MAP):</h3>
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-start gap-3 bg-gray-50 p-3 rounded-lg">
+                            <span class="bg-blue-600 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">1</span>
+                            <div><strong class="text-gray-800">Interposición de la queja:</strong><p class="text-sm text-gray-600 mt-1">Laura puede reportar ante: la ARH/UARH de la institución, el superior jerárquico del acosador, la Defensoría del Pueblo o el MAP. No necesita testigos para presentar la queja inicial.</p></div>
+                        </div>
+                        <div class="flex items-start gap-3 bg-gray-50 p-3 rounded-lg">
+                            <span class="bg-blue-600 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">2</span>
+                            <div><strong class="text-gray-800">Medidas cautelares inmediatas:</strong><p class="text-sm text-gray-600 mt-1">Separación física del acosador del espacio de trabajo de Laura (reasignación temporal del acosador, no de la víctima). <strong>Laura no puede ser transferida en contra de su voluntad</strong>.</p></div>
+                        </div>
+                        <div class="flex items-start gap-3 bg-gray-50 p-3 rounded-lg">
+                            <span class="bg-blue-600 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">3</span>
+                            <div><strong class="text-gray-800">Investigación formal:</strong><p class="text-sm text-gray-600 mt-1">Se constituye una comisión investigadora en 5 días hábiles. Se recopilan evidencias: mensajes, testimonios, registros. El investigado tiene derecho a presentar su defensa.</p></div>
+                        </div>
+                        <div class="flex items-start gap-3 bg-gray-50 p-3 rounded-lg">
+                            <span class="bg-blue-600 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">4</span>
+                            <div><strong class="text-gray-800">Si se comprueba el acoso:</strong><p class="text-sm text-gray-600 mt-1"><strong>Destitución</strong> del acosador (falta muy grave). Referimiento a la Procuraduría General por violación a la Ley 24-97. Inhabilidad para cargos públicos.</p></div>
+                        </div>
+                    </div>
+
+                    <div class="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
+                        <h4 class="font-semibold text-green-800 mb-3"><i class="fas fa-shield-alt mr-2"></i>Protecciones de Laura:</h4>
+                        <div class="grid md:grid-cols-2 gap-2 text-sm text-green-700">
+                            <div>✔ Confidencialidad de su identidad durante la investigación</div>
+                            <div>✔ Prohibición de represalias por parte de la institución</div>
+                            <div>✔ No puede ser transferida ni perjudicada en su evaluación</div>
+                            <div>✔ Apoyo psicológico institucional disponible</div>
+                            <div>✔ Si hay represalias: nueva falta muy grave para quien las ejerza</div>
+                            <div>✔ Puede acudir a la justicia ordinaria paralelamente</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                        <h4 class="font-semibold text-yellow-800 mb-1"><i class="fas fa-gavel mr-2"></i>Fundamento Legal:</h4>
+                        <p class="text-sm text-yellow-700">Ley 41-08 (acoso sexual como falta muy grave) · Protocolo de Prevención y Atención al Acoso Sexual en la Administración Pública (MAP) · Ley 24-97 (violencia contra la mujer) · Constitución 2024, Art. 42 (integridad personal y dignidad humana).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 6 -->
+    <div id="case6-modal" class="case-modal">
+        <div class="modal-content">
+            <div class="p-8">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <h2 class="font-display text-2xl font-bold text-gray-800 mb-2">Caso 6: Uso Indebido de Recursos Públicos</h2>
+                        <span class="difficulty-badge difficulty-medium">Medio</span>
+                    </div>
+                    <button onclick="closeCase('case6')" class="text-gray-400 hover:text-gray-600"><i class="fas fa-times text-2xl"></i></button>
+                </div>
+                <div class="prose max-w-none">
+                    <div class="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
+                        <h3 class="font-semibold text-blue-800 mb-2">Situación:</h3>
+                        <p class="text-blue-700">Roberto es chofer oficial de la institución (<strong>Grupo I – Servicios Generales, Estatuto Simplificado</strong>). Ha sido detectado usando el vehículo institucional repetidamente para llevar a sus hijos al colegio y hacer diligencias personales.</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-3">Clasificación de la falta (Ley 41-08):</h4>
+                            <div class="space-y-2">
+                                <div class="bg-yellow-50 border border-yellow-300 rounded p-3 text-sm">
+                                    <strong class="text-yellow-800">Primera vez:</strong>
+                                    <p class="text-yellow-700 mt-1">Falta <strong>grave</strong> → Suspensión sin goce de salario de 3 a 30 días</p>
+                                </div>
+                                <div class="bg-red-50 border border-red-300 rounded p-3 text-sm">
+                                    <strong class="text-red-800">Si es reincidente (como en este caso):</strong>
+                                    <p class="text-red-700 mt-1">Falta <strong>muy grave</strong> → Destitución</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-3">Proceso disciplinario obligatorio:</h4>
+                            <ol class="space-y-2 text-sm text-gray-700 list-decimal list-inside">
+                                <li>Notificación escrita a Roberto con cargos específicos</li>
+                                <li>Roberto tiene <strong>3 días hábiles</strong> para presentar descargos</li>
+                                <li>Investigación (recopilación de evidencias: GPS, testigos, registros)</li>
+                                <li>Decisión motivada y por escrito</li>
+                                <li>Roberto puede apelar ante el MAP</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="bg-amber-50 border border-amber-200 rounded-lg p-4 mb-6">
+                        <h4 class="font-semibold text-amber-800 mb-2"><i class="fas fa-info-circle mr-2"></i>Derechos de Roberto como Grupo I (Estatuto Simplificado):</h4>
+                        <p class="text-sm text-amber-700 mb-2">A diferencia de los servidores de carrera, Roberto pertenece al <strong>Estatuto Simplificado (Grupo I)</strong>. Si es destituido (con o sin causa justificada), tiene derecho a:</p>
+                        <ul class="text-sm text-amber-800 space-y-1">
+                            <li>• <strong>Indemnización económica:</strong> 1 mes de salario por cada año de servicio o fracción ≥ 6 meses</li>
+                            <li>• <strong>Máximo:</strong> 18 meses de salario</li>
+                            <li>• <strong>Más:</strong> vacaciones no disfrutadas + proporcional de aguinaldo</li>
+                        </ul>
+                        <p class="text-xs text-amber-600 mt-2">Nota: si la destitución es por falta comprobada, recibe la indemnización de ley pero <strong>no</strong> tiene derecho a reposición.</p>
+                    </div>
+
+                    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                        <h4 class="font-semibold text-yellow-800 mb-1"><i class="fas fa-gavel mr-2"></i>Fundamento Legal:</h4>
+                        <p class="text-sm text-yellow-700">Ley 41-08 (prohibiciones del servidor público, régimen disciplinario, Estatuto Simplificado) · Constitución 2024, Art. 146 (prohibición de uso de recursos públicos para fines privados).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 7 -->
+    <div id="case7-modal" class="case-modal">
+        <div class="modal-content">
+            <div class="p-8">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <h2 class="font-display text-2xl font-bold text-gray-800 mb-2">Caso 7: Nepotismo</h2>
+                        <span class="difficulty-badge difficulty-medium">Medio</span>
+                    </div>
+                    <button onclick="closeCase('case7')" class="text-gray-400 hover:text-gray-600"><i class="fas fa-times text-2xl"></i></button>
+                </div>
+                <div class="prose max-w-none">
+                    <div class="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
+                        <h3 class="font-semibold text-blue-800 mb-2">Situación:</h3>
+                        <p class="text-blue-700">Un director general (libre nombramiento) designa a su cónyuge como su asistente directa dentro de la misma unidad que él dirige y supervisa.</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div class="bg-red-50 border border-red-200 rounded-lg p-4">
+                            <h4 class="font-semibold text-red-800 mb-3"><i class="fas fa-times-circle mr-2"></i>¿Es legal este nombramiento?</h4>
+                            <p class="text-sm text-red-700 mb-2"><strong>NO.</strong> La Ley 41-08 prohíbe expresamente el nombramiento de familiares en cargos donde exista relación de subordinación directa. El matrimonio constituye parentesco por <strong>afinidad en 1.° grado</strong>, que está dentro del límite prohibido.</p>
+                        </div>
+                        <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                            <h4 class="font-semibold text-green-800 mb-3"><i class="fas fa-question-circle mr-2"></i>¿Podría estar en otra unidad?</h4>
+                            <p class="text-sm text-green-700">Depende del grado de parentesco y de si existe relación jerárquica directa. La ley prohíbe la subordinación directa. Si la cónyuge trabajara en una unidad completamente independiente sin vínculo jerárquico con el director, podría ser evaluado caso a caso. En este caso específico: <strong>definitivamente ilegal</strong>.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-6">
+                        <h4 class="font-semibold text-gray-800 mb-3">Grados de parentesco prohibidos (Ley 41-08):</h4>
+                        <div class="grid md:grid-cols-2 gap-4 text-sm">
+                            <div>
+                                <p class="font-semibold text-gray-700 mb-2">Por consanguinidad (hasta 4.° grado):</p>
+                                <ul class="text-gray-600 space-y-1">
+                                    <li>• 1.°: hijos, padres</li>
+                                    <li>• 2.°: hermanos, abuelos, nietos</li>
+                                    <li>• 3.°: tíos, sobrinos</li>
+                                    <li>• 4.°: primos hermanos</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-700 mb-2">Por afinidad (hasta 2.° grado):</p>
+                                <ul class="text-gray-600 space-y-1">
+                                    <li>• 1.°: <strong>cónyuge</strong>, suegros, yernos/nueras</li>
+                                    <li>• 2.°: cuñados</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-red-50 border-l-4 border-red-400 p-4 mb-4">
+                        <h4 class="font-semibold text-red-800 mb-2"><i class="fas fa-exclamation-triangle mr-2"></i>Consecuencias:</h4>
+                        <ul class="text-sm text-red-700 space-y-1">
+                            <li>• El nombramiento es <strong>nulo de pleno derecho</strong> desde su origen</li>
+                            <li>• El director enfrenta proceso disciplinario: destitución y posible inhabilitación</li>
+                            <li>• La cónyuge pierde el cargo (el nombramiento ilegal no genera derechos de carrera)</li>
+                            <li>• Si hubo pago de salarios por el cargo ilegal, puede exigirse la devolución al Estado</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                        <h4 class="font-semibold text-yellow-800 mb-1"><i class="fas fa-gavel mr-2"></i>Fundamento Legal:</h4>
+                        <p class="text-sm text-yellow-700">Ley 41-08 (prohibición de nepotismo) · Ley 311-14 (Código de Conducta) · Constitución 2024, Art. 138 (principios de objetividad e imparcialidad en la AP) · Art. 146 (prohibición de uso del cargo para beneficio personal).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 8 -->
+    <div id="case8-modal" class="case-modal">
+        <div class="modal-content">
+            <div class="p-8">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <h2 class="font-display text-2xl font-bold text-gray-800 mb-2">Caso 8: Gestión de Vacaciones Acumuladas</h2>
+                        <span class="difficulty-badge difficulty-easy">Fácil</span>
+                    </div>
+                    <button onclick="closeCase('case8')" class="text-gray-400 hover:text-gray-600"><i class="fas fa-times text-2xl"></i></button>
+                </div>
+                <div class="prose max-w-none">
+                    <div class="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
+                        <h3 class="font-semibold text-blue-800 mb-2">Situación:</h3>
+                        <p class="text-blue-700">Patricia lleva 8 años como analista de carrera (Grupo IV) y nunca ha tomado vacaciones completas porque la institución "siempre tenía necesidades urgentes". Ahora la ARH le dice que sus vacaciones "ya vencieron". ¿Tiene razón la ARH?</p>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-lg p-5 mb-6">
+                        <h4 class="font-semibold text-gray-800 mb-3">Escala de vacaciones (Decreto 523-09, Reglamento Ley 41-08):</h4>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm">
+                                <thead><tr class="bg-blue-100 text-blue-800"><th class="px-3 py-2 text-left">Años de servicio</th><th class="px-3 py-2 text-center">Días laborables</th><th class="px-3 py-2 text-center">Semanas aprox.</th></tr></thead>
+                                <tbody class="divide-y divide-gray-200">
+                                    <tr><td class="px-3 py-2">1 a 5 años</td><td class="px-3 py-2 text-center">15 días</td><td class="px-3 py-2 text-center">3 semanas</td></tr>
+                                    <tr class="bg-yellow-50 font-semibold"><td class="px-3 py-2">5 a 10 años <span class="text-yellow-700">(Patricia: 8 años)</span></td><td class="px-3 py-2 text-center text-yellow-800">20 días</td><td class="px-3 py-2 text-center text-yellow-800">4 semanas</td></tr>
+                                    <tr><td class="px-3 py-2">10 a 15 años</td><td class="px-3 py-2 text-center">25 días</td><td class="px-3 py-2 text-center">5 semanas</td></tr>
+                                    <tr><td class="px-3 py-2">Más de 15 años</td><td class="px-3 py-2 text-center">30 días</td><td class="px-3 py-2 text-center">6 semanas</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-2">*El tiempo de servicio en cualquier institución del Estado se acumula a efectos del cálculo de vacaciones.</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div class="bg-red-50 border border-red-200 rounded-lg p-4">
+                            <h4 class="font-semibold text-red-800 mb-2"><i class="fas fa-times-circle mr-2"></i>¿Tiene razón la ARH?</h4>
+                            <p class="text-sm text-red-700"><strong>NO.</strong> Si la institución impidió que Patricia tomara sus vacaciones por "necesidades del servicio", la responsabilidad es de la institución, no de Patricia. Las vacaciones no pueden prescribir por causa imputable al empleador.</p>
+                        </div>
+                        <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                            <h4 class="font-semibold text-green-800 mb-2"><i class="fas fa-check-circle mr-2"></i>¿Qué le corresponde a Patricia?</h4>
+                            <ul class="text-sm text-green-700 space-y-1">
+                                <li>• Disfrutar sus vacaciones acumuladas pendientes</li>
+                                <li>• La ARH debe programarlas con 30 días de anticipación</li>
+                                <li>• Si se desvincula: pago de todas las vacaciones no disfrutadas</li>
+                                <li>• Mínimo 6 meses de servicio en el año para cobrarlas proporcionalmente</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                        <h4 class="font-semibold text-yellow-800 mb-1"><i class="fas fa-gavel mr-2"></i>Fundamento Legal:</h4>
+                        <p class="text-sm text-yellow-700">Ley 41-08 (derechos del servidor público) · Decreto 523-09, Arts. sobre vacaciones · Lineamientos MAP 2023 sobre disfrute y pago de vacaciones en caso de desvinculación.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 9 -->
+    <div id="case9-modal" class="case-modal">
+        <div class="modal-content">
+            <div class="p-8">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <h2 class="font-display text-2xl font-bold text-gray-800 mb-2">Caso 9: Categorías e Indemnización tras Destitución Ilegal</h2>
+                        <span class="difficulty-badge difficulty-hard">Difícil</span>
+                    </div>
+                    <button onclick="closeCase('case9')" class="text-gray-400 hover:text-gray-600"><i class="fas fa-times text-2xl"></i></button>
+                </div>
+                <div class="prose max-w-none">
+                    <div class="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
+                        <h3 class="font-semibold text-blue-800 mb-2">Situación:</h3>
+                        <p class="text-blue-700">El nuevo director destituye a dos empleados sin ningún proceso disciplinario:<br>
+                        • <strong>Ana García</strong>: Analista II, <strong>Grupo IV – Carrera Administrativa General</strong>, 5 años de servicio, salario RD$45,000/mes.<br>
+                        • <strong>Miguel Santos</strong>: Mensajero, <strong>Grupo I – Servicios Generales, Estatuto Simplificado</strong>, 10 años de servicio, salario RD$20,000/mes.</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <!-- Ana -->
+                        <div class="border-2 border-blue-300 rounded-xl overflow-hidden">
+                            <div class="bg-blue-700 text-white px-4 py-3">
+                                <h4 class="font-bold">Ana García — Grupo IV (Carrera)</h4>
+                                <p class="text-blue-200 text-xs">Analista II · Carrera Administrativa General</p>
+                            </div>
+                            <div class="p-4 space-y-3">
+                                <div class="bg-blue-50 rounded p-3">
+                                    <p class="text-sm font-semibold text-blue-800 mb-1">¿Qué le corresponde?</p>
+                                    <p class="text-sm text-blue-700"><strong>REPOSICIÓN</strong> en su cargo exacto + pago de <strong>todos los salarios</strong> no percibidos desde el día de la destitución hasta que sea repuesta.</p>
+                                </div>
+                                <div class="bg-gray-50 rounded p-3 text-sm">
+                                    <p class="font-semibold text-gray-700 mb-1">¿Recibe indemnización económica?</p>
+                                    <p class="text-red-600 font-bold">NO.</p>
+                                    <p class="text-gray-600 text-xs mt-1">Los servidores de Carrera (Grupos III, IV, V) no reciben indemnización monetaria — su protección es la reposición al cargo.</p>
+                                </div>
+                                <div class="bg-gray-50 rounded p-3 text-sm">
+                                    <p class="font-semibold text-gray-700 mb-1">¿Ante quién reclama?</p>
+                                    <ol class="text-gray-600 space-y-1 list-decimal list-inside text-xs">
+                                        <li>Recurso de reconsideración ante la institución</li>
+                                        <li>Recurso jerárquico ante el MAP</li>
+                                        <li>TCSS (Tribunal Superior Administrativo)</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Miguel -->
+                        <div class="border-2 border-amber-300 rounded-xl overflow-hidden">
+                            <div class="bg-amber-600 text-white px-4 py-3">
+                                <h4 class="font-bold">Miguel Santos — Grupo I (Simplificado)</h4>
+                                <p class="text-amber-100 text-xs">Mensajero · Estatuto Simplificado</p>
+                            </div>
+                            <div class="p-4 space-y-3">
+                                <div class="bg-amber-50 rounded p-3">
+                                    <p class="text-sm font-semibold text-amber-800 mb-1">¿Qué le corresponde?</p>
+                                    <p class="text-sm text-amber-700"><strong>INDEMNIZACIÓN ECONÓMICA</strong>: 1 mes de salario por cada año de servicio o fracción ≥ 6 meses. Máximo 18 meses.</p>
+                                </div>
+                                <div class="bg-green-50 rounded p-3 text-sm">
+                                    <p class="font-semibold text-green-800 mb-1">Cálculo de indemnización:</p>
+                                    <p class="text-green-700">RD$20,000 × 10 años = <strong>RD$200,000</strong></p>
+                                    <p class="text-green-600 text-xs mt-1">+ vacaciones no disfrutadas + proporción de aguinaldo</p>
+                                </div>
+                                <div class="bg-gray-50 rounded p-3 text-sm">
+                                    <p class="font-semibold text-gray-700 mb-1">¿Recibe reposición?</p>
+                                    <p class="text-gray-600 text-xs">No necesariamente. Su protección es económica, no la estabilidad en el cargo. Puede reclamar si considera la destitución injustificada.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cuadro comparativo -->
+                    <div class="bg-gray-50 rounded-xl p-5 mb-6">
+                        <h4 class="font-bold text-gray-800 mb-3 text-center">📋 Cuadro Comparativo — Clave para Concursos</h4>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-xs">
+                                <thead><tr class="bg-gray-800 text-white"><th class="px-3 py-2 text-left">Característica</th><th class="px-3 py-2 text-center">Grupos I y II (Simplificado)</th><th class="px-3 py-2 text-center">Grupos III, IV, V (Carrera)</th></tr></thead>
+                                <tbody class="divide-y divide-gray-200">
+                                    <tr><td class="px-3 py-2 font-medium">Estatuto</td><td class="px-3 py-2 text-center">Simplificado</td><td class="px-3 py-2 text-center">Carrera Administrativa General</td></tr>
+                                    <tr class="bg-gray-50"><td class="px-3 py-2 font-medium">Ingreso</td><td class="px-3 py-2 text-center">Sin concurso formal</td><td class="px-3 py-2 text-center">Concurso de oposición obligatorio</td></tr>
+                                    <tr><td class="px-3 py-2 font-medium">Protección ante despido ilegal</td><td class="px-3 py-2 text-center text-amber-700 font-bold">Indemnización económica</td><td class="px-3 py-2 text-center text-blue-700 font-bold">Reposición + back-pay</td></tr>
+                                    <tr class="bg-gray-50"><td class="px-3 py-2 font-medium">Monto indemnización</td><td class="px-3 py-2 text-center">1 mes/año · máx. 18 meses</td><td class="px-3 py-2 text-center">N/A (se repone al cargo)</td></tr>
+                                    <tr><td class="px-3 py-2 font-medium">Foro de reclamación</td><td class="px-3 py-2 text-center">MAP / Tribunales laborales</td><td class="px-3 py-2 text-center">MAP → TCSS</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                        <h4 class="font-semibold text-yellow-800 mb-1"><i class="fas fa-gavel mr-2"></i>Fundamento Legal:</h4>
+                        <p class="text-sm text-yellow-700">Ley 41-08, Art. 18 (clasificación de servidores) · Arts. sobre Estatuto Simplificado e indemnización · Arts. sobre Carrera Administrativa y reposición · Constitución 2024, Art. 142 (función pública).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 10 -->
+    <div id="case10-modal" class="case-modal">
+        <div class="modal-content">
+            <div class="p-8">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <h2 class="font-display text-2xl font-bold text-gray-800 mb-2">Caso 10: Concurso por Ascenso Interno</h2>
+                        <span class="difficulty-badge difficulty-medium">Medio</span>
+                    </div>
+                    <button onclick="closeCase('case10')" class="text-gray-400 hover:text-gray-600"><i class="fas fa-times text-2xl"></i></button>
+                </div>
+                <div class="prose max-w-none">
+                    <div class="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
+                        <h3 class="font-semibold text-blue-800 mb-2">Situación:</h3>
+                        <p class="text-blue-700">Carlos ha servido 6 años como <strong>Técnico II (Grupo III – Carrera)</strong> con calificaciones "Sobresaliente" en sus últimas dos evaluaciones. Se abre una plaza de <strong>Analista I (Grupo IV – Carrera)</strong> en su departamento. ¿Puede Carlos aplicar y cómo funciona el proceso?</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                            <h4 class="font-semibold text-green-800 mb-3"><i class="fas fa-check-circle mr-2"></i>¿Puede Carlos aplicar?</h4>
+                            <p class="text-sm text-green-700 mb-2"><strong>SÍ</strong>, si cumple:</p>
+                            <ul class="text-sm text-green-700 space-y-1">
+                                <li>✔ Mínimo 2 años en el cargo actual de carrera</li>
+                                <li>✔ Última evaluación: "Satisfactorio" o superior</li>
+                                <li>✔ Cumplir los requisitos académicos del cargo Analista I (licenciatura)</li>
+                                <li>✔ No estar en proceso disciplinario activo</li>
+                            </ul>
+                            <p class="text-xs text-green-600 mt-2">Carlos cumple todos los requisitos con 6 años y evaluación "Sobresaliente".</p>
+                        </div>
+                        <div class="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                            <h4 class="font-semibold text-gray-800 mb-3"><i class="fas fa-list-ol mr-2"></i>Tipos de concurso (Ley 41-08):</h4>
+                            <div class="space-y-2 text-sm">
+                                <div class="bg-blue-50 rounded p-2"><strong class="text-blue-800">Concurso de Ascenso:</strong><p class="text-blue-700 text-xs">Solo para servidores de carrera de la propia institución.</p></div>
+                                <div class="bg-purple-50 rounded p-2"><strong class="text-purple-800">Concurso Abierto:</strong><p class="text-purple-700 text-xs">Abierto a candidatos internos y externos. Carlos puede competir con externos si el concurso es abierto.</p></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4 class="font-semibold text-gray-800 mb-3">Proceso del concurso por ascenso:</h4>
+                    <div class="space-y-2 mb-6">
+                        <div class="flex items-start gap-3 bg-gray-50 p-3 rounded">
+                            <span class="bg-blue-600 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">1</span>
+                            <div><strong class="text-gray-800 text-sm">Convocatoria interna:</strong><p class="text-xs text-gray-600">La ARH publica la vacante internamente con perfil del cargo, requisitos y cronograma.</p></div>
+                        </div>
+                        <div class="flex items-start gap-3 bg-gray-50 p-3 rounded">
+                            <span class="bg-blue-600 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">2</span>
+                            <div><strong class="text-gray-800 text-sm">Evaluación de Carlos:</strong><p class="text-xs text-gray-600">Prueba técnica (40%) + evaluación curricular/méritos (20%) + evaluación de desempeño histórica (20%) + entrevista (20%). Mínimo 70 puntos.</p></div>
+                        </div>
+                        <div class="flex items-start gap-3 bg-gray-50 p-3 rounded">
+                            <span class="bg-blue-600 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">3</span>
+                            <div><strong class="text-gray-800 text-sm">Ranking y selección:</strong><p class="text-xs text-gray-600">Se publica el listado de elegibles. El de mayor puntuación es seleccionado. Carlos tiene derecho a conocer su puntaje y posición.</p></div>
+                        </div>
+                        <div class="flex items-start gap-3 bg-gray-50 p-3 rounded">
+                            <span class="bg-blue-600 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">4</span>
+                            <div><strong class="text-gray-800 text-sm">Nombramiento:</strong><p class="text-xs text-gray-600">Si es seleccionado, el ascenso es formal. Carlos mantiene sus años de servicio acumulados y su certificado de carrera. Nuevo período de evaluación en el cargo superior.</p></div>
+                        </div>
+                        <div class="flex items-start gap-3 bg-gray-50 p-3 rounded">
+                            <span class="bg-blue-600 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">5</span>
+                            <div><strong class="text-gray-800 text-sm">Derecho a apelar:</strong><p class="text-xs text-gray-600">Si Carlos considera irregularidades en el proceso, puede impugnar ante el MAP dentro de los 5 días hábiles siguientes a la publicación de resultados.</p></div>
+                        </div>
+                    </div>
+
+                    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                        <h4 class="font-semibold text-yellow-800 mb-1"><i class="fas fa-gavel mr-2"></i>Fundamento Legal:</h4>
+                        <p class="text-sm text-yellow-700">Ley 41-08 (movilidad y ascenso en la carrera administrativa) · Reglamento de Reclutamiento, Selección y Nombramiento de la Carrera Administrativa General (MAP) · Constitución 2024, Art. 142.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 11 -->
+    <div id="case11-modal" class="case-modal">
+        <div class="modal-content">
+            <div class="p-8">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <h2 class="font-display text-2xl font-bold text-gray-800 mb-2">Caso 11: Proceso Disciplinario — Falta Muy Grave</h2>
+                        <span class="difficulty-badge difficulty-hard">Difícil</span>
+                    </div>
+                    <button onclick="closeCase('case11')" class="text-gray-400 hover:text-gray-600"><i class="fas fa-times text-2xl"></i></button>
+                </div>
+                <div class="prose max-w-none">
+                    <div class="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
+                        <h3 class="font-semibold text-blue-800 mb-2">Situación:</h3>
+                        <p class="text-blue-700">Ramón, <strong>Encargado de División de Estadísticas (Grupo V – Carrera Administrativa General)</strong>, ordenó a su equipo modificar datos en informes oficiales para ocultar el incumplimiento de metas institucionales. Un miembro del equipo lo reportó a la ARH.</p>
+                    </div>
+
+                    <!-- Cuadro de faltas -->
+                    <div class="bg-gray-50 rounded-xl p-5 mb-6">
+                        <h4 class="font-bold text-gray-800 mb-3">Niveles de Faltas y Sanciones — Ley 41-08:</h4>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm">
+                                <thead><tr class="bg-gray-700 text-white"><th class="px-3 py-2 text-left">Nivel</th><th class="px-3 py-2 text-left">Ejemplos</th><th class="px-3 py-2 text-left">Sanción</th></tr></thead>
+                                <tbody class="divide-y divide-gray-200">
+                                    <tr><td class="px-3 py-2 font-medium text-yellow-700">Leve</td><td class="px-3 py-2 text-gray-600 text-xs">Tardanzas menores, descuido no reiterativo, falta de cortesía</td><td class="px-3 py-2 text-xs">Amonestación verbal o escrita</td></tr>
+                                    <tr class="bg-orange-50"><td class="px-3 py-2 font-medium text-orange-700">Grave</td><td class="px-3 py-2 text-gray-600 text-xs">Ausentismo injustificado, uso indebido de recursos (1.ª vez), insubordinación</td><td class="px-3 py-2 text-xs">Suspensión sin goce de salario (3 a 30 días)</td></tr>
+                                    <tr class="bg-red-50"><td class="px-3 py-2 font-medium text-red-700 font-bold">Muy Grave ← Ramón</td><td class="px-3 py-2 text-gray-600 text-xs">Falsificación de documentos, corrupción, acoso sexual, abandono del cargo, fraude</td><td class="px-3 py-2 text-xs font-bold text-red-700">Destitución + posible inhabilitación + referimiento penal</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <h4 class="font-semibold text-gray-800 mb-3">Proceso Disciplinario completo (Ley 41-08 + Ley 107-13):</h4>
+                    <div class="space-y-2 mb-6">
+                        <div class="flex items-start gap-3 bg-gray-50 p-3 rounded">
+                            <span class="bg-red-600 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">1</span>
+                            <div><strong class="text-gray-800 text-sm">Investigación preliminar (máx. 5 días hábiles):</strong><p class="text-xs text-gray-600">La ARH valora la denuncia. Si los hechos constituyen falta muy grave confirmada, Ramón es <strong>suspendido provisionalmente con goce de salario</strong> mientras dura la investigación.</p></div>
+                        </div>
+                        <div class="flex items-start gap-3 bg-gray-50 p-3 rounded">
+                            <span class="bg-red-600 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">2</span>
+                            <div><strong class="text-gray-800 text-sm">Notificación formal de cargos:</strong><p class="text-xs text-gray-600">Ramón recibe notificación escrita con los hechos imputados de forma <strong>específica y detallada</strong>. Tiene <strong>72 horas (o 3 días hábiles)</strong> para presentar sus descargos.</p></div>
+                        </div>
+                        <div class="flex items-start gap-3 bg-gray-50 p-3 rounded">
+                            <span class="bg-red-600 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">3</span>
+                            <div><strong class="text-gray-800 text-sm">Investigación formal (hasta 30 días):</strong><p class="text-xs text-gray-600">Comisión investigadora recopila evidencias: documentos alterados, testimonios del equipo, registros digitales. Ramón puede presentar pruebas y ser asistido por un abogado.</p></div>
+                        </div>
+                        <div class="flex items-start gap-3 bg-gray-50 p-3 rounded">
+                            <span class="bg-red-600 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">4</span>
+                            <div><strong class="text-gray-800 text-sm">Decisión motivada:</strong><p class="text-xs text-gray-600">Si se comprueba la falta: <strong>Destitución</strong>. La decisión debe ser por escrito, fundamentada en hechos probados y en la norma aplicable. Sin decisión motivada, el proceso puede ser anulado.</p></div>
+                        </div>
+                        <div class="flex items-start gap-3 bg-gray-50 p-3 rounded">
+                            <span class="bg-red-600 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">5</span>
+                            <div><strong class="text-gray-800 text-sm">Recursos de Ramón:</strong><p class="text-xs text-gray-600">Recurso de reconsideración ante la institución → Recurso jerárquico ante el MAP → Demanda ante el TCSS (Tribunal Superior Administrativo).</p></div>
+                        </div>
+                    </div>
+
+                    <div class="bg-red-50 border border-red-200 rounded-lg p-4 mb-4">
+                        <h4 class="font-semibold text-red-800 mb-2"><i class="fas fa-exclamation-triangle mr-2"></i>Consecuencias adicionales para Ramón:</h4>
+                        <ul class="text-sm text-red-700 space-y-1">
+                            <li>• Referimiento a la <strong>Procuraduría General de la República</strong> por posible falsificación de documentos públicos</li>
+                            <li>• Referimiento a la <strong>Contraloría General de la República</strong> si hay daño patrimonial al Estado</li>
+                            <li>• <strong>Inhabilitación</strong> para ocupar cargos públicos (hasta 5 años)</li>
+                            <li>• Como servidor de Carrera (Grupo V) destituido <em>por causa justificada</em>: <strong>NO tiene derecho a reposición ni a indemnización</strong></li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                        <h4 class="font-semibold text-yellow-800 mb-1"><i class="fas fa-gavel mr-2"></i>Fundamento Legal:</h4>
+                        <p class="text-sm text-yellow-700">Ley 41-08 (régimen disciplinario: faltas y sanciones, proceso disciplinario) · Ley 107-13, Art. 8 y 9 (debido proceso y motivación del acto administrativo) · Ley 247-12 (organización de la AP) · Código Penal (falsedad documental) · Constitución 2024, Art. 69 (debido proceso).</p>
                     </div>
                 </div>
             </div>
@@ -598,14 +1174,11 @@
                 <div>
                     <div class="mb-4">
                         <div class="inline-flex rounded-md bg-white p-2 shadow-sm">
-                            <img src="assets/inap-logo.png" alt="Instituto Nacional de Administración Pública (INAP). Gobierno de la República Dominicana." class="brand-logo-footer" width="280" height="72" decoding="async">
+                            <img src="assets/inap-logo.png" alt="Instituto Nacional de Administración Pública (INAP)." class="brand-logo-footer" width="280" height="72" decoding="async">
                         </div>
                     </div>
-                    <p class="text-gray-300 text-sm leading-relaxed">
-                        Formando servidores públicos competentes y comprometidos con el desarrollo institucional de la República Dominicana.
-                    </p>
+                    <p class="text-gray-300 text-sm leading-relaxed">Formando servidores públicos competentes y comprometidos con el desarrollo institucional de la República Dominicana.</p>
                 </div>
-                
                 <div>
                     <h4 class="font-display font-semibold text-lg mb-4">Contacto</h4>
                     <div class="space-y-2 text-sm text-gray-300">
@@ -614,27 +1187,17 @@
                         <p><i class="fas fa-map-marker-alt mr-2 text-blue-400"></i>República Dominicana</p>
                     </div>
                 </div>
-                
                 <div>
                     <h4 class="font-display font-semibold text-lg mb-4">Recursos</h4>
                     <div class="space-y-2 text-sm">
-                        <a href="https://www.inap.gob.do" class="text-gray-300 hover:text-blue-400 block transition-colors">
-                            <i class="fas fa-external-link-alt mr-2"></i>Portal INAP
-                        </a>
-                        <a href="https://www.map.gob.do" class="text-gray-300 hover:text-blue-400 block transition-colors">
-                            <i class="fas fa-external-link-alt mr-2"></i>Portal MAP
-                        </a>
-                        <a href="https://transparencia.gob.do" class="text-gray-300 hover:text-blue-400 block transition-colors">
-                            <i class="fas fa-external-link-alt mr-2"></i>Portal Transparencia
-                        </a>
+                        <a href="https://www.inap.gob.do" class="text-gray-300 hover:text-blue-400 block transition-colors"><i class="fas fa-external-link-alt mr-2"></i>Portal INAP</a>
+                        <a href="https://www.map.gob.do" class="text-gray-300 hover:text-blue-400 block transition-colors"><i class="fas fa-external-link-alt mr-2"></i>Portal MAP</a>
+                        <a href="https://transparencia.gob.do" class="text-gray-300 hover:text-blue-400 block transition-colors"><i class="fas fa-external-link-alt mr-2"></i>Portal Transparencia</a>
                     </div>
                 </div>
             </div>
-            
             <div class="border-t border-gray-700 mt-8 pt-8 text-center">
-                <p class="text-gray-400 text-sm">
-                    © 2026 Johan Tapia, PhD - INAP. Curso de Inducción a la Administración Pública.
-                </p>
+                <p class="text-gray-400 text-sm">© 2026 Johan Tapia, PhD - INAP. Curso de Inducción a la Administración Pública.</p>
             </div>
         </div>
     </footer>
